@@ -15,7 +15,7 @@ Faça um fork do projeto para a sua conta e clone-o para o seu ambiente de traba
 
 ###A API de Notícias
 
-Deverá usar a API de conteúdo da url https://desafioapps.firebaseapp.com
+API de conteúdo: https://raw.githubusercontent.com/Infoglobo/desafioapp/master/capa.json
 
 ###Na listagem, o usuário verá:
 
