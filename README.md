@@ -1,7 +1,7 @@
 # Quer trabalhar em nosso time de apps? 
 
 Esse é o nosso desafio para você!
-O objetivo é avaliar o seu conhecimento e habilidades nos seguintes quesitos:
+O objetivo é você desenvolver um aplicativo que exiba as notícias usando uma API de capa e criar testes unitários. Avaliaremos seu conhecimento e habilidades nos seguintes quesitos:
 
 * Utilização de API
 * Experiência do usuário
