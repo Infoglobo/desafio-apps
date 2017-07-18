@@ -2,6 +2,8 @@ package com.globo.oglobo.app.network.api;
 
 import com.globo.oglobo.app.pojo.Capa;
 
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 
@@ -11,9 +13,9 @@ import retrofit2.http.GET;
 
 public interface API {
 
-    String END_POINT = "https://raw.githubusercontent.com/Infoglobo/desafio-apps/";
+    String END_POINT = "https://raw.githubusercontent.com/";
 
-    @GET("/master/capa.json")
-    Call<Capa> getCapa();
+    @GET("/Infoglobo/desafio-apps/master/capa.json")
+    Call<List<Capa>> getCapa();
 
 }

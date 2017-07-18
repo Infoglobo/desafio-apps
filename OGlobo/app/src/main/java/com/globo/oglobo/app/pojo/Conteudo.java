@@ -9,11 +9,11 @@ import java.util.List;
 
 public class Conteudo {
 
-    private List<String> autores;
+    private List<String> autores = null;
     private boolean informePublicitario;
     private String subTitulo;
     private String texto;
-    private List<String> videos;
+    private List<Object> videos = null;
     private Date atualizadoEm;
     private long id;
     private Date publicadoEm;
@@ -22,7 +22,7 @@ public class Conteudo {
     private String titulo;
     private String url;
     private String urlOriginal;
-    private List<Imagem> imagens;
+    private List<Imagem> imagens = null;
 
     public List<String> getAutores() {
         return autores;
@@ -56,11 +56,11 @@ public class Conteudo {
         this.texto = texto;
     }
 
-    public List<String> getVideos() {
+    public List<Object> getVideos() {
         return videos;
     }
 
-    public void setVideos(List<String> videos) {
+    public void setVideos(List<Object> videos) {
         this.videos = videos;
     }
 

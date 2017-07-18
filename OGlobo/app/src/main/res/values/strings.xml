@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">O Globo</string>
+
+    <string name="empty">Nenhum resultado foi encontrado</string>
 </resources>

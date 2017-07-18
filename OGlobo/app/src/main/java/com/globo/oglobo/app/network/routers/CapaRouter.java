@@ -1,8 +1,10 @@
 package com.globo.oglobo.app.network.routers;
 
-import com.globo.oglobo.app.contracts.APICallback;
+import com.globo.oglobo.app.contracts.NoticiasMVP;
 import com.globo.oglobo.app.network.api.API;
 import com.globo.oglobo.app.pojo.Capa;
+
+import java.util.List;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -15,29 +17,35 @@ import retrofit2.Response;
 public class CapaRouter {
 
     private API api;
-    private APICallback<Capa> callback;
+    private NoticiasMVP.NoticiasPresenterImpl callback;
 
-    public CapaRouter(API api, APICallback<Capa> callback) {
+    public CapaRouter(API api, NoticiasMVP.NoticiasPresenterImpl callback) {
         this.api = api;
         this.callback = callback;
     }
 
     public void getCapa() {
         if (api != null) {
-            api.getCapa().enqueue(new Callback<Capa>() {
+            api.getCapa().enqueue(new Callback<List<Capa>>() {
                 @Override
-                public void onResponse(Call<Capa> call, Response<Capa> response) {
-                    if (response.isSuccessful()) {
-                        Capa capa = response.body();
-                        if (capa != null && callback != null)
-                            callback.onSuccess(capa);
+                public void onResponse(Call<List<Capa>> call, Response<List<Capa>> response) {
+                    if (callback != null) {
+                        if (response.isSuccessful()) {
+                            List<Capa> capas = response.body();
+                            if (capas != null) {
+                                Capa capa = capas.get(0);
+                                callback.updateNoticias(capa.getConteudos());
+                            }
+                        } else {
+                            callback.updateNoticias(null);
+                        }
                     }
                 }
 
                 @Override
-                public void onFailure(Call<Capa> call, Throwable t) {
+                public void onFailure(Call<List<Capa>> call, Throwable t) {
                     if (callback != null)
-                        callback.onFailed();
+                        callback.updateNoticias(null);
                 }
             });
         }

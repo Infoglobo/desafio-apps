@@ -8,7 +8,7 @@ import java.util.List;
 
 public class Capa {
 
-    private List<Conteudo> conteudos;
+    private List<Conteudo> conteudos = null;
     private String produto;
 
     public List<Conteudo> getConteudos() {
