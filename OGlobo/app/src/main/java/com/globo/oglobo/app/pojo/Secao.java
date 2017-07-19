@@ -1,10 +1,12 @@
 package com.globo.oglobo.app.pojo;
 
+import java.io.Serializable;
+
 /**
  * Created by Andre on 12/07/17.
  */
 
-public class Secao {
+public class Secao implements Serializable {
 
     private String nome;
     private String url;

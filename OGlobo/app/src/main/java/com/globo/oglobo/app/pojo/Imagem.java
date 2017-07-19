@@ -1,10 +1,12 @@
 package com.globo.oglobo.app.pojo;
 
+import java.io.Serializable;
+
 /**
  * Created by Andre on 12/07/17.
  */
 
-public class Imagem {
+public class Imagem implements Serializable {
 
     private String autor;
     private String fonte;

@@ -1,5 +1,6 @@
 package com.globo.oglobo.app.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
@@ -7,7 +8,7 @@ import java.util.List;
  * Created by Andre on 12/07/17.
  */
 
-public class Conteudo {
+public class Conteudo implements Serializable {
 
     private List<String> autores = null;
     private boolean informePublicitario;

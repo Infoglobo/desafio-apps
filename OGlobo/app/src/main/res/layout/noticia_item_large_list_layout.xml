@@ -12,19 +12,11 @@
         android:layout_height="200dp"
         android:src="@drawable/no_image" />
 
-    <ImageView
-        android:id="@+id/imgSombra"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/imgFoto"
-        android:background="@drawable/sombra_bottom"
-        android:scaleType="centerInside" />
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@id/imgSombra"
-        android:layout_alignTop="@id/imgSombra"
+        android:layout_alignBottom="@id/imgFoto"
+        android:background="@drawable/background_shadow"
         android:orientation="vertical">
 
         <TextView
@@ -33,6 +25,8 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:background="@android:color/black"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
             android:text="EDITORIA"
             android:textColor="@color/gray"
             android:textStyle="bold" />
@@ -41,12 +35,11 @@
             android:id="@+id/txtTitulo"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:layout_marginBottom="@dimen/activity_margin"
-            android:layout_marginLeft="@dimen/activity_margin"
-            android:layout_marginRight="@dimen/activity_margin"
+            android:layout_margin="@dimen/activity_margin"
             android:layout_weight="1"
-            android:gravity="center_vertical"
-            android:text="Título da notícia kjahskhgashjagshkjagskhgaskhagskjagskjahgskajagsha"
+            android:gravity="center"
+            android:text="Título da notícia"
+            android:textAlignment="center"
             android:textAppearance="@style/Base.TextAppearance.AppCompat.Medium"
             android:textColor="@android:color/white"
             android:textStyle="bold" />

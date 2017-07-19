@@ -13,6 +13,7 @@
 
     <include
         android:id="@+id/includeProgressBar"
-        layout="@layout/include_progressbar" />
+        layout="@layout/include_progressbar"
+        android:visibility="gone" />
 
 </RelativeLayout>

@@ -1,6 +1,7 @@
 package com.globo.oglobo.app.views.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -9,10 +10,10 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.globo.oglobo.app.R;
+import com.globo.oglobo.app.helpers.ConteudoInfoHelper;
 import com.globo.oglobo.app.helpers.ImageHelper;
 import com.globo.oglobo.app.pojo.Conteudo;
-import com.globo.oglobo.app.pojo.Imagem;
-import com.globo.oglobo.app.pojo.Secao;
+import com.globo.oglobo.app.views.activities.NoticiaDetalhesActivity;
 
 import java.util.List;
 
@@ -38,11 +39,20 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.Notici
     }
 
     @Override
-    public void onBindViewHolder(NoticiaViewHolder holder, int position) {
-        Conteudo conteudo = conteudos.get(position);
+    public void onBindViewHolder(final NoticiaViewHolder holder, int position) {
+        final Conteudo conteudo = conteudos.get(position);
         if (conteudo != null) {
             holder.setConteudo(conteudo);
         }
+
+        holder.view.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, NoticiaDetalhesActivity.class);
+                intent.putExtra(NoticiaDetalhesActivity.CONTEUDO, conteudo);
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
@@ -63,6 +73,7 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.Notici
 
     class NoticiaViewHolder extends RecyclerView.ViewHolder {
 
+        private View view;
         private ImageView imgFoto;
         private TextView txtEditoria;
         private TextView txtTitulo;
@@ -70,26 +81,19 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.Notici
         NoticiaViewHolder(View itemView) {
             super(itemView);
 
+            view = itemView;
             imgFoto = (ImageView) itemView.findViewById(R.id.imgFoto);
             txtEditoria = (TextView) itemView.findViewById(R.id.txtEditoria);
             txtTitulo = (TextView) itemView.findViewById(R.id.txtTitulo);
         }
 
         void setConteudo(Conteudo conteudo) {
-            List<Imagem> imagens = conteudo.getImagens();
-            if (imagens != null && imagens.size() == 1) {
-                Imagem imagem = imagens.get(0);
-                if (imagem != null)
-                    ImageHelper.loadImages(context, imagem.getUrl(), imgFoto);
-            }
-
-            Secao secao = conteudo.getSecao();
-            if (secao != null) {
-                String nomeSecao = secao.getNome();
-                if (nomeSecao != null)
-                    txtEditoria.setText(nomeSecao.toUpperCase());
-            }
-
+            String urlImagem = ConteudoInfoHelper.getUrlImagem(conteudo);
+            if (urlImagem != null)
+                ImageHelper.loadImages(context, urlImagem, imgFoto);
+            else
+                imgFoto.setVisibility(View.GONE);
+            txtEditoria.setText(ConteudoInfoHelper.getNomeSecao(conteudo));
             txtTitulo.setText(conteudo.getTitulo());
         }
     }

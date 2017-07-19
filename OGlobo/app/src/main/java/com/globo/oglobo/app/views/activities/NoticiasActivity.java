@@ -16,10 +16,13 @@ import java.util.List;
 
 public class NoticiasActivity extends AppCompatActivity implements NoticiasMVP.NoticiasViewImpl {
 
+    protected static final String STATE_CONTEUDOS = "conteudos";
+
     private RecyclerView rvNoticias;
     private NoticiasAdapter adapter;
-
     private NoticiasPresenter presenter;
+
+    private List<Conteudo> conteudos = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,22 +33,34 @@ public class NoticiasActivity extends AppCompatActivity implements NoticiasMVP.N
         rvNoticias.setHasFixedSize(true);
         rvNoticias.setLayoutManager(new LinearLayoutManager(this));
 
-        adapter = new NoticiasAdapter(this, new ArrayList<Conteudo>());
+        adapter = new NoticiasAdapter(this, conteudos);
         rvNoticias.setAdapter(adapter);
-    }
-
-    @Override
-    protected void onResume() {
-        super.onResume();
 
         if (presenter == null)
             presenter = new NoticiasPresenter(this);
 
-        presenter.buscarNoticias();
+        if (savedInstanceState != null) {
+            List<Conteudo> conteudoArrayList = (ArrayList<Conteudo>) savedInstanceState.getSerializable(STATE_CONTEUDOS);
+            if (conteudoArrayList != null && conteudoArrayList.size() > 0) {
+                conteudos.addAll(conteudoArrayList);
+            }
+        } else {
+            presenter.buscarNoticias();
+        }
+    }
+
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+
+        ArrayList<Conteudo> conteudos = new ArrayList<>();
+        conteudos.addAll(this.conteudos);
+        outState.putSerializable(STATE_CONTEUDOS, conteudos);
     }
 
     @Override
     public void onSuccess(List<Conteudo> conteudos) {
+        this.conteudos.addAll(conteudos);
         adapter.updateConteudos(conteudos);
     }
 
