@@ -9,6 +9,7 @@ import com.globo.oglobo.app.pojo.Conteudo;
 public interface NoticiaDetalhesMVP {
 
     interface NoticiaDetalhesViewImpl {
+        void exibirEditoria(String editoria);
         void exibirTitulo(String titulo, int visibility);
         void exibirSubTitulo(String subTitulo, int visibility);
         void exibirAutor(String autor, int visibility);

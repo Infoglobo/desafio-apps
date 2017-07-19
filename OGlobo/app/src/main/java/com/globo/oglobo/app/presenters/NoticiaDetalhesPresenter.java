@@ -20,6 +20,8 @@ public class NoticiaDetalhesPresenter implements NoticiaDetalhesMVP.NoticiaDetal
 
     @Override
     public void preencherConteudo(Conteudo conteudo) {
+        view.exibirEditoria(ConteudoInfoHelper.getNomeSecao(conteudo));
+
         String titulo = conteudo.getTitulo();
         view.exibirTitulo(titulo, pegarVisibilidade(titulo));
 

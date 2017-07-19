@@ -2,4 +2,6 @@
     <string name="app_name">O Globo</string>
 
     <string name="empty">Nenhum resultado foi encontrado</string>
+
+    <string name="img_transition">imgTransition</string>
 </resources>

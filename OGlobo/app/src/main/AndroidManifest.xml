@@ -2,9 +2,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.globo.oglobo.app">
 
-    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE"/>
 
     <application
+        android:name=".OGloboApplication"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -21,7 +23,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".views.activities.NoticiasActivity" />
-        <activity android:name=".views.activities.NoticiaDetalhesActivity"></activity>
+        <activity android:name=".views.activities.NoticiaDetalhesActivity" />
     </application>
 
 </manifest>

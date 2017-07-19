@@ -18,7 +18,8 @@
             android:layout_height="60dp"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="@dimen/activity_margin"
-            android:src="@drawable/no_image" />
+            android:src="@drawable/no_image"
+            android:transitionName="@string/img_transition" />
 
         <LinearLayout
             android:layout_width="match_parent"

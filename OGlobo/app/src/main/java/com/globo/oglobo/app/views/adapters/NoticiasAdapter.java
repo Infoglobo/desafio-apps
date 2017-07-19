@@ -1,7 +1,9 @@
 package com.globo.oglobo.app.views.adapters;
 
-import android.content.Context;
+import android.app.Activity;
 import android.content.Intent;
+import android.os.Build;
+import android.support.v4.app.ActivityOptionsCompat;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,11 +25,11 @@ import java.util.List;
 
 public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.NoticiaViewHolder> {
 
-    private Context context;
+    private Activity activity;
     private List<Conteudo> conteudos;
 
-    public NoticiasAdapter(Context context, List<Conteudo> conteudos) {
-        this.context = context;
+    public NoticiasAdapter(Activity activity, List<Conteudo> conteudos) {
+        this.activity = activity;
         this.conteudos = conteudos;
     }
 
@@ -48,9 +50,13 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.Notici
         holder.view.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context, NoticiaDetalhesActivity.class);
+                Intent intent = new Intent(activity, NoticiaDetalhesActivity.class);
                 intent.putExtra(NoticiaDetalhesActivity.CONTEUDO, conteudo);
-                context.startActivity(intent);
+                ActivityOptionsCompat optionsCompat = ActivityOptionsCompat.makeSceneTransitionAnimation(activity, holder.imgFoto, activity.getString(R.string.img_transition));
+                if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN)
+                    activity.startActivity(intent, optionsCompat.toBundle());
+                else
+                    activity.startActivity(intent);
             }
         });
     }
@@ -90,7 +96,7 @@ public class NoticiasAdapter extends RecyclerView.Adapter<NoticiasAdapter.Notici
         void setConteudo(Conteudo conteudo) {
             String urlImagem = ConteudoInfoHelper.getUrlImagem(conteudo);
             if (urlImagem != null)
-                ImageHelper.loadImages(context, urlImagem, imgFoto);
+                ImageHelper.loadImages(activity, urlImagem, imgFoto);
             else
                 imgFoto.setVisibility(View.GONE);
             txtEditoria.setText(ConteudoInfoHelper.getNomeSecao(conteudo));

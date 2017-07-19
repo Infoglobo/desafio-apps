@@ -3,7 +3,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.globo.oglobo.app.views.activities.NoticiaDetalhesActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <include
+            android:id="@+id/includeToolbar"
+            layout="@layout/include_toolbar" />
+
+        <TextView
+            android:id="@+id/txtEditoria"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/toolbar_margin"
+            android:gravity="center"
+            android:text="EDITORIA"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Large"
+            android:textColor="@android:color/white"
+            android:textStyle="bold" />
+
+    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
@@ -72,7 +94,8 @@
                     android:id="@+id/imgFoto"
                     android:layout_width="match_parent"
                     android:layout_height="200dp"
-                    android:src="@drawable/no_image" />
+                    android:src="@drawable/no_image"
+                    android:transitionName="@string/img_transition" />
 
                 <LinearLayout
                     android:layout_width="match_parent"

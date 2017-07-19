@@ -5,10 +5,23 @@
     android:layout_height="match_parent"
     tools:context="com.globo.oglobo.app.views.activities.NoticiasActivity">
 
+    <include
+        android:id="@+id/includeToolbar"
+        layout="@layout/include_toolbar" />
+
+    <ImageView
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="@dimen/toolbar_margin"
+        android:src="@drawable/logo" />
+
     <android.support.v7.widget.RecyclerView
         android:id="@+id/rvNoticias"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/includeToolbar"
         tools:listitem="@layout/noticia_item_list_layout" />
 
     <include

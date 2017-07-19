@@ -2,6 +2,7 @@ package com.globo.oglobo.app.views.activities;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 import android.widget.ImageView;
 import android.widget.RelativeLayout;
@@ -9,7 +10,6 @@ import android.widget.TextView;
 
 import com.globo.oglobo.app.R;
 import com.globo.oglobo.app.contracts.NoticiaDetalhesMVP;
-import com.globo.oglobo.app.helpers.ConteudoInfoHelper;
 import com.globo.oglobo.app.helpers.ImageHelper;
 import com.globo.oglobo.app.pojo.Conteudo;
 import com.globo.oglobo.app.presenters.NoticiaDetalhesPresenter;
@@ -20,7 +20,7 @@ public class NoticiaDetalhesActivity extends AppCompatActivity implements Notici
 
     private Conteudo conteudo;
 
-    private TextView txtTitulo, txtSubTitulo, txtAutor, txtDataPublicacao, txtLegendaImagem, txtTexto;
+    private TextView txtEditoria, txtTitulo, txtSubTitulo, txtAutor, txtDataPublicacao, txtLegendaImagem, txtTexto;
     private ImageView imgFoto;
     private RelativeLayout lytImagem;
 
@@ -31,12 +31,16 @@ public class NoticiaDetalhesActivity extends AppCompatActivity implements Notici
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_noticia_detalhes);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         getSupportActionBar().setDisplayShowHomeEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         conteudo = (Conteudo) getIntent().getSerializableExtra(CONTEUDO);
-        setTitle(ConteudoInfoHelper.getNomeSecao(conteudo));
 
+        txtEditoria = (TextView) findViewById(R.id.txtEditoria);
         txtTitulo = (TextView) findViewById(R.id.txtTitulo);
         txtSubTitulo = (TextView) findViewById(R.id.txtSubTitulo);
         txtAutor = (TextView) findViewById(R.id.txtAutor);
@@ -54,8 +58,13 @@ public class NoticiaDetalhesActivity extends AppCompatActivity implements Notici
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
         if (id == android.R.id.home)
-            finish();
+            supportFinishAfterTransition();
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void exibirEditoria(String editoria) {
+        txtEditoria.setText(editoria);
     }
 
     @Override
