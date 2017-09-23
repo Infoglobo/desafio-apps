@@ -7,3 +7,8 @@
 //
 
 import Foundation
+
+protocol NewsContentService {
+    init()
+    func fetchNewsContent(completion: @escaping (_ news: [Content]?, _ error: ErrorType?) -> Void)
+}

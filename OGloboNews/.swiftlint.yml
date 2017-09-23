@@ -49,13 +49,13 @@ force_try: warning
 
 # type name
 type_name:
-  min_length: 3
+  min_length: 2
   max_length:
     warning: 50
 
 # variable name
 variable_name:
-  min_length: 3
+  min_length: 2
   max_length:
     warning: 50
 

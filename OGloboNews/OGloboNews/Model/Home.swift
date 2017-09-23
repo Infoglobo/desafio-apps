@@ -7,3 +7,22 @@
 //
 
 import Foundation
+import ObjectMapper
+
+struct Home: Mappable {
+    
+    var content = [Content]()
+    var product = ""
+    
+    init?(map: Map) {
+        mapping(map: map)
+    }
+    
+    init() {
+    }
+    
+    mutating func mapping(map: Map) {
+        content <- map["conteudos"]
+        product <- map["produto"]
+    }
+}

@@ -57,4 +57,3 @@ func <*> <T: Mappable>(json: JSONDictionary?, response: (type: T.Type, error: Er
     }
     return (T(JSON: json), nil)
 }
-

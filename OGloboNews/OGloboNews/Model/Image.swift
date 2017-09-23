@@ -1,5 +1,5 @@
 //
-//  Section.swift
+//  Image.swift
 //  OGloboNews
 //
 //  Created by Cauê Silva on 22/09/17.
@@ -9,9 +9,11 @@
 import Foundation
 import ObjectMapper
 
-struct Section: Mappable {
+struct Image: Mappable {
     
-    var name = ""
+    var author = ""
+    var source = ""
+    var legend = ""
     var url = ""
     
     init?(map: Map) {
@@ -22,7 +24,9 @@ struct Section: Mappable {
     }
     
     mutating func mapping(map: Map) {
-        name <- map["nome"]
+        author <- map["autor"]
+        source <- map["fonte"]
+        legend <- map["legenda"]
         url <- map["url"]
     }
 }
