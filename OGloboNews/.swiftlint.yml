@@ -1,0 +1,66 @@
+# ------------------------------------------------------------------------------
+# INCLUDE, EXCLUDE & IGNORED PATHS
+# ------------------------------------------------------------------------------
+
+included:
+  - OGloboNews
+
+excluded:
+  - Pods
+
+# ------------------------------------------------------------------------------
+# EXCLUDE & IGNORED RULES
+# ------------------------------------------------------------------------------
+
+disabled_rules:
+  - missing_docs
+  - trailing_whitespace
+
+opt_in_rules:
+
+# ------------------------------------------------------------------------------
+# LENGHT RULES
+# ------------------------------------------------------------------------------
+
+# file
+file_length:
+  warning: 700 # lenght considered warning
+  error: 1200  # lenght considered error
+
+# type body
+type_body_length:
+  - 400 # lenght considered warning
+  - 500  # lenght considered error
+
+# code line
+line_length: 500
+
+# ------------------------------------------------------------------------------
+# FORCE RULES
+# ------------------------------------------------------------------------------
+
+# force
+force_cast: warning
+force_try: warning
+
+# ------------------------------------------------------------------------------
+# NAMING RULES
+# ------------------------------------------------------------------------------
+
+# type name
+type_name:
+  min_length: 3
+  max_length:
+    warning: 50
+
+# variable name
+variable_name:
+  min_length: 3
+  max_length:
+    warning: 50
+
+# ------------------------------------------------------------------------------
+# REPORTER TYPE (xcode, json, csv, checkstyle, junit, html, emoji)
+# ------------------------------------------------------------------------------
+
+reporter: "xcode"

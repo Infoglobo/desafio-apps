@@ -1,0 +1,28 @@
+PODS:
+  - FLAnimatedImage (1.0.12)
+  - ObjectMapper (2.2.7)
+  - PINCache (2.3)
+  - PINRemoteImage (2.1.4):
+    - PINRemoteImage/FLAnimatedImage (= 2.1.4)
+  - PINRemoteImage/Core (2.1.4):
+    - PINCache (>= 2.1)
+  - PINRemoteImage/FLAnimatedImage (2.1.4):
+    - FLAnimatedImage (>= 1.0)
+    - PINRemoteImage/Core
+  - SwiftLint (0.19.0)
+
+DEPENDENCIES:
+  - ObjectMapper
+  - PINRemoteImage
+  - SwiftLint
+
+SPEC CHECKSUMS:
+  FLAnimatedImage: 4a0b56255d9b05f18b6dd7ee06871be5d3b89e31
+  ObjectMapper: 65abcfd9a61cf7396cbd14a4fb22fddfcc46577e
+  PINCache: ce36ed282031b92fc7733ffe831f474ff80fddc2
+  PINRemoteImage: 4ac4011c5caefd6befd99758e09becede05d3226
+  SwiftLint: 3537a05b34060e78e7510f04fb7537d738247803
+
+PODFILE CHECKSUM: c9716d89e7ab23a0bb66be1504132ace07afdef1
+
+COCOAPODS: 1.2.1
