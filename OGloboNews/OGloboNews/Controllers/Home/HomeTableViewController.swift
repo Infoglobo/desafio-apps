@@ -96,7 +96,7 @@ class HomeTableViewController: UITableViewController, HomeDelegate, HomeContentD
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return .leastNonzeroMagnitude
+        return 1.5
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -117,10 +117,6 @@ class HomeTableViewController: UITableViewController, HomeDelegate, HomeContentD
             cell.fill(sectionNews: sectionNews, delegate: self)
         }
         return cell
-    }
-    
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     // MARK: Prepare for Segue

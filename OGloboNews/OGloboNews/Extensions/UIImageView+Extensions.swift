@@ -23,12 +23,9 @@ extension UIImageView {
     
     func addIndicatorView() {
         if !subviews.contains(where: { $0.isKind(of: UIActivityIndicatorView.self) }) {
-            let indicatorView = UIActivityIndicatorView(activityIndicatorStyle: .gray)
-            indicatorView.frame = CGRect(x: frame.size.width / 2, y: frame.size.height / 2, width: 15, height: 15)
-            indicatorView.backgroundColor = .clear
-            indicatorView.startAnimating()
-            addSubview(indicatorView)
-            bringSubview(toFront: indicatorView)
+            let loader = IndicatorLoader().create(for: self)
+            addSubview(loader)
+            bringSubview(toFront: loader)
             backgroundColor = UIColor.black.withAlphaComponent(0.05)
         }
     }

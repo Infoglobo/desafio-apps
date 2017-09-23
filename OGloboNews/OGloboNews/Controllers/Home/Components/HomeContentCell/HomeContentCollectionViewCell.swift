@@ -21,7 +21,7 @@ class HomeContentCollectionViewCell: UICollectionViewCell {
     func fill(image: String, title: String) {
         titleLabel.text = title
         if image.isEmpty {
-            imageView.image = UIImage(named: "default")
+            imageView.image = UIImage(named: "logo")
             imageView.contentMode = .center
         } else {
             if let localImage = UIImage(named: image.normalized()) {

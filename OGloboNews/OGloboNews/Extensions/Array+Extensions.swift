@@ -18,3 +18,15 @@ extension Array {
     }
     
 }
+
+extension Array where Iterator.Element == String {
+    
+    func combined() -> String {
+        var combined = ""
+        forEach { stringElement in
+            combined += ", \(stringElement)"
+        }
+        return String(describing: combined.dropFirst(2))
+    }
+    
+}
