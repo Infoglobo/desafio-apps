@@ -23,7 +23,16 @@ enum ContentDetailCellType: Int {
     }
     
     var height: CGFloat {
-        return 200
+        switch self {
+        case .title, .subTitle:
+            return 100
+        case .authorAndDate:
+            return 77
+        case .image:
+            return 300
+        case .content:
+            return 667
+        }
     }
     
 }

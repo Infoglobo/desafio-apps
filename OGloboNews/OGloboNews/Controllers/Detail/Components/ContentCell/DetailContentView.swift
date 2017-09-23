@@ -10,4 +10,14 @@ import UIKit
 
 class DetailContentView: UIView {
 
+    @IBOutlet weak var textView: UITextView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        textView.text = ""
+    }
+    
+    func fill(text: String) {
+        textView.text = text
+    }
 }

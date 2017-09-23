@@ -10,15 +10,15 @@ import UIKit
 
 class ContentTableViewCell: UITableViewCell {
 
+    let view: DetailContentView = UIView.fromNib()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        fillWithSubview(subview: view)
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    
+    func fill(content: String) {
+        view.fill(text: content)
     }
-
+    
 }

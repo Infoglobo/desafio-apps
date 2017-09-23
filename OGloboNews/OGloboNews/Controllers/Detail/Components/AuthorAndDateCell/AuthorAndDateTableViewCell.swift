@@ -10,8 +10,15 @@ import UIKit
 
 class AuthorAndDateTableViewCell: UITableViewCell {
 
+    let view: AuthorAndDateView = UIView.fromNib()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        fillWithSubview(subview: view)
+    }
+    
+    func fill(author: String, date: String) {
+        view.fill(author: author, date: date)
     }
     
 }

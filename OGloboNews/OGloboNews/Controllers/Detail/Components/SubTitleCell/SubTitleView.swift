@@ -10,4 +10,15 @@ import UIKit
 
 class SubTitleView: UIView {
 
+    @IBOutlet weak var subTitleLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        subTitleLabel.text = ""
+    }
+    
+    func fill(subTitle: String) {
+        subTitleLabel.text = subTitle
+    }
+    
 }

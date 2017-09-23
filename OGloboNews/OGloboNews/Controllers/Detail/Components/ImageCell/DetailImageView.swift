@@ -10,4 +10,17 @@ import UIKit
 
 class DetailImageView: UIView {
 
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var legendLabel: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        legendLabel.text = ""
+    }
+    
+    func fill(url: String, legend: String) {
+        imageView.downloadImage(with: url)
+        legendLabel.text = legend
+    }
+    
 }

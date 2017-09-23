@@ -10,8 +10,15 @@ import UIKit
 
 class SubTitleTableViewCell: UITableViewCell {
 
+    let view: SubTitleView = UIView.fromNib()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        fillWithSubview(subview: view)
+    }
+    
+    func fill(subTitle: String) {
+        view.fill(subTitle: subTitle)
     }
     
 }

@@ -10,8 +10,15 @@ import UIKit
 
 class ImageTableViewCell: UITableViewCell {
 
+    let view: DetailImageView = UIView.fromNib()
+    
     override func awakeFromNib() {
         super.awakeFromNib()
+        fillWithSubview(subview: view)
+    }
+    
+    func fill(url: String, legend: String) {
+        view.fill(url: url, legend: legend)
     }
     
 }

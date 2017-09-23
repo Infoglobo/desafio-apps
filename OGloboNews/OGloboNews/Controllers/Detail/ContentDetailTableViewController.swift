@@ -75,23 +75,33 @@ class ContentDetailTableViewController: UITableViewController {
     // MARK: Cells
     
     private func titleCell(at indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell: TitleTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
+        cell.fill(title: viewModel.title)
+        return cell
     }
     
     private func subTitleCell(at indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell: SubTitleTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
+        cell.fill(subTitle: viewModel.subTitle)
+        return cell
     }
     
     private func authorAndDateCell(at indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell: AuthorAndDateTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
+        cell.fill(author: viewModel.authorAndDate.author ?? "", date: viewModel.authorAndDate.date ?? "")
+        return cell
     }
     
     private func imageCell(at indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell: ImageTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
+        cell.fill(url: viewModel.image?.url ?? "", legend: viewModel.image?.legend ?? "")
+        return cell
     }
     
     private func contentCell(at indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let cell: ContentTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
+        cell.fill(content: viewModel.text)
+        return cell
     }
     
     // MARK: Share
