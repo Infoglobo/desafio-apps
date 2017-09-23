@@ -5,7 +5,7 @@ def common_pods_for_target
     use_frameworks!
     pod 'ObjectMapper'
     pod 'PINRemoteImage'
-    pod ‘SwiftLint’
+    pod 'SwiftLint'
 end
 
 target 'OGloboNews' do

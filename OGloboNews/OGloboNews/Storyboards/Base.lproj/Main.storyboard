@@ -9,17 +9,22 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Home Table View Controller-->
         <scene sceneID="Sl4-MD-Hhn">
             <objects>
-                <tableViewController id="AC7-VU-3fL" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SWI-5J-acn">
+                <tableViewController storyboardIdentifier="HomeTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AC7-VU-3fL" customClass="HomeTableViewController" customModule="OGloboNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" id="SWI-5J-acn">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <view key="tableHeaderView" contentMode="scaleToFill" id="GER-C2-hgB">
+                            <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="tTy-4D-N10">
-                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeContentTableViewCell" id="tTy-4D-N10" customClass="HomeContentTableViewCell" customModule="OGloboNews" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="135.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tTy-4D-N10" id="g51-is-sxP">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
@@ -34,17 +39,18 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="5gZ-Im-dn8"/>
                     <connections>
-                        <segue destination="Mcg-Au-HfA" kind="show" id="fF1-uE-1sj"/>
+                        <outlet property="headerContainerView" destination="GER-C2-hgB" id="tNN-vI-dWh"/>
+                        <segue destination="Mcg-Au-HfA" kind="show" identifier="contentDetailSegue" id="fF1-uE-1sj"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="F7I-K2-mUm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="282.39999999999998" y="135.38230884557723"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Title-->
         <scene sceneID="aEG-5w-nzh">
             <objects>
-                <tableViewController id="Mcg-Au-HfA" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="ContentDetailTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mcg-Au-HfA" customClass="ContentDetailTableViewController" customModule="OGloboNews" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="MPH-Sq-OSW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -64,6 +70,18 @@
                             <outlet property="delegate" destination="Mcg-Au-HfA" id="pHI-uB-gYZ"/>
                         </connections>
                     </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" title="Title" id="nXX-lZ-NgS">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="1hj-9q-D3j">
+                            <connections>
+                                <action selector="shareContent:" destination="Mcg-Au-HfA" id="yzB-E7-nTx"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="shareButton" destination="1hj-9q-D3j" id="wjk-Pw-67W"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6MY-29-Iot" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

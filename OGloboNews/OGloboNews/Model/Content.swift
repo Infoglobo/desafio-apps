@@ -9,6 +9,15 @@
 import Foundation
 import ObjectMapper
 
+enum ContentType: String {
+    case material = "materia"
+    case externalLink = "linkExterno"
+    
+    init(type: String) {
+        self = ContentType(rawValue: type) ?? .externalLink
+    }
+}
+
 struct Content: Mappable {
     
     var id = 0
