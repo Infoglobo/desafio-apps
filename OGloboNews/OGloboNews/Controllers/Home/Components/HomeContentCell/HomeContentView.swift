@@ -9,7 +9,7 @@
 import UIKit
 
 protocol HomeContentDelegate: class {
-    func didSelectContent(with id: Int)
+    func didSelectContent(with id: String)
 }
 
 class HomeContentView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B2B1D8F1F77318800F2C9E5 /* CacheContentPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2B1D8E1F77318800F2C9E5 /* CacheContentPersister.swift */; };
 		0B5F688D1F76A8800032FF34 /* ContentDetailCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5F688C1F76A8800032FF34 /* ContentDetailCellType.swift */; };
 		0B5F688F1F76B4C50032FF34 /* IndicatorLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5F688E1F76B4C50032FF34 /* IndicatorLoader.swift */; };
 		0B5F689C1F76B9C70032FF34 /* TitleTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B5F689B1F76B9C70032FF34 /* TitleTableViewCell.swift */; };
@@ -77,6 +78,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B2B1D8E1F77318800F2C9E5 /* CacheContentPersister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheContentPersister.swift; sourceTree = "<group>"; };
 		0B5F688C1F76A8800032FF34 /* ContentDetailCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailCellType.swift; sourceTree = "<group>"; };
 		0B5F688E1F76B4C50032FF34 /* IndicatorLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndicatorLoader.swift; sourceTree = "<group>"; };
 		0B5F689B1F76B9C70032FF34 /* TitleTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableViewCell.swift; sourceTree = "<group>"; };
@@ -164,6 +166,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B2B1D8A1F7730AA00F2C9E5 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				0B2B1D8E1F77318800F2C9E5 /* CacheContentPersister.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 		0B5F68961F76B9920032FF34 /* ContentCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -240,6 +250,7 @@
 				0B8BC07B1F75D3E400073CD6 /* AppDelegate.swift */,
 				0B8BC09F1F75D4EB00073CD6 /* Networking */,
 				0B8BC09E1F75D4E600073CD6 /* Model */,
+				0B2B1D8A1F7730AA00F2C9E5 /* Persistence */,
 				0B8BC09D1F75D4DE00073CD6 /* Controllers */,
 				0B8BC09C1F75D4D400073CD6 /* Storyboards */,
 				0B8BC09B1F75D4CB00073CD6 /* Extensions */,
@@ -665,6 +676,7 @@
 				0B8BC0A21F75D57200073CD6 /* Network.swift in Sources */,
 				0BA3C76C1F75DD950092F2F4 /* Image.swift in Sources */,
 				0B5F68B41F76C3CB0032FF34 /* ContentTableViewCell.swift in Sources */,
+				0B2B1D8F1F77318800F2C9E5 /* CacheContentPersister.swift in Sources */,
 				0BA3C76E1F75DD9E0092F2F4 /* Section.swift in Sources */,
 				0B9741091F7621A500A8538E /* UIImageView+Extensions.swift in Sources */,
 				0B9741011F76126400A8538E /* HomeContentCollectionViewCell.swift in Sources */,

@@ -12,6 +12,7 @@ import Foundation
 
 protocol HomeDelegate: class {
     func fetchedNewsContent(success: Bool)
+    func fetchedCachedNewsContent()
     func openMaterial()
     func openExternalLink()
 }
@@ -23,6 +24,7 @@ class HomeViewModel {
     private var news: [Content]?
     private var newsBySection = [SectionNews]()
     private var newsService: NewsContentService?
+    private var persister = CacheContentPersister()
     private weak var delegate: HomeDelegate?
     
     // MARK: Init
@@ -43,13 +45,26 @@ class HomeViewModel {
             self.news = news
             self.newsBySection = NewsContentFilter(news: news).filterBySection()
             self.delegate?.fetchedNewsContent(success: true)
+            self.persister.save(content: news, completion: { _ in })
         })
+    }
+    
+    // MARK: Cache
+    
+    func fetchCachedNewsContent() {
+        persister.query { cachedContent in
+            if !cachedContent.isEmpty {
+                self.news = cachedContent
+                self.newsBySection = NewsContentFilter(news: cachedContent).filterBySection()
+                self.delegate?.fetchedCachedNewsContent()
+            }
+        }
     }
     
     // MARK: UI
     
     var title: String {
-        return "O Globo"
+        return "O Globo".uppercased()
     }
     
     var numberOfSections: Int {
@@ -68,7 +83,7 @@ class HomeViewModel {
     
     var selectedContent: Content?
     
-    func selectedContent(with id: Int) {
+    func selectedContent(with id: String) {
         if let index = news?.index(where: { $0.id == id }), let content = news?.object(index: index) {
             selectedContent = content
             switch ContentType(type: content.type) {

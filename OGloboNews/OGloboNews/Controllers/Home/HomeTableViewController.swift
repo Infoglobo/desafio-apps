@@ -23,10 +23,15 @@ class HomeTableViewController: UITableViewController, HomeDelegate, HomeContentD
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+        fetchCachedNewsContent()
         fetchNewsContent()
     }
     
     // MARK: Service
+    
+    private func fetchCachedNewsContent() {
+        viewModel.fetchCachedNewsContent()
+    }
     
     @objc func fetchNewsContent() {
         refresher.beginRefreshing()
@@ -40,9 +45,16 @@ class HomeTableViewController: UITableViewController, HomeDelegate, HomeContentD
             self.refresher.endRefreshing()
             self.headerView.fill()
             self.tableView.reloadData()
-            if !success {
+            if !success && self.viewModel.numberOfRows == 0 {
                 // showAlert()
             }
+        }
+    }
+    
+    func fetchedCachedNewsContent() {
+        DispatchQueue.main.async {
+            self.headerView.fill()
+            self.tableView.reloadData()
         }
     }
     
@@ -61,7 +73,7 @@ class HomeTableViewController: UITableViewController, HomeDelegate, HomeContentD
     
     // MARK: HomeContentDelegate
     
-    func didSelectContent(with id: Int) {
+    func didSelectContent(with id: String) {
         viewModel.selectedContent(with: id)
     }
     

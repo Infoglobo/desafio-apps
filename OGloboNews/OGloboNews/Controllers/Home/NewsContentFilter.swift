@@ -9,7 +9,7 @@
 import Foundation
 
 struct HomeContentDTO {
-    var id = 0
+    var id = ""
     var section = ""
     var title = ""
     var image = ""
