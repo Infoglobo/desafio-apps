@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 protocol ContentDetailDelegate: class {
-    func favoriteFeedback()
+    func favoriteFeedback(type: DropDownType)
 }
 
 class ContentDetailViewModel {
@@ -124,13 +124,13 @@ class ContentDetailViewModel {
         if isFavorite {
             persister.delete(content: content, completion: { success in
                 if success {
-                    self.delegate?.favoriteFeedback()
+                    self.delegate?.favoriteFeedback(type: .removedFavorite)
                 }
             })
         } else {
             persister.save(content: content, completion: { success in
                 if success {
-                    self.delegate?.favoriteFeedback()
+                    self.delegate?.favoriteFeedback(type: .addedFavorite)
                 }
             })
         }

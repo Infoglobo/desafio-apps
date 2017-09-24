@@ -1,5 +1,5 @@
 //
-//  HomeHeaderView.swift
+//  TodayView.swift
 //  OGloboNews
 //
 //  Created by Cauê Silva on 22/09/17.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class HomeHeaderView: UIView {
+class TodayView: UIView {
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var messageLabel: UILabel!

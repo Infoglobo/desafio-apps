@@ -128,9 +128,10 @@ class ContentDetailTableViewController: UITableViewController, ContentDetailDele
     
     // MARK: ContentDetailDelegate
     
-    func favoriteFeedback() {
+    func favoriteFeedback(type: DropDownType) {
         DispatchQueue.main.async {
-            self.saveButton.tintColor = self.viewModel.isFavorite ? .yellow : .white
+            self.showDropDown(type: type)
+            self.saveButton.tintColor = type == DropDownType.addedFavorite ? .yellow : .white
         }
     }
     

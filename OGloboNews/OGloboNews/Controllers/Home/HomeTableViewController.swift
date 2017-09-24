@@ -15,14 +15,16 @@ class HomeTableViewController: UITableViewController, HomeDelegate, HomeContentD
     
     private lazy var viewModel: HomeViewModel = HomeViewModel(delegate: self)
     private let refresher = UIRefreshControl()
-    private var headerView: HomeHeaderView!
-    @IBOutlet weak var headerContainerView: UIView!
     
     // MARK: VC life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         fetchCachedNewsContent()
         fetchNewsContent()
     }
@@ -43,17 +45,15 @@ class HomeTableViewController: UITableViewController, HomeDelegate, HomeContentD
     func fetchedNewsContent(success: Bool) {
         DispatchQueue.main.async {
             self.refresher.endRefreshing()
-            self.headerView.fill()
             self.tableView.reloadData()
-            if !success && self.viewModel.numberOfRows == 0 {
-                // showAlert()
+            if !success {
+                self.showDropDown(type: .connectionError)
             }
         }
     }
     
     func fetchedCachedNewsContent() {
         DispatchQueue.main.async {
-            self.headerView.fill()
             self.tableView.reloadData()
         }
     }
@@ -80,21 +80,18 @@ class HomeTableViewController: UITableViewController, HomeDelegate, HomeContentD
     // MARK: UI Setup
     
     private func setupUI() {
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+            navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
+        }
         title = viewModel.title
         navigationItem.customizeBackButton()
         setupRefreshControl()
-        setupHeader()
     }
     
     private func setupRefreshControl() {
         tableView.addSubview(refresher)
         refresher.addTarget(self, action: #selector(HomeTableViewController.fetchNewsContent), for: .valueChanged)
-    }
-    
-    private func setupHeader() {
-        let view: HomeHeaderView = UIView.fromNib()
-        headerContainerView.fillWithSubview(subview: view)
-        headerView = view
     }
     
     // MARK: UITableViewDelegate & UITableViewDataSource
@@ -104,15 +101,15 @@ class HomeTableViewController: UITableViewController, HomeDelegate, HomeContentD
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.numberOfRows
+        return viewModel.numberOfRows(in: section)
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 1.5
+        return viewModel.headerHeight
     }
     
     override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return .leastNonzeroMagnitude
+        return viewModel.footerHeight(in: section)
     }
     
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -120,10 +117,27 @@ class HomeTableViewController: UITableViewController, HomeDelegate, HomeContentD
     }
     
     override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 420
+        return viewModel.cellHeight(in: indexPath.section)
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        switch HomeSectionType(section: indexPath.section) {
+        case .today:
+            return todayCell(indexPath: indexPath)
+        case .content:
+            return contentCell(indexPath: indexPath)
+        }
+    }
+    
+    // MARK: Cells
+    
+    private func todayCell(indexPath: IndexPath) -> UITableViewCell {
+        let cell: TodayTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
+        cell.fill()
+        return cell
+    }
+    
+    private func contentCell(indexPath: IndexPath) -> UITableViewCell {
         let cell: HomeContentTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
         if let sectionNews = viewModel.getContentDTO(at: indexPath.row) {
             cell.fill(sectionNews: sectionNews, delegate: self)

@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0B294A4B1F784E8D00E146AB /* DropDownView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B294A4A1F784E8D00E146AB /* DropDownView.swift */; };
+		0B294A4D1F784F0900E146AB /* DropDownView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0B294A4C1F784F0900E146AB /* DropDownView.xib */; };
+		0B294A4F1F78560000E146AB /* DropDownType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B294A4E1F78560000E146AB /* DropDownType.swift */; };
 		0B2B1D8F1F77318800F2C9E5 /* CacheContentPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2B1D8E1F77318800F2C9E5 /* CacheContentPersister.swift */; };
 		0B2B1D911F78441F00F2C9E5 /* FavoriteContentPersister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2B1D901F78441E00F2C9E5 /* FavoriteContentPersister.swift */; };
 		0B2B1D931F78455D00F2C9E5 /* ContentObjectConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B2B1D921F78455D00F2C9E5 /* ContentObjectConverter.swift */; };
@@ -55,12 +58,14 @@
 		0BA3C7791F75DE470092F2F4 /* ContentDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA3C7781F75DE470092F2F4 /* ContentDetailViewModel.swift */; };
 		0BA3C77D1F75EAE60092F2F4 /* MockNewsContent.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BA3C77C1F75E8FE0092F2F4 /* MockNewsContent.json */; };
 		0BA3C7801F75EE440092F2F4 /* NetworkParametersTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA3C77F1F75EE440092F2F4 /* NetworkParametersTest.swift */; };
+		0BCCCA7B1F785B3A00CA7F2A /* ViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCCCA7A1F785B3A00CA7F2A /* ViewController+Extensions.swift */; };
+		0BCCCA7D1F787A9200CA7F2A /* TodayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCCCA7C1F787A9200CA7F2A /* TodayTableViewCell.swift */; };
 		0BDA1E6F1F75EFCC00123DC7 /* ModelParseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA1E6E1F75EFCC00123DC7 /* ModelParseTest.swift */; };
 		0BDA1E711F75FF8300123DC7 /* NewsContentFilter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA1E701F75FF8300123DC7 /* NewsContentFilter.swift */; };
 		0BDA1E731F76006000123DC7 /* Array+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA1E721F76006000123DC7 /* Array+Extensions.swift */; };
-		0BDA1E761F7602FD00123DC7 /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA1E751F7602FD00123DC7 /* HomeHeaderView.swift */; };
+		0BDA1E761F7602FD00123DC7 /* TodayView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA1E751F7602FD00123DC7 /* TodayView.swift */; };
 		0BDA1E781F7604F500123DC7 /* DateParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA1E771F7604F500123DC7 /* DateParser.swift */; };
-		0BDA1E7A1F76099B00123DC7 /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BDA1E791F76099B00123DC7 /* HomeHeaderView.xib */; };
+		0BDA1E7A1F76099B00123DC7 /* TodayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0BDA1E791F76099B00123DC7 /* TodayView.xib */; };
 		0BDA1E7C1F760C2700123DC7 /* UIView+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA1E7B1F760C2700123DC7 /* UIView+Extensions.swift */; };
 		0BDA1E7F1F760D4500123DC7 /* HomeContentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA1E7E1F760D4500123DC7 /* HomeContentTableViewCell.swift */; };
 		0BDA1E811F760D7400123DC7 /* HomeContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA1E801F760D7400123DC7 /* HomeContentView.swift */; };
@@ -80,6 +85,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0B294A4A1F784E8D00E146AB /* DropDownView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownView.swift; sourceTree = "<group>"; };
+		0B294A4C1F784F0900E146AB /* DropDownView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DropDownView.xib; sourceTree = "<group>"; };
+		0B294A4E1F78560000E146AB /* DropDownType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DropDownType.swift; sourceTree = "<group>"; };
 		0B2B1D8E1F77318800F2C9E5 /* CacheContentPersister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CacheContentPersister.swift; sourceTree = "<group>"; };
 		0B2B1D901F78441E00F2C9E5 /* FavoriteContentPersister.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteContentPersister.swift; sourceTree = "<group>"; };
 		0B2B1D921F78455D00F2C9E5 /* ContentObjectConverter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentObjectConverter.swift; sourceTree = "<group>"; };
@@ -132,12 +140,14 @@
 		0BA3C77C1F75E8FE0092F2F4 /* MockNewsContent.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockNewsContent.json; sourceTree = "<group>"; };
 		0BA3C77E1F75EE430092F2F4 /* OGloboNewsTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OGloboNewsTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		0BA3C77F1F75EE440092F2F4 /* NetworkParametersTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkParametersTest.swift; sourceTree = "<group>"; };
+		0BCCCA7A1F785B3A00CA7F2A /* ViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extensions.swift"; sourceTree = "<group>"; };
+		0BCCCA7C1F787A9200CA7F2A /* TodayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTableViewCell.swift; sourceTree = "<group>"; };
 		0BDA1E6E1F75EFCC00123DC7 /* ModelParseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelParseTest.swift; sourceTree = "<group>"; };
 		0BDA1E701F75FF8300123DC7 /* NewsContentFilter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsContentFilter.swift; sourceTree = "<group>"; };
 		0BDA1E721F76006000123DC7 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
-		0BDA1E751F7602FD00123DC7 /* HomeHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		0BDA1E751F7602FD00123DC7 /* TodayView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayView.swift; sourceTree = "<group>"; };
 		0BDA1E771F7604F500123DC7 /* DateParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateParser.swift; sourceTree = "<group>"; };
-		0BDA1E791F76099B00123DC7 /* HomeHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
+		0BDA1E791F76099B00123DC7 /* TodayView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TodayView.xib; sourceTree = "<group>"; };
 		0BDA1E7B1F760C2700123DC7 /* UIView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extensions.swift"; sourceTree = "<group>"; };
 		0BDA1E7E1F760D4500123DC7 /* HomeContentTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentTableViewCell.swift; sourceTree = "<group>"; };
 		0BDA1E801F760D7400123DC7 /* HomeContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeContentView.swift; sourceTree = "<group>"; };
@@ -170,6 +180,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0B294A491F784E6300E146AB /* DropDownView */ = {
+			isa = PBXGroup;
+			children = (
+				0B294A4A1F784E8D00E146AB /* DropDownView.swift */,
+				0B294A4E1F78560000E146AB /* DropDownType.swift */,
+				0B294A4C1F784F0900E146AB /* DropDownView.xib */,
+			);
+			path = DropDownView;
+			sourceTree = "<group>";
+		};
 		0B2B1D8A1F7730AA00F2C9E5 /* Persistence */ = {
 			isa = PBXGroup;
 			children = (
@@ -279,7 +299,9 @@
 		0B8BC09B1F75D4CB00073CD6 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0B294A491F784E6300E146AB /* DropDownView */,
 				0BDA1E721F76006000123DC7 /* Array+Extensions.swift */,
+				0BCCCA7A1F785B3A00CA7F2A /* ViewController+Extensions.swift */,
 				0B97410A1F762B3100A8538E /* String+Extensions.swift */,
 				0B97410E1F76381500A8538E /* UINavigationItem+Extensions.swift */,
 				0B9741081F7621A400A8538E /* UIImageView+Extensions.swift */,
@@ -377,7 +399,7 @@
 		0BA3C7751F75DE210092F2F4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				0BDA1E741F7602E100123DC7 /* HomeHeader */,
+				0BDA1E741F7602E100123DC7 /* TodayCell */,
 				0BDA1E7D1F760D2600123DC7 /* HomeContentCell */,
 			);
 			path = Components;
@@ -395,13 +417,14 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
-		0BDA1E741F7602E100123DC7 /* HomeHeader */ = {
+		0BDA1E741F7602E100123DC7 /* TodayCell */ = {
 			isa = PBXGroup;
 			children = (
-				0BDA1E751F7602FD00123DC7 /* HomeHeaderView.swift */,
-				0BDA1E791F76099B00123DC7 /* HomeHeaderView.xib */,
+				0BCCCA7C1F787A9200CA7F2A /* TodayTableViewCell.swift */,
+				0BDA1E751F7602FD00123DC7 /* TodayView.swift */,
+				0BDA1E791F76099B00123DC7 /* TodayView.xib */,
 			);
-			path = HomeHeader;
+			path = TodayCell;
 			sourceTree = "<group>";
 		};
 		0BDA1E7D1F760D2600123DC7 /* HomeContentCell */ = {
@@ -530,12 +553,13 @@
 				0B5F68AC1F76C3650032FF34 /* AuthorAndDateView.xib in Resources */,
 				0BA3C75D1F75DB740092F2F4 /* Info.plist in Resources */,
 				0BA3C77D1F75EAE60092F2F4 /* MockNewsContent.json in Resources */,
-				0BDA1E7A1F76099B00123DC7 /* HomeHeaderView.xib in Resources */,
+				0BDA1E7A1F76099B00123DC7 /* TodayView.xib in Resources */,
 				0BDA1E831F760E0000123DC7 /* HomeContentView.xib in Resources */,
 				0B8BC0861F75D3E400073CD6 /* LaunchScreen.storyboard in Resources */,
 				0B8BC0831F75D3E400073CD6 /* Assets.xcassets in Resources */,
 				0B5F68A61F76BA870032FF34 /* SubTitleView.xib in Resources */,
 				0B8BC0811F75D3E400073CD6 /* Main.storyboard in Resources */,
+				0B294A4D1F784F0900E146AB /* DropDownView.xib in Resources */,
 				0B5F68B21F76C3B70032FF34 /* DetailImageView.xib in Resources */,
 				0B5F68B81F76C3E70032FF34 /* DetailContentView.xib in Resources */,
 				0B9741031F76126E00A8538E /* HomeContentCollectionViewCell.xib in Resources */,
@@ -669,6 +693,7 @@
 				0B5F68AA1F76C35A0032FF34 /* AuthorAndDateView.swift in Sources */,
 				0B5F68A21F76BA070032FF34 /* SubTitleTableViewCell.swift in Sources */,
 				0BA3C7621F75DCA90092F2F4 /* NewsContentService.swift in Sources */,
+				0B294A4F1F78560000E146AB /* DropDownType.swift in Sources */,
 				0BA3C7721F75DE0E0092F2F4 /* HomeTableViewController.swift in Sources */,
 				0BA3C7771F75DE3C0092F2F4 /* ContentDetailTableViewController.swift in Sources */,
 				0B5F68AE1F76C3760032FF34 /* ImageTableViewCell.swift in Sources */,
@@ -690,13 +715,16 @@
 				0BDA1E7F1F760D4500123DC7 /* HomeContentTableViewCell.swift in Sources */,
 				0B5F68A81F76C3420032FF34 /* AuthorAndDateTableViewCell.swift in Sources */,
 				0B5F68A41F76BA760032FF34 /* SubTitleView.swift in Sources */,
+				0BCCCA7D1F787A9200CA7F2A /* TodayTableViewCell.swift in Sources */,
 				0B5F688F1F76B4C50032FF34 /* IndicatorLoader.swift in Sources */,
+				0BCCCA7B1F785B3A00CA7F2A /* ViewController+Extensions.swift in Sources */,
 				0B9741051F76154B00A8538E /* UICollectionView+Extensions.swift in Sources */,
 				0B97410B1F762B3100A8538E /* String+Extensions.swift in Sources */,
 				0B5F68B61F76C3DC0032FF34 /* DetailContentView.swift in Sources */,
-				0BDA1E761F7602FD00123DC7 /* HomeHeaderView.swift in Sources */,
+				0BDA1E761F7602FD00123DC7 /* TodayView.swift in Sources */,
 				0BA3C7741F75DE1B0092F2F4 /* HomeViewModel.swift in Sources */,
 				0BA3C7791F75DE470092F2F4 /* ContentDetailViewModel.swift in Sources */,
+				0B294A4B1F784E8D00E146AB /* DropDownView.swift in Sources */,
 				0BDA1E711F75FF8300123DC7 /* NewsContentFilter.swift in Sources */,
 				0BDA1E7C1F760C2700123DC7 /* UIView+Extensions.swift in Sources */,
 				0BDA1E781F7604F500123DC7 /* DateParser.swift in Sources */,

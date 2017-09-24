@@ -7,6 +7,18 @@
 //
 
 import Foundation
+import UIKit
+
+enum HomeSectionType {
+    case today
+    case content
+    
+    static let allValues = [today, content]
+    
+    init(section: Int) {
+        self = section == 0 ? .today : .content
+    }
+}
 
 // MARK: HomeDelegate
 
@@ -37,15 +49,15 @@ class HomeViewModel {
     // MARK: Service
     
     func fetchNewsContent() {
-        newsService?.fetchNewsContent(completion: { news, error in
-            guard let news = news, error == nil else {
+        newsService?.fetchNewsContent(completion: { fetchedNews, error in
+            guard let fetchedNews = fetchedNews, error == nil else {
                 self.delegate?.fetchedNewsContent(success: false)
                 return
             }
-            self.news = news
-            self.newsBySection = NewsContentFilter(news: news).filterBySection()
+            self.news = fetchedNews
+            self.newsBySection = NewsContentFilter(news: fetchedNews).filterBySection()
             self.delegate?.fetchedNewsContent(success: true)
-            self.persister.save(content: news, completion: { _ in })
+            self.persister.save(content: fetchedNews, completion: { _ in })
         })
     }
     
@@ -68,11 +80,38 @@ class HomeViewModel {
     }
     
     var numberOfSections: Int {
-        return 1
+        return HomeSectionType.allValues.count
     }
     
-    var numberOfRows: Int {
-        return newsBySection.count
+    func numberOfRows(in section: Int) -> Int {
+        switch HomeSectionType(section: section) {
+        case .today:
+            return 1
+        case .content:
+            return newsBySection.count
+        }
+    }
+    
+    var headerHeight: CGFloat {
+        return .leastNonzeroMagnitude
+    }
+    
+    func footerHeight(in section: Int) -> CGFloat {
+        switch HomeSectionType(section: section) {
+        case .today:
+            return 1.5
+        case .content:
+            return .leastNonzeroMagnitude
+        }
+    }
+    
+    func cellHeight(in section: Int) -> CGFloat {
+        switch HomeSectionType(section: section) {
+        case .today:
+            return 80
+        case .content:
+            return 420
+        }
     }
     
     func getContentDTO(at index: Int) -> SectionNews? {
