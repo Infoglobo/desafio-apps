@@ -9,18 +9,20 @@
 import Foundation
 import UIKit
 
-class ContentDetailTableViewController: UITableViewController {
+class ContentDetailTableViewController: UITableViewController, ContentDetailDelegate {
     
     // MARK: Properties
     
     @IBOutlet var shareButton: UIBarButtonItem!
-    private lazy var viewModel: ContentDetailViewModel = ContentDetailViewModel()
+    @IBOutlet var saveButton: UIBarButtonItem!
+    private lazy var viewModel: ContentDetailViewModel = ContentDetailViewModel(delegate: self)
     
     // MARK: VC life cycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         title = viewModel.section.uppercased()
+        saveButton.tintColor = viewModel.isFavorite ? .yellow : .white
     }
     
     func prepareForNavigation(transporter: Transporter<Any>) {
@@ -106,19 +108,29 @@ class ContentDetailTableViewController: UITableViewController {
     
     // MARK: Share
     
-    @IBAction func shareContent(_ sender: Any) {
+    @IBAction func shareContent() {
         guard let shareMessage = viewModel.shareMessage, let navigationController = navigationController else {
             return
         }
         let activityController = UIActivityViewController(activityItems: [shareMessage], applicationActivities: nil)
-        let loader = IndicatorLoader().create(for: navigationController.navigationBar)
+        let loader = IndicatorLoader().create(for: navigationController.navigationBar, style: .white)
         DispatchQueue.main.async {
-            navigationController.navigationBar.addSubview(loader)
-            self.title = ""
+            self.shareButton.customView = loader
             self.present(activityController, animated: true, completion: {
-                loader.removeFromSuperview()
-                self.title = self.viewModel.section.uppercased()
+                self.shareButton.customView = nil
             })
+        }
+    }
+    
+    @IBAction func saveContent() {
+        viewModel.saveContent()
+    }
+    
+    // MARK: ContentDetailDelegate
+    
+    func favoriteFeedback() {
+        DispatchQueue.main.async {
+            self.saveButton.tintColor = self.viewModel.isFavorite ? .yellow : .white
         }
     }
     

@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -104,14 +105,22 @@
                     </tableView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="nXX-lZ-NgS">
-                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="1hj-9q-D3j">
-                            <connections>
-                                <action selector="shareContent:" destination="Mcg-Au-HfA" id="yzB-E7-nTx"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="action" id="1hj-9q-D3j">
+                                <connections>
+                                    <action selector="shareContent" destination="Mcg-Au-HfA" id="X54-qV-w1k"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="bookmarks" id="U3W-Eo-yFG">
+                                <connections>
+                                    <action selector="saveContent" destination="Mcg-Au-HfA" id="mWa-Ax-qBw"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
+                        <outlet property="saveButton" destination="U3W-Eo-yFG" id="E7J-xQ-8VK"/>
                         <outlet property="shareButton" destination="1hj-9q-D3j" id="wjk-Pw-67W"/>
                     </connections>
                 </tableViewController>

@@ -16,15 +16,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-//        MockNewsContentRequest().fetchNewsContent { (news, error) in
-//            if let news = news {
-//                CacheContentPersister().save(content: news, completion: { success in
-//                    CacheContentPersister().query(completion: { foundedNews in
-//                        print(foundedNews)
-//                    })
-//                })
-//            }
-//        }
+        UINavigationBar.appearance().barTintColor = UIColor(red: 12/255, green: 95/255, blue: 149/255, alpha: 1.0)
+        UINavigationBar.appearance().tintColor = .white
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         
         return true
     }

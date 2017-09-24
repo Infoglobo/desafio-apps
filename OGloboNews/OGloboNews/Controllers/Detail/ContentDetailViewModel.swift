@@ -9,15 +9,22 @@
 import Foundation
 import UIKit
 
+protocol ContentDetailDelegate: class {
+    func favoriteFeedback()
+}
+
 class ContentDetailViewModel {
     
     // MARK: Properties
     
     private var content: Content?
+    private var persister = FavoriteContentPersister()
+    private var delegate: ContentDetailDelegate?
     
     // MARK: Constructor
     
-    init() {
+    init(delegate: ContentDetailDelegate?) {
+        self.delegate = delegate
     }
     
     func prepareForNavigation(transporter: Transporter<Any>) {
@@ -99,6 +106,34 @@ class ContentDetailViewModel {
         message += "\n\n\(title)"
         message += "\n\n\(url)"
         return message
+    }
+    
+    // MARK: Persitence
+    
+    var isFavorite: Bool {
+        if let content = content {
+            return persister.isFavorite(content: content)
+        }
+        return false
+    }
+    
+    func saveContent() {
+        guard let content = content else {
+            return
+        }
+        if isFavorite {
+            persister.delete(content: content, completion: { success in
+                if success {
+                    self.delegate?.favoriteFeedback()
+                }
+            })
+        } else {
+            persister.save(content: content, completion: { success in
+                if success {
+                    self.delegate?.favoriteFeedback()
+                }
+            })
+        }
     }
     
 }
