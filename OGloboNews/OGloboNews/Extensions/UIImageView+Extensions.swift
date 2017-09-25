@@ -16,7 +16,7 @@ extension UIImageView {
     func downloadImage(with url: String) {
         addIndicatorView()
         pin_updateWithProgress = true
-        pin_setImage(from: URL(string: url)) { result in
+        pin_setImage(from: URL(string: url)) { _ in
             self.removeIndicatorView()
         }
     }

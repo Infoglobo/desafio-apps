@@ -34,7 +34,7 @@ class ModelParseTest: XCTestCase {
         }
         
         XCTAssertEqual(news.count, 14)
-        XCTAssertEqual(news.first?.id, 21030945)
+        XCTAssertEqual(news.first?.id, "21030945")
         XCTAssertEqual(news.first?.authors.count, 1)
         XCTAssertEqual(news.first?.authors.first, "O GLOBO")
         XCTAssertEqual(news.first?.title, "Sérgio Cabral é denunciado pela sexta vez na Lava-Jato")

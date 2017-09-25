@@ -19,7 +19,7 @@ class ContentDetailViewModel {
     
     private var content: Content?
     private var persister = FavoriteContentPersister()
-    private var delegate: ContentDetailDelegate?
+    private weak var delegate: ContentDetailDelegate?
     
     // MARK: Constructor
     

@@ -20,7 +20,11 @@ extension UICollectionView {
 extension UICollectionViewCell {
     
     class func createCell<T: UICollectionViewCell>(collectionView: UICollectionView, indexPath: IndexPath) -> T {
+        // swiftlint:disable force_cast
+        // swiftlint:disable force_try
         return collectionView.dequeueReusableCell(withReuseIdentifier: String(describing: T.self), for: indexPath) as! T
+        // swiftlint:enable force_cast
+        // swiftlint:enable force_try
     }
     
 }

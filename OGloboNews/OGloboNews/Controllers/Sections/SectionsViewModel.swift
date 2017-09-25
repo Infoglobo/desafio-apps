@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol SectionsDelegate {
+protocol SectionsDelegate: class {
     func fetchedSections()
     func openExternalLink(with url: String)
 }
@@ -19,7 +19,7 @@ class SectionViewModel {
     
     private var sections = [SectionNewsURL]()
     private let persister = CacheContentPersister()
-    private var delegate: SectionsDelegate?
+    private weak var delegate: SectionsDelegate?
     
     // MARK: Constructor
     

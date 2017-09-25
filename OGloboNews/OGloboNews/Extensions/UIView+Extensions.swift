@@ -12,7 +12,11 @@ import UIKit
 extension UIView {
     
     class func fromNib<T: UIView>() -> T {
+        // swiftlint:disable force_cast
+        // swiftlint:disable force_try
         return Bundle.main.loadNibNamed(String(describing: T.self), owner: nil, options: nil)!.first as! T
+        // swiftlint:enable force_cast
+        // swiftlint:enable force_try
     }
     
     func fillWithSubview(subview: UIView) {
