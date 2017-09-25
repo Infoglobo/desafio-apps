@@ -58,6 +58,10 @@
 		0BA3C7791F75DE470092F2F4 /* ContentDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA3C7781F75DE470092F2F4 /* ContentDetailViewModel.swift */; };
 		0BA3C77D1F75EAE60092F2F4 /* MockNewsContent.json in Resources */ = {isa = PBXBuildFile; fileRef = 0BA3C77C1F75E8FE0092F2F4 /* MockNewsContent.json */; };
 		0BA3C7801F75EE440092F2F4 /* NetworkParametersTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BA3C77F1F75EE440092F2F4 /* NetworkParametersTest.swift */; };
+		0BCA82871F7883700033E493 /* SectionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA82861F7883700033E493 /* SectionsTableViewController.swift */; };
+		0BCA82891F7883A70033E493 /* SectionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA82881F7883A70033E493 /* SectionsViewModel.swift */; };
+		0BCA828C1F7896DB0033E493 /* FavoritesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA828B1F7896DB0033E493 /* FavoritesTableViewController.swift */; };
+		0BCA828E1F7897590033E493 /* FavoritesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCA828D1F7897590033E493 /* FavoritesViewModel.swift */; };
 		0BCCCA7B1F785B3A00CA7F2A /* ViewController+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCCCA7A1F785B3A00CA7F2A /* ViewController+Extensions.swift */; };
 		0BCCCA7D1F787A9200CA7F2A /* TodayTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BCCCA7C1F787A9200CA7F2A /* TodayTableViewCell.swift */; };
 		0BDA1E6F1F75EFCC00123DC7 /* ModelParseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0BDA1E6E1F75EFCC00123DC7 /* ModelParseTest.swift */; };
@@ -140,6 +144,10 @@
 		0BA3C77C1F75E8FE0092F2F4 /* MockNewsContent.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockNewsContent.json; sourceTree = "<group>"; };
 		0BA3C77E1F75EE430092F2F4 /* OGloboNewsTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "OGloboNewsTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		0BA3C77F1F75EE440092F2F4 /* NetworkParametersTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkParametersTest.swift; sourceTree = "<group>"; };
+		0BCA82861F7883700033E493 /* SectionsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsTableViewController.swift; sourceTree = "<group>"; };
+		0BCA82881F7883A70033E493 /* SectionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionsViewModel.swift; sourceTree = "<group>"; };
+		0BCA828B1F7896DB0033E493 /* FavoritesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesTableViewController.swift; sourceTree = "<group>"; };
+		0BCA828D1F7897590033E493 /* FavoritesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesViewModel.swift; sourceTree = "<group>"; };
 		0BCCCA7A1F785B3A00CA7F2A /* ViewController+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Extensions.swift"; sourceTree = "<group>"; };
 		0BCCCA7C1F787A9200CA7F2A /* TodayTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayTableViewCell.swift; sourceTree = "<group>"; };
 		0BDA1E6E1F75EFCC00123DC7 /* ModelParseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelParseTest.swift; sourceTree = "<group>"; };
@@ -329,6 +337,8 @@
 			children = (
 				0BA3C76F1F75DDC50092F2F4 /* Home */,
 				0BA3C7701F75DDF00092F2F4 /* Detail */,
+				0BCA82851F7883570033E493 /* Sections */,
+				0BCA828A1F7896C40033E493 /* Favorites */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -415,6 +425,24 @@
 				0B5F68961F76B9920032FF34 /* ContentCell */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		0BCA82851F7883570033E493 /* Sections */ = {
+			isa = PBXGroup;
+			children = (
+				0BCA82861F7883700033E493 /* SectionsTableViewController.swift */,
+				0BCA82881F7883A70033E493 /* SectionsViewModel.swift */,
+			);
+			path = Sections;
+			sourceTree = "<group>";
+		};
+		0BCA828A1F7896C40033E493 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				0BCA828B1F7896DB0033E493 /* FavoritesTableViewController.swift */,
+				0BCA828D1F7897590033E493 /* FavoritesViewModel.swift */,
+			);
+			path = Favorites;
 			sourceTree = "<group>";
 		};
 		0BDA1E741F7602E100123DC7 /* TodayCell */ = {
@@ -689,6 +717,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0B97410F1F76381500A8538E /* UINavigationItem+Extensions.swift in Sources */,
+				0BCA82871F7883700033E493 /* SectionsTableViewController.swift in Sources */,
 				0B5F68B01F76C3920032FF34 /* DetailImageView.swift in Sources */,
 				0B5F68AA1F76C35A0032FF34 /* AuthorAndDateView.swift in Sources */,
 				0B5F68A21F76BA070032FF34 /* SubTitleTableViewCell.swift in Sources */,
@@ -711,6 +740,7 @@
 				0B2B1D8F1F77318800F2C9E5 /* CacheContentPersister.swift in Sources */,
 				0BA3C76E1F75DD9E0092F2F4 /* Section.swift in Sources */,
 				0B9741091F7621A500A8538E /* UIImageView+Extensions.swift in Sources */,
+				0BCA828E1F7897590033E493 /* FavoritesViewModel.swift in Sources */,
 				0B9741011F76126400A8538E /* HomeContentCollectionViewCell.swift in Sources */,
 				0BDA1E7F1F760D4500123DC7 /* HomeContentTableViewCell.swift in Sources */,
 				0B5F68A81F76C3420032FF34 /* AuthorAndDateTableViewCell.swift in Sources */,
@@ -720,6 +750,7 @@
 				0BCCCA7B1F785B3A00CA7F2A /* ViewController+Extensions.swift in Sources */,
 				0B9741051F76154B00A8538E /* UICollectionView+Extensions.swift in Sources */,
 				0B97410B1F762B3100A8538E /* String+Extensions.swift in Sources */,
+				0BCA828C1F7896DB0033E493 /* FavoritesTableViewController.swift in Sources */,
 				0B5F68B61F76C3DC0032FF34 /* DetailContentView.swift in Sources */,
 				0BDA1E761F7602FD00123DC7 /* TodayView.swift in Sources */,
 				0BA3C7741F75DE1B0092F2F4 /* HomeViewModel.swift in Sources */,
@@ -729,6 +760,7 @@
 				0BDA1E7C1F760C2700123DC7 /* UIView+Extensions.swift in Sources */,
 				0BDA1E781F7604F500123DC7 /* DateParser.swift in Sources */,
 				0B5F689C1F76B9C70032FF34 /* TitleTableViewCell.swift in Sources */,
+				0BCA82891F7883A70033E493 /* SectionsViewModel.swift in Sources */,
 				0BDA1E731F76006000123DC7 /* Array+Extensions.swift in Sources */,
 				0B2B1D911F78441F00F2C9E5 /* FavoriteContentPersister.swift in Sources */,
 				0BA3C75F1F75DC0A0092F2F4 /* ObjectParser.swift in Sources */,

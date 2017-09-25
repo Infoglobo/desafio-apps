@@ -33,7 +33,7 @@ class HomeViewModel {
     
     // MARK: Properties
     
-    private var news: [Content]?
+    private var news = [Content]()
     private var newsBySection = [SectionNews]()
     private var newsService: NewsContentService?
     private var persister = CacheContentPersister()
@@ -123,7 +123,7 @@ class HomeViewModel {
     var selectedContent: Content?
     
     func selectedContent(with id: String) {
-        if let index = news?.index(where: { $0.id == id }), let content = news?.object(index: index) {
+        if let index = news.index(where: { $0.id == id }), let content = news.object(index: index) {
             selectedContent = content
             switch ContentType(type: content.type) {
             case .material:

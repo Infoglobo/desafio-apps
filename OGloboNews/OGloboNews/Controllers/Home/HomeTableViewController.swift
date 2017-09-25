@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SafariServices
 
 class HomeTableViewController: UITableViewController, HomeDelegate, HomeContentDelegate {
     
@@ -63,11 +62,8 @@ class HomeTableViewController: UITableViewController, HomeDelegate, HomeContentD
     }
     
     func openExternalLink() {
-        if let selectedURL = viewModel.selectedContent?.url, let url = URL(string: selectedURL) {
-            let safariVC = SFSafariViewController(url: url, entersReaderIfAvailable: true)
-            DispatchQueue.main.async {
-                self.present(safariVC, animated: true, completion: nil)
-            }
+        if let url = viewModel.selectedContent?.url {
+            showSafariVC(with: url)
         }
     }
     
@@ -84,7 +80,7 @@ class HomeTableViewController: UITableViewController, HomeDelegate, HomeContentD
             navigationController?.navigationBar.prefersLargeTitles = true
             navigationController?.navigationBar.largeTitleTextAttributes = [NSAttributedStringKey.foregroundColor: UIColor.white]
         }
-        title = viewModel.title
+        navigationItem.title = viewModel.title
         navigationItem.customizeBackButton()
         setupRefreshControl()
     }
@@ -151,6 +147,7 @@ class HomeTableViewController: UITableViewController, HomeDelegate, HomeContentD
         if let detailVC = segue.destination as? ContentDetailTableViewController, segue.identifier == "contentDetailSegue",
            let selectedContent = viewModel.selectedContent {
            detailVC.prepareForNavigation(transporter: Transporter(data: selectedContent))
+           detailVC.hidesBottomBarWhenPushed = true
         }
     }
     

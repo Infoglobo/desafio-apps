@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SafariServices
 
 extension UIViewController {
     
@@ -22,6 +23,15 @@ extension UIViewController {
     
     func removeDropDownIfNeeded() {
         UIApplication.shared.keyWindow?.subviews.forEach { if $0.isKind(of: DropDownView.self) { $0.removeFromSuperview() } }
+    }
+    
+    func showSafariVC(with url: String) {
+        if let url = URL(string: url) {
+            let safariVC = SFSafariViewController(url: url, entersReaderIfAvailable: true)
+            DispatchQueue.main.async {
+                self.present(safariVC, animated: true, completion: nil)
+            }
+        }
     }
     
 }

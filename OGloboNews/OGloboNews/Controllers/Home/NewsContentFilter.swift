@@ -16,6 +16,7 @@ struct HomeContentDTO {
 }
 
 typealias SectionNews = (section: String, news: [HomeContentDTO])
+typealias SectionNewsURL = (section: String, url: String)
 
 struct NewsContentFilter {
     var news: [Content]
@@ -41,6 +42,17 @@ struct NewsContentFilter {
         }
         
         return filteredNews.filter { !$0.news.isEmpty }
+    }
+    
+    func filterBySectionsWithURLs() -> [SectionNewsURL] {
+        var sectionURLs = [SectionNewsURL]()
+        let sections = filterBySection()
+        sections.forEach { sectionNews in
+            if let url = news.filter ({ $0.section?.name == sectionNews.section }).first?.section?.url {
+                sectionURLs.append((sectionNews.section, url))
+            }
+        }
+        return sectionURLs
     }
     
     private func getHomeDTO(from content: Content) -> HomeContentDTO {
