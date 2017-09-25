@@ -81,7 +81,7 @@ class FavoritesViewModel {
     }
     
     var cellHeight: CGFloat {
-        return 50
+        return 300
     }
     
     func favoriteDTO(at index: Int) -> FavoriteContentDTO {
@@ -103,9 +103,4 @@ class FavoritesViewModel {
         delegate?.openMaterial()
     }
     
-}
-
-struct FavoriteContentDTO {
-    var section = ""
-    var title = ""
 }

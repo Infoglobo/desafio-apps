@@ -18,13 +18,13 @@
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="weekday, dd/mm/aaaa" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1ed-V7-Os7">
                     <rect key="frame" x="15" y="20" width="345" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="message" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fIG-GR-8aR">
-                    <rect key="frame" x="15" y="44" width="345" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <rect key="frame" x="15" y="44" width="345" height="18"/>
+                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
@@ -34,7 +34,7 @@
                 <constraint firstItem="1ed-V7-Os7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="20" id="Hef-Ff-40e"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="1ed-V7-Os7" secondAttribute="trailing" constant="15" id="RCv-IZ-v5Y"/>
                 <constraint firstItem="fIG-GR-8aR" firstAttribute="trailing" secondItem="1ed-V7-Os7" secondAttribute="trailing" id="daP-Te-OWD"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="fIG-GR-8aR" secondAttribute="bottom" constant="15" id="fJe-0g-RRF"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="fIG-GR-8aR" secondAttribute="bottom" constant="15" id="fJe-0g-RRF"/>
                 <constraint firstItem="fIG-GR-8aR" firstAttribute="leading" secondItem="1ed-V7-Os7" secondAttribute="leading" id="i3y-cD-6Sj"/>
                 <constraint firstItem="fIG-GR-8aR" firstAttribute="top" secondItem="1ed-V7-Os7" secondAttribute="bottom" constant="3" id="nk8-S3-89N"/>
                 <constraint firstItem="1ed-V7-Os7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="15" id="xdV-FF-gg8"/>

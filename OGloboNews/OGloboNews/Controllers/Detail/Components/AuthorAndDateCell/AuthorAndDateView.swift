@@ -10,18 +10,23 @@ import UIKit
 
 class AuthorAndDateView: UIView {
 
+    @IBOutlet weak var prefixLabel: UILabel!
     @IBOutlet weak var authorLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        prefixLabel.text = ""
         authorLabel.text = ""
         dateLabel.text = ""
+        prefixLabel.textColor = UIColor.gray()
+        authorLabel.textColor = UIColor.primary()
     }
     
     func fill(author: String, date: String) {
+        prefixLabel.text = !author.isEmpty ? "por" : ""
         authorLabel.text = author
-        dateLabel.text = date
+        dateLabel.text = DateParser().formatDate(from: date)
     }
     
 }

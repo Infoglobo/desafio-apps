@@ -178,7 +178,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="2Kf-hM-PB4">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SectionTableViewCell" id="2Kf-hM-PB4" customClass="SectionTableViewCell" customModule="OGloboNews" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Kf-hM-PB4" id="jm7-ka-k41">
@@ -226,7 +226,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="FiV-85-LG2">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteTableViewCell" id="FiV-85-LG2" customClass="FavoriteTableViewCell" customModule="OGloboNews" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FiV-85-LG2" id="ZG7-5q-Cbu">
@@ -240,15 +240,8 @@
                             <outlet property="delegate" destination="FwX-Fj-EeP" id="xxW-cG-4V1"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="83e-WW-1cC">
-                        <barButtonItem key="rightBarButtonItem" title="Editar" id="yDf-Nd-2yz">
-                            <connections>
-                                <action selector="enterEditMode" destination="FwX-Fj-EeP" id="WCU-59-fco"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="83e-WW-1cC"/>
                     <connections>
-                        <outlet property="editButton" destination="yDf-Nd-2yz" id="KxC-XV-WM4"/>
                         <segue destination="Mcg-Au-HfA" kind="show" identifier="contentDetailSegue" id="9gO-u3-aE9"/>
                     </connections>
                 </tableViewController>

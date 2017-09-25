@@ -15,6 +15,7 @@ class SubTitleView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
         subTitleLabel.text = ""
+        subTitleLabel.textColor = UIColor.gray()
     }
     
     func fill(subTitle: String) {

@@ -37,11 +37,11 @@ enum DropDownType {
     var color: UIColor {
         switch self {
         case .connectionError:
-            return UIColor(red: 203/255, green: 30/255, blue: 32/255, alpha: 1.0)
+            return UIColor.connectionError()
         case .addedFavorite:
-            return UIColor(red: 70/255, green: 150/255, blue: 80/255, alpha: 1.0)
+            return UIColor.addedFavorite()
         case .removedFavorite:
-            return UIColor(red: 245/255, green: 160/255, blue: 70/255, alpha: 1.0)
+            return UIColor.removedFavorite()
         }
     }
     

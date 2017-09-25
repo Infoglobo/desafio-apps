@@ -52,7 +52,7 @@ struct NewsContentFilter {
                 sectionURLs.append((sectionNews.section, url))
             }
         }
-        return sectionURLs
+        return sectionURLs.sorted(by: { $0.section < $1.section })
     }
     
     private func getHomeDTO(from content: Content) -> HomeContentDTO {

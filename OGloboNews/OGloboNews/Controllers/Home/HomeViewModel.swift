@@ -110,7 +110,7 @@ class HomeViewModel {
         case .today:
             return 80
         case .content:
-            return 420
+            return 405
         }
     }
     

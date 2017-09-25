@@ -12,7 +12,6 @@ class FavoritesTableViewController: UITableViewController, FavoritesDelegate {
 
     // MARK: Properties
     
-    @IBOutlet var editButton: UIBarButtonItem!
     private lazy var viewModel: FavoritesViewModel = FavoritesViewModel(delegate: self)
     
     // MARK: VC life cyle
@@ -42,12 +41,6 @@ class FavoritesTableViewController: UITableViewController, FavoritesDelegate {
     func fetchedFavorites() {
         DispatchQueue.main.async {
             self.tableView.reloadData()
-            if self.viewModel.numberOfRows == 0 {
-                self.editButton.title = ""
-                self.tableView.isEditing = false
-            } else {
-                self.editButton.title = self.tableView.isEditing ? "Concluir" : "Editar"
-            }
         }
     }
     
@@ -81,9 +74,17 @@ class FavoritesTableViewController: UITableViewController, FavoritesDelegate {
         return viewModel.numberOfRows
     }
     
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return UITableViewAutomaticDimension
+    }
+    
+    override func tableView(_ tableView: UITableView, estimatedHeightForRowAt indexPath: IndexPath) -> CGFloat {
+        return viewModel.cellHeight
+    }
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = viewModel.favoriteDTO(at: indexPath.row).title
+        let cell: FavoriteTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
+        cell.fill(dto: viewModel.favoriteDTO(at: indexPath.row))
         return cell
     }
     
@@ -110,15 +111,6 @@ class FavoritesTableViewController: UITableViewController, FavoritesDelegate {
             let selectedContent = viewModel.selectedContent {
             detailVC.prepareForNavigation(transporter: Transporter(data: selectedContent))
             detailVC.hidesBottomBarWhenPushed = true
-        }
-    }
-    
-    // MARK: Edit mode
-    
-    @IBAction func enterEditMode() {
-        DispatchQueue.main.async {
-            self.tableView.isEditing = !self.tableView.isEditing
-            self.editButton.title = self.tableView.isEditing ? "Concluir" : "Editar"
         }
     }
     

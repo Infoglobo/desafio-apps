@@ -71,8 +71,8 @@ class SectionsTableViewController: UITableViewController, SectionsDelegate {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
-        cell.textLabel?.text = viewModel.section(at: indexPath.row)
+        let cell: SectionTableViewCell = UITableViewCell.createCell(tableView: tableView, indexPath: indexPath)
+        cell.fill(section: viewModel.section(at: indexPath.row))
         return cell
     }
     

@@ -26,6 +26,28 @@ struct DateParser {
         return WeekDay(day: day).localized
     }
     
+    private var defaultFormatter: DateFormatter {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZZZZ"
+        let locale = Locale(identifier: "pt_BR")
+        formatter.locale = locale
+        formatter.timeZone = TimeZone(abbreviation: "UTC")
+        return formatter
+    }
+    
+    func formatDate(from string: String) -> String {
+        if let date = defaultFormatter.date(from: string) {
+            let calendar = Calendar.current
+            let day = calendar.component(.day, from: date)
+            let month = calendar.component(.month, from: date)
+            let year = calendar.component(.year, from: date)
+            let hour = calendar.component(.hour, from: date)
+            let minute = calendar.component(.minute, from: date)
+            return "\(day)/\(month)/\(year) - \(hour):\(minute)"
+        }
+        return ""
+    }
+    
 }
 
 enum WeekDay: Int {

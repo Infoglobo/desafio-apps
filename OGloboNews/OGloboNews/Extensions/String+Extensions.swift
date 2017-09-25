@@ -11,7 +11,7 @@ import Foundation
 extension String {
     
     func normalized() -> String {
-        let lowerCase = lowercased()
+        let lowerCase = lowercased().folding(options: .diacriticInsensitive, locale: .current)
         return lowerCase.replacingOccurrences(of: " ", with: "")
     }
     
