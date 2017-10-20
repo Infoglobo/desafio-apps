@@ -1,0 +1,9 @@
+platform :ios, '8.1'
+use_frameworks!
+
+target 'DesafioNoticias' do
+
+pod 'Alamofire'
+pod 'Freddy'
+
+end
