@@ -3,7 +3,11 @@ use_frameworks!
 
 target 'DesafioNoticias' do
 
+# Requests Maker
 pod 'Alamofire'
+pod 'AlamofireImage'
+
+# JSON Parser
 pod 'Freddy'
 
 end

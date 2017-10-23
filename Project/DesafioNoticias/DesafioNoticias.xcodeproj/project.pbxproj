@@ -7,12 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0E12792D1F9E849000A29339 /* News.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E12792C1F9E849000A29339 /* News.swift */; };
+		0E12792F1F9E862500A29339 /* NewsImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E12792E1F9E862500A29339 /* NewsImage.swift */; };
 		0E316EC61F997CEA00388BCE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E316EC51F997CEA00388BCE /* AppDelegate.swift */; };
-		0E316EC81F997CEA00388BCE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E316EC71F997CEA00388BCE /* ViewController.swift */; };
 		0E316ECB1F997CEB00388BCE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E316EC91F997CEA00388BCE /* Main.storyboard */; };
 		0E316ED01F997CEB00388BCE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0E316ECE1F997CEB00388BCE /* LaunchScreen.storyboard */; };
 		0E316EDB1F997CEB00388BCE /* DesafioNoticiasTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E316EDA1F997CEB00388BCE /* DesafioNoticiasTests.swift */; };
 		0E316EE61F997D1A00388BCE /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 0E316EE51F997D1A00388BCE /* Podfile */; };
+		0E8C33F81F9E942700B49E71 /* NewsfeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E8C33F71F9E942700B49E71 /* NewsfeedViewController.swift */; };
+		0EB2269B1F9E8D4B0051AD9C /* NewsfeedViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0EB2269A1F9E8D4B0051AD9C /* NewsfeedViewModel.swift */; };
 		110995F745D11D0607082F58 /* Pods_DesafioNoticias.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 329D9641FB742B7181817343 /* Pods_DesafioNoticias.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,17 +31,20 @@
 
 /* Begin PBXFileReference section */
 		00555F1898514B41EA77742C /* Pods-DesafioNoticias.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioNoticias.release.xcconfig"; path = "Pods/Target Support Files/Pods-DesafioNoticias/Pods-DesafioNoticias.release.xcconfig"; sourceTree = "<group>"; };
+		0E12792C1F9E849000A29339 /* News.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = News.swift; sourceTree = "<group>"; };
+		0E12792E1F9E862500A29339 /* NewsImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsImage.swift; sourceTree = "<group>"; };
 		0E167D601F998289002C3C6E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0E316EC21F997CEA00388BCE /* DesafioNoticias.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DesafioNoticias.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E316EC51F997CEA00388BCE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		0E316EC71F997CEA00388BCE /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0E316ECA1F997CEB00388BCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0E316ECF1F997CEB00388BCE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0E316ED11F997CEB00388BCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0E316ED61F997CEB00388BCE /* DesafioNoticiasTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DesafioNoticiasTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E316EDA1F997CEB00388BCE /* DesafioNoticiasTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DesafioNoticiasTests.swift; sourceTree = "<group>"; };
 		0E316EDC1F997CEB00388BCE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0E316EE51F997D1A00388BCE /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; };
+		0E316EE51F997D1A00388BCE /* Podfile */ = {isa = PBXFileReference; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		0E8C33F71F9E942700B49E71 /* NewsfeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedViewController.swift; sourceTree = "<group>"; };
+		0EB2269A1F9E8D4B0051AD9C /* NewsfeedViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewsfeedViewModel.swift; sourceTree = "<group>"; };
 		329D9641FB742B7181817343 /* Pods_DesafioNoticias.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_DesafioNoticias.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		994BCDB95E534A665A8A0452 /* Pods-DesafioNoticias.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DesafioNoticias.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DesafioNoticias/Pods-DesafioNoticias.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -65,6 +71,8 @@
 		0E234C711F998084003515B1 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0E12792C1F9E849000A29339 /* News.swift */,
+				0E12792E1F9E862500A29339 /* NewsImage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -72,6 +80,7 @@
 		0E234C721F998094003515B1 /* View Model */ = {
 			isa = PBXGroup;
 			children = (
+				0EB2269A1F9E8D4B0051AD9C /* NewsfeedViewModel.swift */,
 			);
 			path = "View Model";
 			sourceTree = "<group>";
@@ -88,7 +97,7 @@
 		0E234C741F9980A6003515B1 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				0E316EC71F997CEA00388BCE /* ViewController.swift */,
+				0E8C33F71F9E942700B49E71 /* NewsfeedViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -98,7 +107,6 @@
 			children = (
 				0E316EC51F997CEA00388BCE /* AppDelegate.swift */,
 				0E167D601F998289002C3C6E /* Assets.xcassets */,
-				0E316ED11F997CEB00388BCE /* Info.plist */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -127,6 +135,7 @@
 		0E316EC41F997CEA00388BCE /* DesafioNoticias */ = {
 			isa = PBXGroup;
 			children = (
+				0E316ED11F997CEB00388BCE /* Info.plist */,
 				0E234C731F9980A0003515B1 /* View */,
 				0E234C721F998094003515B1 /* View Model */,
 				0E234C711F998084003515B1 /* Model */,
@@ -305,11 +314,13 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-DesafioNoticias/Pods-DesafioNoticias-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
 				"${BUILT_PRODUCTS_DIR}/Freddy/Freddy.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Freddy.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,8 +335,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0E316EC81F997CEA00388BCE /* ViewController.swift in Sources */,
+				0E8C33F81F9E942700B49E71 /* NewsfeedViewController.swift in Sources */,
+				0E12792D1F9E849000A29339 /* News.swift in Sources */,
+				0E12792F1F9E862500A29339 /* NewsImage.swift in Sources */,
 				0E316EC61F997CEA00388BCE /* AppDelegate.swift in Sources */,
+				0EB2269B1F9E8D4B0051AD9C /* NewsfeedViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -485,7 +499,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.guihsoft.DesafioNoticias;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -501,7 +515,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.guihsoft.DesafioNoticias;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
