@@ -1,0 +1,17 @@
+platform :ios, '9.0'
+inhibit_all_warnings!
+
+  def common_pods_for_target
+    use_frameworks!
+    pod 'ObjectMapper'
+    pod 'PINRemoteImage'
+  end
+
+  # Pods for desafio-apps-Infoglobo
+  target 'desafio-apps-Infoglobo' do
+    common_pods_for_target
+  end
+
+  target 'desafio-apps-InfogloboTests' do
+    common_pods_for_target
+  end
