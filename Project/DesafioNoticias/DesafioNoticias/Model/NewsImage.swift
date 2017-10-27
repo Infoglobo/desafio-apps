@@ -15,16 +15,17 @@ struct NewsImage {
     var source : String
     var subtitles : String
     var url : URL?
+    var image : UIImage?
     
-}
-
-extension NewsImage : JSONDecodable {
-    public init(json: JSON) throws {
-        self.author = try json.getString(at: "autor")
-        self.source = try json.getString(at: "fonte")
-        self.subtitles = try json.getString(at: "legenda")
+    init(dictionary : [String : String]) {
         
-        let urlString = try json.getString(at: "url")
+        self.author = dictionary["autor"] ?? ""
+        self.source = dictionary["fonte"] ?? ""
+        self.subtitles = dictionary["legenda"] ?? ""
+        
+        let urlString = dictionary["url"] ?? ""
         self.url = URL(string: urlString)
+        
     }
+    
 }

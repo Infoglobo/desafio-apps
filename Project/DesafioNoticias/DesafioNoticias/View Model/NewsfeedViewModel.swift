@@ -15,10 +15,22 @@ internal class NewsfeedViewModel {
     var titleText : String
     var image : UIImage
     
-    init(sectionName : String, title : String, image : UIImage) {
-        self.sectionNameText = sectionName
-        self.titleText = title
-        self.image = image
+    init(news : News) {
+        self.sectionNameText = news.section.name
+        self.titleText = news.title
+        
+        if news.images.count > 0 {
+            self.image = news.images[0].image ?? UIImage(contentsOfFile: "imageNotFound.jpeg") ?? UIImage()
+        } else {
+            self.image = UIImage(contentsOfFile: "imageNotFound.jpeg") ?? UIImage()
+        }
+        
+    }
+    
+    init() {
+        self.sectionNameText = ""
+        self.titleText = ""
+        self.image = UIImage()
     }
     
 }
