@@ -11,3 +11,8 @@ pod 'AlamofireImage'
 pod 'Freddy'
 
 end
+
+target 'DesafioNoticiasTests' do
+    pod 'Quick'
+    pod 'Nimble'
+end
