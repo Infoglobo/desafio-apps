@@ -14,10 +14,9 @@ class NoticiasAPICall: NSObject {
         let path = Bundle.main.path(forResource: "capa", ofType: "json")
         let data = try! Data(contentsOf: URL(fileURLWithPath: path!))
         let jsonResult = try! JSONSerialization.jsonObject(with: data, options: []) as! NSArray
-        print(jsonResult)
         let result = jsonResult.flatMap{ Content(map: Map(mappingType: .fromJSON, JSON: $0 as! [String : Any])) }
-
         completion(result.first?.content, nil)
     }
+    
 }
 

@@ -8,5 +8,6 @@ target 'globoapp' do
   # Pods for globoapp
 
 pod 'ObjectMapper', '~> 2.2'
-
+pod 'AlamofireImage', '~> 3.3'
+pod 'PINRemoteImage'
 end

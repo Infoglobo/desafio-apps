@@ -7,6 +7,7 @@
 //
 import ObjectMapper
 import UIKit
+import AlamofireImage
 
 class Imagem: Mappable {
     
@@ -14,9 +15,11 @@ class Imagem: Mappable {
     var autor: String?
     var fonte: String?
     var legenda: String?
+    var image: UIImageView?
     
     required init?(map: Map) {
         mapping(map: map)
+        fillImage()
     }
     
     func mapping(map: Map) {
@@ -26,6 +29,15 @@ class Imagem: Mappable {
         self.legenda <- map["legenda"]
     }
     
+    func fillImage(){
+        let serialQueue = DispatchQueue(label: "serialQueue")
 
+        let urlRequest = URL(string: url!)!
+        self.image?.af_setImage(withURL: urlRequest)
+        
+    }
+    
+    
     
 }
+
