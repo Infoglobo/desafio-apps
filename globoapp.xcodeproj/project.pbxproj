@@ -1,0 +1,531 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		653FDE071FA66652008DB30D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653FDE061FA66652008DB30D /* AppDelegate.swift */; };
+		653FDE091FA66652008DB30D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653FDE081FA66652008DB30D /* ViewController.swift */; };
+		653FDE0C1FA66652008DB30D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653FDE0A1FA66652008DB30D /* Main.storyboard */; };
+		653FDE0F1FA66652008DB30D /* globoapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 653FDE0D1FA66652008DB30D /* globoapp.xcdatamodeld */; };
+		653FDE111FA66652008DB30D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653FDE101FA66652008DB30D /* Assets.xcassets */; };
+		653FDE141FA66652008DB30D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653FDE121FA66652008DB30D /* LaunchScreen.storyboard */; };
+		653FDE211FA66C0E008DB30D /* globonews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653FDE201FA66C0E008DB30D /* globonews.storyboard */; };
+		653FDE281FA672CE008DB30D /* CapaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653FDE271FA672CE008DB30D /* CapaTableViewController.swift */; };
+		653FDE2A1FA672F8008DB30D /* CapaTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653FDE291FA672F8008DB30D /* CapaTableView.swift */; };
+		653FDE2C1FA674DF008DB30D /* NoticiaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653FDE2B1FA674DF008DB30D /* NoticiaTableViewCell.swift */; };
+		653FDE2F1FA6832D008DB30D /* NoticiasAPICall.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653FDE2E1FA6832D008DB30D /* NoticiasAPICall.swift */; };
+		65417C9C1FA69384005EB72A /* Noticia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65417C9B1FA69384005EB72A /* Noticia.swift */; };
+		65417C9E1FA69613005EB72A /* capa.json in Resources */ = {isa = PBXBuildFile; fileRef = 65417C9D1FA69613005EB72A /* capa.json */; };
+		65417CA01FA69DF6005EB72A /* Content.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65417C9F1FA69DF6005EB72A /* Content.swift */; };
+		65417CA21FA6A8DB005EB72A /* Imagem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65417CA11FA6A8DB005EB72A /* Imagem.swift */; };
+		65417CA41FA6AA9C005EB72A /* Secao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65417CA31FA6AA9C005EB72A /* Secao.swift */; };
+		D1020A9ED23F949E251904FA /* Pods_globoapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E28DBDA301090F9DC944BA /* Pods_globoapp.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2523A6B6D2EDAB713836EE1C /* Pods-globoapp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-globoapp.debug.xcconfig"; path = "Pods/Target Support Files/Pods-globoapp/Pods-globoapp.debug.xcconfig"; sourceTree = "<group>"; };
+		653FDE031FA66652008DB30D /* globoapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = globoapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		653FDE061FA66652008DB30D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		653FDE081FA66652008DB30D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		653FDE0B1FA66652008DB30D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		653FDE0E1FA66652008DB30D /* globoapp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = globoapp.xcdatamodel; sourceTree = "<group>"; };
+		653FDE101FA66652008DB30D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		653FDE131FA66652008DB30D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		653FDE151FA66652008DB30D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		653FDE201FA66C0E008DB30D /* globonews.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = globonews.storyboard; sourceTree = "<group>"; };
+		653FDE271FA672CE008DB30D /* CapaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CapaTableViewController.swift; path = globoapp/controllers/CapaTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		653FDE291FA672F8008DB30D /* CapaTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapaTableView.swift; sourceTree = "<group>"; };
+		653FDE2B1FA674DF008DB30D /* NoticiaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaTableViewCell.swift; sourceTree = "<group>"; };
+		653FDE2E1FA6832D008DB30D /* NoticiasAPICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiasAPICall.swift; sourceTree = "<group>"; };
+		65417C9B1FA69384005EB72A /* Noticia.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Noticia.swift; sourceTree = "<group>"; };
+		65417C9D1FA69613005EB72A /* capa.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = capa.json; sourceTree = "<group>"; };
+		65417C9F1FA69DF6005EB72A /* Content.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Content.swift; sourceTree = "<group>"; };
+		65417CA11FA6A8DB005EB72A /* Imagem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Imagem.swift; sourceTree = "<group>"; };
+		65417CA31FA6AA9C005EB72A /* Secao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secao.swift; sourceTree = "<group>"; };
+		B9E28DBDA301090F9DC944BA /* Pods_globoapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_globoapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF98266C2B9FE45C9111CB30 /* Pods-globoapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-globoapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-globoapp/Pods-globoapp.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		653FDE001FA66652008DB30D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D1020A9ED23F949E251904FA /* Pods_globoapp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		59062EFA582F1BC0E253C1DB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B9E28DBDA301090F9DC944BA /* Pods_globoapp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		653FDDFA1FA66652008DB30D = {
+			isa = PBXGroup;
+			children = (
+				653FDE051FA66652008DB30D /* globoapp */,
+				653FDE041FA66652008DB30D /* Products */,
+				CF629D03AD34B9D7D44438E7 /* Pods */,
+				59062EFA582F1BC0E253C1DB /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		653FDE041FA66652008DB30D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				653FDE031FA66652008DB30D /* globoapp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		653FDE051FA66652008DB30D /* globoapp */ = {
+			isa = PBXGroup;
+			children = (
+				65417C9A1FA69255005EB72A /* models */,
+				653FDE2D1FA682E4008DB30D /* business */,
+				653FDE221FA66DD1008DB30D /* cells */,
+				653FDE1F1FA66707008DB30D /* storyboards */,
+				653FDE1E1FA666E1008DB30D /* managers */,
+				653FDE1D1FA6669A008DB30D /* infrastructure */,
+				653FDE1C1FA66685008DB30D /* views */,
+				653FDE1B1FA66677008DB30D /* controllers */,
+				653FDE061FA66652008DB30D /* AppDelegate.swift */,
+				653FDE081FA66652008DB30D /* ViewController.swift */,
+				653FDE0A1FA66652008DB30D /* Main.storyboard */,
+				653FDE101FA66652008DB30D /* Assets.xcassets */,
+				653FDE121FA66652008DB30D /* LaunchScreen.storyboard */,
+				653FDE151FA66652008DB30D /* Info.plist */,
+				653FDE0D1FA66652008DB30D /* globoapp.xcdatamodeld */,
+			);
+			path = globoapp;
+			sourceTree = "<group>";
+		};
+		653FDE1B1FA66677008DB30D /* controllers */ = {
+			isa = PBXGroup;
+			children = (
+				653FDE271FA672CE008DB30D /* CapaTableViewController.swift */,
+			);
+			path = controllers;
+			sourceTree = "<group>";
+		};
+		653FDE1C1FA66685008DB30D /* views */ = {
+			isa = PBXGroup;
+			children = (
+				653FDE291FA672F8008DB30D /* CapaTableView.swift */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		653FDE1D1FA6669A008DB30D /* infrastructure */ = {
+			isa = PBXGroup;
+			children = (
+				65417C9D1FA69613005EB72A /* capa.json */,
+			);
+			path = infrastructure;
+			sourceTree = "<group>";
+		};
+		653FDE1E1FA666E1008DB30D /* managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = managers;
+			sourceTree = "<group>";
+		};
+		653FDE1F1FA66707008DB30D /* storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				653FDE201FA66C0E008DB30D /* globonews.storyboard */,
+			);
+			path = storyboards;
+			sourceTree = "<group>";
+		};
+		653FDE221FA66DD1008DB30D /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				653FDE2B1FA674DF008DB30D /* NoticiaTableViewCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		653FDE2D1FA682E4008DB30D /* business */ = {
+			isa = PBXGroup;
+			children = (
+				653FDE2E1FA6832D008DB30D /* NoticiasAPICall.swift */,
+			);
+			path = business;
+			sourceTree = "<group>";
+		};
+		65417C9A1FA69255005EB72A /* models */ = {
+			isa = PBXGroup;
+			children = (
+				65417C9B1FA69384005EB72A /* Noticia.swift */,
+				65417C9F1FA69DF6005EB72A /* Content.swift */,
+				65417CA11FA6A8DB005EB72A /* Imagem.swift */,
+				65417CA31FA6AA9C005EB72A /* Secao.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		CF629D03AD34B9D7D44438E7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2523A6B6D2EDAB713836EE1C /* Pods-globoapp.debug.xcconfig */,
+				CF98266C2B9FE45C9111CB30 /* Pods-globoapp.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		653FDE021FA66652008DB30D /* globoapp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 653FDE181FA66652008DB30D /* Build configuration list for PBXNativeTarget "globoapp" */;
+			buildPhases = (
+				B1768F90EFFFF846342C216F /* [CP] Check Pods Manifest.lock */,
+				653FDDFF1FA66652008DB30D /* Sources */,
+				653FDE001FA66652008DB30D /* Frameworks */,
+				653FDE011FA66652008DB30D /* Resources */,
+				981F536D2B525B73246C4451 /* [CP] Embed Pods Frameworks */,
+				2C633D71BCA7D261E6FFC02E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = globoapp;
+			productName = globoapp;
+			productReference = 653FDE031FA66652008DB30D /* globoapp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		653FDDFB1FA66652008DB30D /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0900;
+				LastUpgradeCheck = 0900;
+				ORGANIZATIONNAME = Andre;
+				TargetAttributes = {
+					653FDE021FA66652008DB30D = {
+						CreatedOnToolsVersion = 9.0;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 653FDDFE1FA66652008DB30D /* Build configuration list for PBXProject "globoapp" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 653FDDFA1FA66652008DB30D;
+			productRefGroup = 653FDE041FA66652008DB30D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				653FDE021FA66652008DB30D /* globoapp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		653FDE011FA66652008DB30D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				653FDE141FA66652008DB30D /* LaunchScreen.storyboard in Resources */,
+				653FDE111FA66652008DB30D /* Assets.xcassets in Resources */,
+				65417C9E1FA69613005EB72A /* capa.json in Resources */,
+				653FDE0C1FA66652008DB30D /* Main.storyboard in Resources */,
+				653FDE211FA66C0E008DB30D /* globonews.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C633D71BCA7D261E6FFC02E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-globoapp/Pods-globoapp-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		981F536D2B525B73246C4451 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-globoapp/Pods-globoapp-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-globoapp/Pods-globoapp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1768F90EFFFF846342C216F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-globoapp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		653FDDFF1FA66652008DB30D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65417CA41FA6AA9C005EB72A /* Secao.swift in Sources */,
+				653FDE091FA66652008DB30D /* ViewController.swift in Sources */,
+				653FDE281FA672CE008DB30D /* CapaTableViewController.swift in Sources */,
+				653FDE2A1FA672F8008DB30D /* CapaTableView.swift in Sources */,
+				653FDE0F1FA66652008DB30D /* globoapp.xcdatamodeld in Sources */,
+				653FDE2F1FA6832D008DB30D /* NoticiasAPICall.swift in Sources */,
+				65417CA01FA69DF6005EB72A /* Content.swift in Sources */,
+				653FDE071FA66652008DB30D /* AppDelegate.swift in Sources */,
+				65417CA21FA6A8DB005EB72A /* Imagem.swift in Sources */,
+				653FDE2C1FA674DF008DB30D /* NoticiaTableViewCell.swift in Sources */,
+				65417C9C1FA69384005EB72A /* Noticia.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		653FDE0A1FA66652008DB30D /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				653FDE0B1FA66652008DB30D /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		653FDE121FA66652008DB30D /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				653FDE131FA66652008DB30D /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		653FDE161FA66652008DB30D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		653FDE171FA66652008DB30D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		653FDE191FA66652008DB30D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2523A6B6D2EDAB713836EE1C /* Pods-globoapp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JNNVVHR28;
+				INFOPLIST_FILE = globoapp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = andre.globoapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		653FDE1A1FA66652008DB30D /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF98266C2B9FE45C9111CB30 /* Pods-globoapp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6JNNVVHR28;
+				INFOPLIST_FILE = globoapp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = andre.globoapp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		653FDDFE1FA66652008DB30D /* Build configuration list for PBXProject "globoapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				653FDE161FA66652008DB30D /* Debug */,
+				653FDE171FA66652008DB30D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		653FDE181FA66652008DB30D /* Build configuration list for PBXNativeTarget "globoapp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				653FDE191FA66652008DB30D /* Debug */,
+				653FDE1A1FA66652008DB30D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		653FDE0D1FA66652008DB30D /* globoapp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				653FDE0E1FA66652008DB30D /* globoapp.xcdatamodel */,
+			);
+			currentVersion = 653FDE0E1FA66652008DB30D /* globoapp.xcdatamodel */;
+			path = globoapp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 653FDDFB1FA66652008DB30D /* Project object */;
+}
