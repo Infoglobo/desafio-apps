@@ -11,6 +11,7 @@ import UIKit
 class CapaTableViewController: UITableViewController {
     var noticiaAPICall: NoticiasAPICall!
     private var news: [Noticia]?
+    @IBOutlet var capaTableView: CapaTableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,23 +35,30 @@ class CapaTableViewController: UITableViewController {
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return (self.news?.count)!
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
-        // Configure the cell...
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NoticiaTableViewCell", for: indexPath) as! (NoticiaTableViewCell)
+        let new = self.news![indexPath.row] as Noticia!
+        let secao = new?.secao as Secao!
+        if indexPath.row == 0{
+            self.capaTableView.setup(secao: (secao?.name)!, titulo: (new?.title)!)
+        }else{
+        cell.secao.text = secao?.name
+        cell.topico.text = new?.title
+        }
+//         Configure the cell...
+        
         return cell
     }
-    */
+ 
 
     /*
     // Override to support conditional editing of the table view.

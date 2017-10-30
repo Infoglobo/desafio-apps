@@ -10,6 +10,8 @@ import UIKit
 
 class CapaTableView: UITableView {
 
+    @IBOutlet weak var secao: UILabel!
+    @IBOutlet weak var titulo: UILabel!
     @IBOutlet weak var imagemCapa: UIImageView!
     /*
     // Only override draw() if you perform custom drawing.
@@ -18,5 +20,9 @@ class CapaTableView: UITableView {
         // Drawing code
     }
     */
+    func setup(secao: String, titulo: String){
+        self.secao.text = secao
+        self.titulo.text = titulo
+    }
 
 }

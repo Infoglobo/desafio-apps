@@ -11,6 +11,7 @@ import UIKit
 class NoticiaTableViewCell: UITableViewCell {
 
     @IBOutlet weak var topico: UILabel!
+    @IBOutlet weak var secao: UILabel!
     @IBOutlet weak var imagemNoticia: UIImageView!
     
     override func awakeFromNib() {

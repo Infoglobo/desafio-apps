@@ -16,10 +16,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        var rootViewController: CapaTableViewController = CapaTableViewController ()
-        if let window = self.window{
-            window.rootViewController = rootViewController;
-        }
+        
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        
+        let storyboard = UIStoryboard(name: "globonews", bundle: nil)
+        
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "CapaTableViewController")
+        
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
+        
         return true
     }
 
