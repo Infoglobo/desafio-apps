@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class CapaTableViewController: UITableViewController {
     var noticiaAPICall: NoticiasAPICall!
@@ -20,10 +21,10 @@ class CapaTableViewController: UITableViewController {
             self.news = news
         }
         // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
+         self.clearsSelectionOnViewWillAppear = false
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     
     override func didReceiveMemoryWarning() {
@@ -45,14 +46,18 @@ class CapaTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NoticiaTableViewCell", for: indexPath) as! (NoticiaTableViewCell)
+        var cell = tableView.dequeueReusableCell(withIdentifier: "NoticiaTableViewCell", for: indexPath) as! (NoticiaTableViewCell)
         let new = self.news![indexPath.row] as Noticia!
         let secao = new?.secao as Secao!
         if indexPath.row == 0{
             self.capaTableView.setup(secao: (secao?.name)!, titulo: (new?.title)!)
-        }else{
+            self.capaTableView.imagemCapa.af_setImage(withURL: URL(string: (new?.images[0].url)!)!)
+        }else if indexPath.row > 0{
             cell.secao.text = secao?.name
             cell.topico.text = new?.title
+            if new!.images.count > 0{
+                cell.imagemNoticia.af_setImage(withURL: URL(string: (new?.images[0].url)!)!)
+            }
         }
         
         return cell
