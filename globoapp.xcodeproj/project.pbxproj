@@ -25,6 +25,7 @@
 		65417CA41FA6AA9C005EB72A /* Secao.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65417CA31FA6AA9C005EB72A /* Secao.swift */; };
 		65417CA81FA6C9CD005EB72A /* NoticiaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65417CA71FA6C9CD005EB72A /* NoticiaViewController.swift */; };
 		65417CAA1FA6CBA1005EB72A /* NoticiaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65417CA91FA6CBA1005EB72A /* NoticiaView.swift */; };
+		65417CAC1FA94BCF005EB72A /* NoticiaSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65417CAB1FA94BCF005EB72A /* NoticiaSegue.swift */; };
 		D1020A9ED23F949E251904FA /* Pods_globoapp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B9E28DBDA301090F9DC944BA /* Pods_globoapp.framework */; };
 /* End PBXBuildFile section */
 
@@ -50,6 +51,7 @@
 		65417CA31FA6AA9C005EB72A /* Secao.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secao.swift; sourceTree = "<group>"; };
 		65417CA71FA6C9CD005EB72A /* NoticiaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaViewController.swift; sourceTree = "<group>"; };
 		65417CA91FA6CBA1005EB72A /* NoticiaView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaView.swift; sourceTree = "<group>"; };
+		65417CAB1FA94BCF005EB72A /* NoticiaSegue.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaSegue.swift; sourceTree = "<group>"; };
 		B9E28DBDA301090F9DC944BA /* Pods_globoapp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_globoapp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CF98266C2B9FE45C9111CB30 /* Pods-globoapp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-globoapp.release.xcconfig"; path = "Pods/Target Support Files/Pods-globoapp/Pods-globoapp.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -136,6 +138,7 @@
 			isa = PBXGroup;
 			children = (
 				65417C9D1FA69613005EB72A /* capa.json */,
+				65417CAB1FA94BCF005EB72A /* NoticiaSegue.swift */,
 			);
 			path = infrastructure;
 			sourceTree = "<group>";
@@ -341,6 +344,7 @@
 				653FDE2F1FA6832D008DB30D /* NoticiasAPICall.swift in Sources */,
 				65417CA01FA69DF6005EB72A /* Content.swift in Sources */,
 				653FDE071FA66652008DB30D /* AppDelegate.swift in Sources */,
+				65417CAC1FA94BCF005EB72A /* NoticiaSegue.swift in Sources */,
 				65417CA21FA6A8DB005EB72A /* Imagem.swift in Sources */,
 				65417CAA1FA6CBA1005EB72A /* NoticiaView.swift in Sources */,
 				653FDE2C1FA674DF008DB30D /* NoticiaTableViewCell.swift in Sources */,

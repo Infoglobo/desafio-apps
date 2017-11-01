@@ -13,7 +13,7 @@
         <!--O Globo-->
         <scene sceneID="SiT-BP-m7d">
             <objects>
-                <tableViewController storyboardIdentifier="CapaTableViewController" id="aXL-hy-2zr" customClass="CapaTableViewController" customModule="globoapp" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="CapaTableViewController" automaticallyAdjustsScrollViewInsets="NO" id="aXL-hy-2zr" customClass="CapaTableViewController" customModule="globoapp" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="never" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="1" sectionFooterHeight="1" contentViewInsetsToSafeArea="NO" id="ERe-go-2bB" customClass="CapaTableView" customModule="globoapp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -23,7 +23,7 @@
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <subviews>
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zA9-A6-yrB">
-                                    <rect key="frame" x="0.0" y="30" width="375" height="220"/>
+                                    <rect key="frame" x="0.0" y="30" width="375" height="211"/>
                                 </imageView>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xX-zI-dwU">
                                     <rect key="frame" x="30" y="181" width="325" height="41"/>
@@ -54,7 +54,7 @@
                                 <constraint firstAttribute="trailing" secondItem="zA9-A6-yrB" secondAttribute="trailing" id="DPr-mo-WCe"/>
                                 <constraint firstItem="zA9-A6-yrB" firstAttribute="leading" secondItem="pbs-rt-V9R" secondAttribute="leading" id="KcB-ud-9aZ"/>
                                 <constraint firstItem="zA9-A6-yrB" firstAttribute="top" secondItem="pbs-rt-V9R" secondAttribute="top" constant="30" id="LjT-FU-dOl"/>
-                                <constraint firstAttribute="bottom" secondItem="zA9-A6-yrB" secondAttribute="bottom" constant="-9" id="OUO-Jg-3EJ"/>
+                                <constraint firstAttribute="bottom" secondItem="zA9-A6-yrB" secondAttribute="bottom" id="OUO-Jg-3EJ"/>
                                 <constraint firstItem="1xX-zI-dwU" firstAttribute="leading" secondItem="pbs-rt-V9R" secondAttribute="leading" constant="30" id="PvO-it-EQ3"/>
                                 <constraint firstAttribute="bottom" secondItem="Pmg-HK-4Zq" secondAttribute="bottom" constant="68" id="WtO-ey-alO"/>
                                 <constraint firstItem="Pmg-HK-4Zq" firstAttribute="leading" secondItem="pbs-rt-V9R" secondAttribute="leading" constant="166" id="X0l-aX-C2u"/>
@@ -120,6 +120,7 @@
                                 <constraints>
                                     <constraint firstAttribute="trailing" secondItem="4av-az-sS4" secondAttribute="trailing" constant="283" id="M4w-iZ-IQr"/>
                                 </constraints>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="contentView" destination="4ud-nd-ozf" id="FVM-F1-TIb"/>
                                     <outlet property="imagemNoticia" destination="4av-az-sS4" id="xLa-nr-MsY"/>
@@ -145,10 +146,10 @@
             </objects>
             <point key="canvasLocation" x="404" y="189.3553223388306"/>
         </scene>
-        <!--Noticia View Controller-->
+        <!--Noticia Detalhe-->
         <scene sceneID="H5j-4E-iEb">
             <objects>
-                <viewController storyboardIdentifier="NoticiaViewController" id="jen-WG-S0E" customClass="NoticiaViewController" customModule="globoapp" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="NoticiaViewController" title="Noticia Detalhe" id="jen-WG-S0E" customClass="NoticiaViewController" customModule="globoapp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o6O-R2-Dwi" customClass="NoticiaView" customModule="globoapp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -156,24 +157,18 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HWo-k6-leb" customClass="NoticiaView" customModule="globoapp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOa-AL-GPY">
-                                        <rect key="frame" x="41" y="28" width="311" height="32"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FOa-AL-GPY">
+                                        <rect key="frame" x="18" y="20" width="342" height="46"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="32" id="Rdu-A5-nct"/>
+                                            <constraint firstAttribute="height" constant="46" id="Rdu-A5-nct"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tyc-oL-wao">
-                                        <rect key="frame" x="41" y="68" width="38" height="18"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="23"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="POR " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D76-yS-6QG">
-                                        <rect key="frame" x="141" y="149" width="39" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <rect key="frame" x="141" y="157" width="27" height="13"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="11"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
@@ -186,7 +181,7 @@
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KqN-iF-lAf">
                                         <rect key="frame" x="0.0" y="418" width="375" height="249"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOC-9d-Z4y">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="1000" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bOC-9d-Z4y">
                                                 <rect key="frame" x="0.0" y="8" width="367" height="241"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="241" id="QS4-Kb-WYd"/>
@@ -204,22 +199,34 @@
                                             <constraint firstAttribute="bottom" secondItem="bOC-9d-Z4y" secondAttribute="bottom" id="foR-Kr-8gd"/>
                                         </constraints>
                                     </scrollView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tyc-oL-wao">
+                                        <rect key="frame" x="40" y="74" width="296" height="29"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="29" id="0ci-b0-vir"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="FOa-AL-GPY" firstAttribute="top" secondItem="HWo-k6-leb" secondAttribute="topMargin" id="4If-3h-cgu"/>
+                                    <constraint firstItem="FOa-AL-GPY" firstAttribute="top" secondItem="HWo-k6-leb" secondAttribute="topMargin" constant="-8" id="4If-3h-cgu"/>
                                     <constraint firstItem="KqN-iF-lAf" firstAttribute="top" secondItem="QYG-Ik-IFw" secondAttribute="bottom" constant="27" id="8Zm-1Z-zgi"/>
                                     <constraint firstAttribute="bottom" secondItem="KqN-iF-lAf" secondAttribute="bottom" id="BW9-S1-r5t"/>
                                     <constraint firstItem="D76-yS-6QG" firstAttribute="leading" secondItem="HWo-k6-leb" secondAttribute="leading" constant="141" id="Dd6-j3-qH0"/>
                                     <constraint firstItem="QYG-Ik-IFw" firstAttribute="top" secondItem="D76-yS-6QG" secondAttribute="bottom" constant="19" id="I61-VJ-pA9"/>
+                                    <constraint firstItem="D76-yS-6QG" firstAttribute="top" secondItem="Tyc-oL-wao" secondAttribute="bottom" constant="54" id="I8T-Jc-uVS"/>
                                     <constraint firstItem="KqN-iF-lAf" firstAttribute="trailing" secondItem="QYG-Ik-IFw" secondAttribute="trailing" id="KzB-rv-tc7"/>
                                     <constraint firstItem="KqN-iF-lAf" firstAttribute="top" secondItem="HWo-k6-leb" secondAttribute="top" constant="418" id="MHo-M8-889"/>
                                     <constraint firstItem="KqN-iF-lAf" firstAttribute="leading" secondItem="QYG-Ik-IFw" secondAttribute="leading" id="NWF-nd-VyC"/>
                                     <constraint firstItem="KqN-iF-lAf" firstAttribute="leading" secondItem="HWo-k6-leb" secondAttribute="leading" id="Qte-j6-WcM"/>
-                                    <constraint firstAttribute="trailing" secondItem="FOa-AL-GPY" secondAttribute="trailing" constant="23" id="VFE-e8-wbH"/>
-                                    <constraint firstItem="FOa-AL-GPY" firstAttribute="leading" secondItem="Tyc-oL-wao" secondAttribute="leading" id="cgN-dt-bBk"/>
-                                    <constraint firstItem="Tyc-oL-wao" firstAttribute="top" secondItem="FOa-AL-GPY" secondAttribute="bottom" constant="8" id="gRa-KO-kEv"/>
-                                    <constraint firstItem="FOa-AL-GPY" firstAttribute="leading" secondItem="HWo-k6-leb" secondAttribute="leading" constant="41" id="kDd-5r-ewF"/>
+                                    <constraint firstAttribute="trailing" secondItem="bOC-9d-Z4y" secondAttribute="trailing" constant="8" id="Rg2-h3-6Co"/>
+                                    <constraint firstItem="Tyc-oL-wao" firstAttribute="centerX" secondItem="QYG-Ik-IFw" secondAttribute="centerX" id="SPw-mn-7DS"/>
+                                    <constraint firstAttribute="trailing" secondItem="FOa-AL-GPY" secondAttribute="trailing" constant="15" id="VFE-e8-wbH"/>
+                                    <constraint firstItem="Tyc-oL-wao" firstAttribute="leading" secondItem="HWo-k6-leb" secondAttribute="leading" constant="40" id="VUM-mk-NTL"/>
+                                    <constraint firstItem="Tyc-oL-wao" firstAttribute="top" secondItem="FOa-AL-GPY" secondAttribute="bottom" constant="8" symbolic="YES" id="j8U-gb-N2K"/>
+                                    <constraint firstItem="FOa-AL-GPY" firstAttribute="leading" secondItem="HWo-k6-leb" secondAttribute="leading" constant="18" id="kDd-5r-ewF"/>
                                     <constraint firstAttribute="trailing" secondItem="KqN-iF-lAf" secondAttribute="trailing" id="pLR-cs-Apk"/>
                                 </constraints>
                             </view>
@@ -233,8 +240,10 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="7CE-Ab-kbO"/>
                         <connections>
+                            <outlet property="imagemNoticia" destination="QYG-Ik-IFw" id="T3U-x9-rEX"/>
+                            <outlet property="scrollView" destination="KqN-iF-lAf" id="H9R-Qt-P9q"/>
                             <outlet property="subtitulo" destination="Tyc-oL-wao" id="zII-w8-sBp"/>
-                            <outlet property="texto" destination="bOC-9d-Z4y" id="IIz-rf-Y4i"/>
+                            <outlet property="textoNoticia" destination="bOC-9d-Z4y" id="YXS-xA-sY7"/>
                             <outlet property="titulo" destination="FOa-AL-GPY" id="gjf-8i-XDZ"/>
                         </connections>
                     </view>

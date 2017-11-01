@@ -25,6 +25,7 @@ class CapaTableViewController: UITableViewController {
 //        self.capaTableView.tableFooterView = UIView()
 //        self.capaTableView.tableHeaderView = UIView()
         self.capaTableView.reloadData()
+//        self.capaTableView.style = .UITableViewStyleGrouped
         // Uncomment the following line to preserve selection between presentations
 //         self.clearsSelectionOnViewWillAppear = false
         
@@ -78,17 +79,15 @@ class CapaTableViewController: UITableViewController {
      */
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NoticiaTableViewCell", for: indexPath) as! (NoticiaTableViewCell)
-        let storyboard = UIStoryboard(name: "globonews", bundle: nil)
-        
-        let noticiaViewController = storyboard.instantiateViewController(withIdentifier: "NoticiaViewController") as! NoticiaViewController
-  
-    
-//        noticiaViewController.noticiaView.titulo.text = cell.topico.text
-        
-        navigationController?.pushViewController(noticiaViewController, animated: true)
-//        nvc.
-        //        present(NoticiaViewController, animated: true, completion: nil)
+
+        let new = self.news[indexPath.row]
+       
+        let storyboard = UIStoryboard(name: "globonews", bundle:nil)
+        let noticiaVC = storyboard.instantiateViewController(withIdentifier: "NoticiaViewController") as! NoticiaViewController
+//        noticiaVC.viewDidLoad()
+//        noticiaVC.setUpNoticiaView(titulo: new.title!, subtitulo: new.subTitle!, imagem: new.images[0].image! as Data, texto: new.texto!)
+        self.present(noticiaVC, animated: true, completion: nil)
+       noticiaVC.setUpNoticiaView(titulo: new.title!, subtitulo: new.subTitle!, imagem: new.images[0].image! as Data, texto: new.texto!)
     }
     
     func setUpCell(cell: NoticiaTableViewCell, new: Noticia){

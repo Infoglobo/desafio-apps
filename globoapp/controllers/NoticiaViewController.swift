@@ -23,7 +23,9 @@ class NoticiaViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    public func setUpNoticiaView(titulo: String, subtitulo: String, imagem: Data, texto : String){
+        self.noticiaView.setUpNoticiaView(titulo: titulo, subtitulo: subtitulo, imagem: imagem, texto: texto)
+    }
     /*
     // MARK: - Navigation
 
