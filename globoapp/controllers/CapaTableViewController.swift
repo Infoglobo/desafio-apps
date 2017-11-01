@@ -8,10 +8,11 @@
 
 import UIKit
 import AlamofireImage
+import Foundation
 
 class CapaTableViewController: UITableViewController {
     var noticiaAPICall: NoticiasAPICall!
-    private var news: [Noticia]?
+    private var news: [Noticia]!
     @IBOutlet var capaTableView: CapaTableView!
     
     override func viewDidLoad() {
@@ -20,13 +21,19 @@ class CapaTableViewController: UITableViewController {
         noticiaAPICall.fetchNoticias(){ news, error in
             self.news = news
         }
+        
+//        self.capaTableView.tableFooterView = UIView()
+//        self.capaTableView.tableHeaderView = UIView()
+        self.capaTableView.reloadData()
         // Uncomment the following line to preserve selection between presentations
-         self.clearsSelectionOnViewWillAppear = false
+//         self.clearsSelectionOnViewWillAppear = false
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-         self.navigationItem.rightBarButtonItem = self.editButtonItem
+//         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
+    override func viewDidAppear(_ animated: Bool) {
+        self.capaTableView.reloadData()
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -46,23 +53,21 @@ class CapaTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: "NoticiaTableViewCell", for: indexPath) as! (NoticiaTableViewCell)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "NoticiaTableViewCell", for: indexPath) as! (NoticiaTableViewCell)
         let new = self.news![indexPath.row] as Noticia!
         let secao = new?.secao as Secao!
         if indexPath.row == 0{
-            self.capaTableView.setup(secao: (secao?.name)!, titulo: (new?.title)!)
-            self.capaTableView.imagemCapa.af_setImage(withURL: URL(string: (new?.images[0].url)!)!)
-        }else if indexPath.row > 0{
+            self.setUpCapa(new: new!, secao: secao!)
+        }else{
             cell.secao.text = secao?.name
             cell.topico.text = new?.title
             if new!.images.count > 0{
-                cell.imagemNoticia.af_setImage(withURL: URL(string: (new?.images[0].url)!)!)
+                self.setUpCell(cell: cell, new: new!)
             }
         }
         
         return cell
     }
-    
     
     /*
      // Override to support conditional editing of the table view.
@@ -84,6 +89,25 @@ class CapaTableViewController: UITableViewController {
         navigationController?.pushViewController(noticiaViewController, animated: true)
 //        nvc.
         //        present(NoticiaViewController, animated: true, completion: nil)
+    }
+    
+    func setUpCell(cell: NoticiaTableViewCell, new: Noticia){
+        cell.imagemNoticia.image = UIImage(data: new.images[0].image! as! Data)
+        let itemSize:CGSize = CGSize(width: 84, height: 50)
+        UIGraphicsBeginImageContextWithOptions(itemSize, false, UIScreen.main.scale)
+        let imageRect : CGRect = CGRect(origin: .zero, size: CGSize(width: itemSize.width, height: itemSize.height))
+        cell.imagemNoticia!.image?.draw(in: imageRect)
+        let img = self.resizeImage(image: cell.imagemNoticia.image!, targetSize: itemSize)
+        cell.imagemNoticia.image = img
+    }
+    
+    func setUpCapa(new: Noticia, secao: Secao){
+        self.capaTableView.setup(secao: (secao.name)!, titulo: (new.title)!)
+        self.capaTableView.imagemCapa.image = UIImage(data: new.images[0].image! as Data)
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 0.0
     }
     /*
      // Override to support editing the table view.
@@ -121,6 +145,31 @@ class CapaTableViewController: UITableViewController {
      // Pass the selected object to the new view controller.
      }
      */
-    
+    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / size.width
+        let heightRatio = targetSize.height / size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
+        } else {
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.draw(in: rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
+    }
+
 }
 
