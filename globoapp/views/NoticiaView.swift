@@ -10,6 +10,7 @@ import UIKit
 
 class NoticiaView: UIView {
 
+    @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var titulo: UILabel!
     @IBOutlet weak var subtitulo: UILabel!
     @IBOutlet weak var imagemNoticia: UIImageView!
@@ -29,6 +30,11 @@ class NoticiaView: UIView {
         self.subtitulo.text = subtitulo
         self.imagemNoticia.image = UIImage(data: imagem as! Data)
         self.textoNoticia.text = texto
+        
+        let nib = UINib(nibName: "NoticiaViewHeader", bundle: nil)
+        let view = nib.instantiate(withOwner: nil, options: nil).first as! UIView
+        self.tabBar.addSubview(view)
+       
     }
 
 }

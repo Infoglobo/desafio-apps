@@ -21,7 +21,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let storyboard = UIStoryboard(name: "globonews", bundle: nil)
         
-        let initialViewController = storyboard.instantiateViewController(withIdentifier: "CapaTableViewController")
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: "CapaViewController")
         
         self.window?.rootViewController = initialViewController
         self.window?.makeKeyAndVisible()

@@ -19,6 +19,8 @@ class Noticia: Mappable {
     var tipo: String?
     var url: String?
     var images = [Imagem]()
+    var img: Imagem? = nil
+    
     var secao: Secao?
     
     required init?(map: Map) {
@@ -37,7 +39,14 @@ class Noticia: Mappable {
         texto <- map["texto"]
         tipo <- map["tipo"]
         url <- map["url"]
-        images <- map["imagens"]
+        
+        if map["imagens"] != nil{
+            images <- map["imagens"]
+            if  images.count > 0{
+                self.img = images[0]
+            }
+        }
+        
         secao <- map["secao"]
     }
 }

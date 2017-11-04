@@ -10,10 +10,11 @@ import UIKit
 
 class NoticiaTableViewCell: UITableViewCell {
 
+    
     @IBOutlet weak var topico: UILabel!
     @IBOutlet weak var secao: UILabel!
     @IBOutlet weak var imagemNoticia: UIImageView!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -25,4 +26,8 @@ class NoticiaTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    override func prepareForReuse() {
+        //myOutletName = myNilValue
+        super.prepareForReuse()
+    }
 }

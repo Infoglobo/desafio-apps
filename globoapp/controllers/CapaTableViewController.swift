@@ -13,27 +13,34 @@ import Foundation
 class CapaTableViewController: UITableViewController {
     var noticiaAPICall: NoticiasAPICall!
     private var news: [Noticia]!
-    @IBOutlet var capaTableView: CapaTableView!
+    var loadingData = false
+    //    @IBOutlet var capaTableView: CapaTableView!
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    private func configureTable(){
         noticiaAPICall = NoticiasAPICall()
         noticiaAPICall.fetchNoticias(){ news, error in
             self.news = news
         }
+        self.tableView.reloadData()
         
-//        self.capaTableView.tableFooterView = UIView()
-//        self.capaTableView.tableHeaderView = UIView()
-        self.capaTableView.reloadData()
-//        self.capaTableView.style = .UITableViewStyleGrouped
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        tableView.register(UINib(nibName: "NoticiaTableViewCell", bundle: nil), forCellReuseIdentifier: "NoticiaTableViewCell")
+        tableView.contentInset = UIEdgeInsets.zero
+        tableView.contentInset.top = 20
+        self.configureTable()
+//        self.tableView.edgesForExtendedLayout = UIRectEdge;
+        
         // Uncomment the following line to preserve selection between presentations
-//         self.clearsSelectionOnViewWillAppear = false
+        //         self.clearsSelectionOnViewWillAppear = false
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-//         self.navigationItem.rightBarButtonItem = self.editButtonItem
+        //         self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
     override func viewDidAppear(_ animated: Bool) {
-        self.capaTableView.reloadData()
+        //        self.capaTableView.reloadData()
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -41,7 +48,6 @@ class CapaTableViewController: UITableViewController {
     }
     
     // MARK: - Table view data source
-    
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
@@ -54,22 +60,46 @@ class CapaTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "NoticiaTableViewCell", for: indexPath) as! (NoticiaTableViewCell)
-        let new = self.news![indexPath.row] as Noticia!
-        let secao = new?.secao as Secao!
-        if indexPath.row == 0{
-            self.setUpCapa(new: new!, secao: secao!)
-        }else{
+        let simpleIdentifier = "NoticiaTableViewCell"
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: simpleIdentifier, for: indexPath) as! (NoticiaTableViewCell)
+        
+        if indexPath.row < self.news.count{
+            let new = self.news![indexPath.row] as Noticia!
+            let secao = new?.secao as Secao!
+        
             cell.secao.text = secao?.name
             cell.topico.text = new?.title
-            if new!.images.count > 0{
-                self.setUpCell(cell: cell, new: new!)
-            }
+            return cell
         }
-        
         return cell
     }
     
+    override func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if !self.loadingData && indexPath.row == self.news.count - 1{
+            self.loadingData = true
+        }
+        
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(80)
+    }
+    
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//        return "O Globo"
+//    }
+    
+    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return CGFloat(60)
+    }
+    
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let nib = UINib(nibName: "NoticiaTableViewHeader", bundle: nil)
+        let view = nib.instantiate(withOwner: nil, options: nil).first as! UIView
+        return view
+    }
+  
     /*
      // Override to support conditional editing of the table view.
      override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
@@ -79,20 +109,24 @@ class CapaTableViewController: UITableViewController {
      */
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
         let new = self.news[indexPath.row]
-       
+        
         let storyboard = UIStoryboard(name: "globonews", bundle:nil)
         let noticiaVC = storyboard.instantiateViewController(withIdentifier: "NoticiaViewController") as! NoticiaViewController
-//        noticiaVC.viewDidLoad()
-//        noticiaVC.setUpNoticiaView(titulo: new.title!, subtitulo: new.subTitle!, imagem: new.images[0].image! as Data, texto: new.texto!)
+        //        noticiaVC.viewDidLoad()
+        //        noticiaVC.setUpNoticiaView(titulo: new.title!, subtitulo: new.subTitle!, imagem: new.images[0].image! as Data, texto: new.texto!)
         self.present(noticiaVC, animated: true, completion: nil)
-       noticiaVC.setUpNoticiaView(titulo: new.title!, subtitulo: new.subTitle!, imagem: new.images[0].image! as Data, texto: new.texto!)
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        noticiaVC.navigationItem.backBarButtonItem = backItem
+        
+        noticiaVC.setUpNoticiaView(titulo: new.title!, subtitulo: new.subTitle!, imagem: new.img as! Data, texto: new.texto!)
     }
     
     func setUpCell(cell: NoticiaTableViewCell, new: Noticia){
-        cell.imagemNoticia.image = UIImage(data: new.images[0].image! as! Data)
-        let itemSize:CGSize = CGSize(width: 84, height: 50)
+        cell.imagemNoticia.image = UIImage(data: new.img as! Data)
+        let itemSize:CGSize = CGSize(width: 99, height: 85)
         UIGraphicsBeginImageContextWithOptions(itemSize, false, UIScreen.main.scale)
         let imageRect : CGRect = CGRect(origin: .zero, size: CGSize(width: itemSize.width, height: itemSize.height))
         cell.imagemNoticia!.image?.draw(in: imageRect)
@@ -101,13 +135,10 @@ class CapaTableViewController: UITableViewController {
     }
     
     func setUpCapa(new: Noticia, secao: Secao){
-        self.capaTableView.setup(secao: (secao.name)!, titulo: (new.title)!)
-        self.capaTableView.imagemCapa.image = UIImage(data: new.images[0].image! as Data)
+        //        self.tableView.setup(secao: (secao.name)!, titulo: (new.title)!)
+        //        self.capaTableView.imagemCapa.image = UIImage(data: new.images[0].image! as Data)
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 0.0
-    }
     /*
      // Override to support editing the table view.
      override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
@@ -169,6 +200,6 @@ class CapaTableViewController: UITableViewController {
         
         return newImage!
     }
-
+    
 }
 
