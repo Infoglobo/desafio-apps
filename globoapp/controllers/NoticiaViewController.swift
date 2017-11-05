@@ -20,9 +20,10 @@ class NoticiaViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
-    public func setUpNoticiaView(titulo: String, subtitulo: String, imagem: Data, texto : String, secao: Secao){
+    public func setUpNoticiaView(titulo: String, subtitulo: String, imagem: Data, texto : String, secao: Secao, autores: [String]){
         self.noticiaView.setUpNoticiaView(titulo: titulo, subtitulo: subtitulo, imagem: imagem, texto: texto)
         self.noticiaView.setupHeader(secao: secao)
+        self.noticiaView.setupAutor(authors: autores)
     }
 
 }

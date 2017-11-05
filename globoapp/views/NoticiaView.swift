@@ -15,6 +15,7 @@ class NoticiaView: UIView {
     @IBOutlet weak var subtitulo: UILabel!
     @IBOutlet weak var imagemNoticia: UIImageView!
     
+    @IBOutlet weak var autor: UILabel!
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var textoNoticia: UILabel!
     
@@ -42,5 +43,10 @@ class NoticiaView: UIView {
         view.secao.text = secao.name
         
         self.tabBar.addSubview(view)
+    }
+    
+    
+    func setupAutor(authors: [String]){
+        self.autor.text = authors[0]
     }
 }

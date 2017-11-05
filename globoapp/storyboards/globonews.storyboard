@@ -157,8 +157,8 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HWo-k6-leb" customClass="NoticiaView" customModule="globoapp" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="36" width="375" height="631"/>
                                 <subviews>
-                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KqN-iF-lAf">
-                                        <rect key="frame" x="0.0" y="14" width="375" height="617"/>
+                                    <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KqN-iF-lAf">
+                                        <rect key="frame" x="1" y="14" width="375" height="617"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aks-cl-t5r">
                                                 <rect key="frame" x="0.0" y="132.5" width="375" height="326.5"/>
@@ -179,9 +179,9 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kL1-9r-ndk">
-                                                <rect key="frame" x="183" y="96.5" width="42" height="15"/>
+                                                <rect key="frame" x="183" y="97" width="89" height="15"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="width" constant="42" id="R6F-o3-IKw"/>
+                                                    <constraint firstAttribute="width" constant="89" id="R6F-o3-IKw"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="12"/>
                                                 <color key="textColor" red="0.19399364594288748" green="0.24314808736894988" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -209,6 +209,7 @@
                                             <constraint firstItem="2r5-QP-sGB" firstAttribute="top" secondItem="KqN-iF-lAf" secondAttribute="top" constant="24" id="GOL-U6-Z0P"/>
                                             <constraint firstItem="YMl-tY-feI" firstAttribute="top" secondItem="aks-cl-t5r" secondAttribute="bottom" constant="49" id="Kq9-je-ljS"/>
                                             <constraint firstItem="YMl-tY-feI" firstAttribute="trailing" secondItem="KqN-iF-lAf" secondAttribute="trailingMargin" id="PKQ-R7-OhJ"/>
+                                            <constraint firstAttribute="trailing" secondItem="kL1-9r-ndk" secondAttribute="trailing" constant="103" id="Pwy-HV-Q2v"/>
                                             <constraint firstItem="2r5-QP-sGB" firstAttribute="leading" secondItem="Rq4-iw-k9A" secondAttribute="leading" id="VSx-SB-Qof"/>
                                             <constraint firstItem="2r5-QP-sGB" firstAttribute="trailing" secondItem="Rq4-iw-k9A" secondAttribute="trailing" id="Xl1-S8-MBC"/>
                                             <constraint firstItem="aks-cl-t5r" firstAttribute="leading" secondItem="KqN-iF-lAf" secondAttribute="leading" id="aQj-qm-Qag"/>
@@ -255,6 +256,7 @@
                             <constraint firstItem="HWo-k6-leb" firstAttribute="leading" secondItem="o6O-R2-Dwi" secondAttribute="leading" id="rKA-Ju-vq5"/>
                         </constraints>
                         <connections>
+                            <outlet property="autor" destination="kL1-9r-ndk" id="fIs-kU-m3e"/>
                             <outlet property="imagemNoticia" destination="aks-cl-t5r" id="xSS-nK-lv2"/>
                             <outlet property="scrollView" destination="KqN-iF-lAf" id="H9R-Qt-P9q"/>
                             <outlet property="subtitulo" destination="Rq4-iw-k9A" id="RQY-Kz-NJv"/>

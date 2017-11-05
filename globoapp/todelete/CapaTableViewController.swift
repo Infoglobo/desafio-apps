@@ -122,7 +122,7 @@ class CapaTableViewController: UITableViewController {
         navigationItem.backBarButtonItem = backItem
         noticiaVC.navigationItem.backBarButtonItem = backItem
         
-        noticiaVC.setUpNoticiaView(titulo: new.title!, subtitulo: new.subTitle!, imagem: new.img as! Data, texto: new.texto!, secao: new.secao!)
+        noticiaVC.setUpNoticiaView(titulo: new.title!, subtitulo: new.subTitle!, imagem: new.img as! Data, texto: new.texto!, secao: new.secao!, autores: new.autores)
     }
     
     func setUpCell(cell: NoticiaTableViewCell, new: Noticia){

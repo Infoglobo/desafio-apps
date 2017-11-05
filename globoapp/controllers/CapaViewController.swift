@@ -131,7 +131,7 @@ class CapaViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         //        noticiaVC.navigationItem.backBarButtonItem = backItem
         
-        noticiaVC.setUpNoticiaView(titulo: new.title!, subtitulo: new.subTitle!, imagem: new.images[0].image! as Data, texto: new.texto!, secao: new.secao!)
+        noticiaVC.setUpNoticiaView(titulo: new.title!, subtitulo: new.subTitle!, imagem: new.images[0].image! as Data, texto: new.texto!, secao: new.secao!, autores: new.autores)
     }
 
     
