@@ -32,7 +32,9 @@ class NoticiaView: UIView {
         self.textoNoticia.text = texto
         
         let nib = UINib(nibName: "NoticiaViewHeader", bundle: nil)
-        let view = nib.instantiate(withOwner: nil, options: nil).first as! UIView
+        let view = nib.instantiate(withOwner: nil, options: nil).first as! NoticiaViewHeader
+        
+//        view.secao.text = secao
         self.tabBar.addSubview(view)
        
     }
