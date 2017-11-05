@@ -9,11 +9,8 @@
 /* Begin PBXBuildFile section */
 		651D303D1FAC8FB500C91BE1 /* CapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D303C1FAC8FB500C91BE1 /* CapaViewController.swift */; };
 		653FDE071FA66652008DB30D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653FDE061FA66652008DB30D /* AppDelegate.swift */; };
-		653FDE091FA66652008DB30D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653FDE081FA66652008DB30D /* ViewController.swift */; };
-		653FDE0C1FA66652008DB30D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653FDE0A1FA66652008DB30D /* Main.storyboard */; };
 		653FDE0F1FA66652008DB30D /* globoapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 653FDE0D1FA66652008DB30D /* globoapp.xcdatamodeld */; };
 		653FDE111FA66652008DB30D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 653FDE101FA66652008DB30D /* Assets.xcassets */; };
-		653FDE141FA66652008DB30D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653FDE121FA66652008DB30D /* LaunchScreen.storyboard */; };
 		653FDE211FA66C0E008DB30D /* globonews.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 653FDE201FA66C0E008DB30D /* globonews.storyboard */; };
 		653FDE281FA672CE008DB30D /* CapaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653FDE271FA672CE008DB30D /* CapaTableViewController.swift */; };
 		653FDE2A1FA672F8008DB30D /* CapaTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653FDE291FA672F8008DB30D /* CapaTableView.swift */; };
@@ -46,11 +43,8 @@
 		651D303C1FAC8FB500C91BE1 /* CapaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapaViewController.swift; sourceTree = "<group>"; };
 		653FDE031FA66652008DB30D /* globoapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = globoapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		653FDE061FA66652008DB30D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		653FDE081FA66652008DB30D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		653FDE0B1FA66652008DB30D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		653FDE0E1FA66652008DB30D /* globoapp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = globoapp.xcdatamodel; sourceTree = "<group>"; };
 		653FDE101FA66652008DB30D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		653FDE131FA66652008DB30D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		653FDE151FA66652008DB30D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		653FDE201FA66C0E008DB30D /* globonews.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = globonews.storyboard; sourceTree = "<group>"; };
 		653FDE271FA672CE008DB30D /* CapaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CapaTableViewController.swift; path = globoapp/todelete/CapaTableViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -132,10 +126,7 @@
 				653FDE1C1FA66685008DB30D /* views */,
 				653FDE1B1FA66677008DB30D /* controllers */,
 				653FDE061FA66652008DB30D /* AppDelegate.swift */,
-				653FDE081FA66652008DB30D /* ViewController.swift */,
-				653FDE0A1FA66652008DB30D /* Main.storyboard */,
 				653FDE101FA66652008DB30D /* Assets.xcassets */,
-				653FDE121FA66652008DB30D /* LaunchScreen.storyboard */,
 				653FDE151FA66652008DB30D /* Info.plist */,
 				653FDE0D1FA66652008DB30D /* globoapp.xcdatamodeld */,
 			);
@@ -324,12 +315,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				653FDE141FA66652008DB30D /* LaunchScreen.storyboard in Resources */,
 				6551671B1FAE434600EDB5F7 /* NoticiaViewHeader.xib in Resources */,
 				65F33A2D1FAC6D990036512B /* NoticiaTableViewHeader.xib in Resources */,
 				653FDE111FA66652008DB30D /* Assets.xcassets in Resources */,
 				65417C9E1FA69613005EB72A /* capa.json in Resources */,
-				653FDE0C1FA66652008DB30D /* Main.storyboard in Resources */,
 				653FDE211FA66C0E008DB30D /* globonews.storyboard in Resources */,
 				65F33A2B1FABB3240036512B /* NoticiaTableViewCell.xib in Resources */,
 			);
@@ -411,7 +400,6 @@
 				6546BA891FAF385A00F3A37D /* NoticiaViewHeader.swift in Sources */,
 				65417CA41FA6AA9C005EB72A /* Secao.swift in Sources */,
 				655167131FADC31900EDB5F7 /* NoticiaViewModelImageItem.swift in Sources */,
-				653FDE091FA66652008DB30D /* ViewController.swift in Sources */,
 				653FDE281FA672CE008DB30D /* CapaTableViewController.swift in Sources */,
 				653FDE2A1FA672F8008DB30D /* CapaTableView.swift in Sources */,
 				65417CA81FA6C9CD005EB72A /* NoticiaViewController.swift in Sources */,
@@ -433,25 +421,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		653FDE0A1FA66652008DB30D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				653FDE0B1FA66652008DB30D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		653FDE121FA66652008DB30D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				653FDE131FA66652008DB30D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		653FDE161FA66652008DB30D /* Debug */ = {

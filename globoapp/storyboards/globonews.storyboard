@@ -4,11 +4,12 @@
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <development version="8000" identifier="xcode"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
-        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -16,6 +17,10 @@
         <scene sceneID="REI-3T-ZrC">
             <objects>
                 <viewController storyboardIdentifier="CapaViewController" id="0Nc-jd-GnB" customClass="CapaViewController" customModule="globoapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="b2d-FQ-EBD"/>
+                        <viewControllerLayoutGuide type="bottom" id="PqV-no-zMR"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="SY8-VY-0r1">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -87,23 +92,22 @@
                             <constraint firstItem="djM-hF-eHT" firstAttribute="leading" secondItem="8KT-g3-JN5" secondAttribute="trailing" constant="-375" id="9aW-7N-Uhj"/>
                             <constraint firstItem="8KT-g3-JN5" firstAttribute="leading" secondItem="SY8-VY-0r1" secondAttribute="leading" id="HK2-CC-e1b"/>
                             <constraint firstItem="8KT-g3-JN5" firstAttribute="centerX" secondItem="djM-hF-eHT" secondAttribute="centerX" id="HXf-Io-ijn"/>
-                            <constraint firstItem="8KT-g3-JN5" firstAttribute="trailing" secondItem="jWj-Hf-3Sc" secondAttribute="trailing" id="PK1-Bp-Hyh"/>
+                            <constraint firstItem="8KT-g3-JN5" firstAttribute="trailing" secondItem="SY8-VY-0r1" secondAttribute="trailing" id="PK1-Bp-Hyh"/>
                             <constraint firstItem="djM-hF-eHT" firstAttribute="top" secondItem="Dqa-Wn-guO" secondAttribute="bottom" constant="2" id="PaD-eq-hWO"/>
-                            <constraint firstItem="8KT-g3-JN5" firstAttribute="leading" secondItem="jWj-Hf-3Sc" secondAttribute="leading" id="Pv6-Fg-CNk"/>
+                            <constraint firstItem="8KT-g3-JN5" firstAttribute="leading" secondItem="SY8-VY-0r1" secondAttribute="leading" id="Pv6-Fg-CNk"/>
                             <constraint firstItem="8KT-g3-JN5" firstAttribute="top" secondItem="SY8-VY-0r1" secondAttribute="topMargin" constant="-63" id="TTC-Jg-GMO"/>
-                            <constraint firstItem="jWj-Hf-3Sc" firstAttribute="bottom" secondItem="8KT-g3-JN5" secondAttribute="bottom" constant="447" id="Ufm-e6-zDj"/>
+                            <constraint firstItem="PqV-no-zMR" firstAttribute="top" secondItem="8KT-g3-JN5" secondAttribute="bottom" constant="447" id="Ufm-e6-zDj"/>
                             <constraint firstItem="djM-hF-eHT" firstAttribute="width" secondItem="SY8-VY-0r1" secondAttribute="width" id="XA1-1j-WNd"/>
                             <constraint firstAttribute="trailing" secondItem="8KT-g3-JN5" secondAttribute="trailing" id="cGS-vJ-vy0"/>
                             <constraint firstItem="8KT-g3-JN5" firstAttribute="top" secondItem="SY8-VY-0r1" secondAttribute="top" constant="1" id="fff-yU-5ND"/>
                             <constraint firstItem="8KT-g3-JN5" firstAttribute="leading" secondItem="djM-hF-eHT" secondAttribute="leading" id="ike-WX-oUg"/>
-                            <constraint firstItem="jWj-Hf-3Sc" firstAttribute="trailing" secondItem="djM-hF-eHT" secondAttribute="trailing" id="jFd-hl-WiO"/>
+                            <constraint firstAttribute="trailing" secondItem="djM-hF-eHT" secondAttribute="trailing" id="jFd-hl-WiO"/>
                             <constraint firstItem="8KT-g3-JN5" firstAttribute="leading" secondItem="SY8-VY-0r1" secondAttribute="leading" id="nTA-Qz-X2Q"/>
                             <constraint firstItem="8KT-g3-JN5" firstAttribute="leading" secondItem="SY8-VY-0r1" secondAttribute="leading" id="ncd-lY-LIm"/>
                             <constraint firstAttribute="bottom" secondItem="8KT-g3-JN5" secondAttribute="bottom" constant="447" id="pWN-Iw-0NN"/>
                             <constraint firstItem="8KT-g3-JN5" firstAttribute="centerX" secondItem="SY8-VY-0r1" secondAttribute="centerX" id="tEx-hk-6bh"/>
-                            <constraint firstItem="djM-hF-eHT" firstAttribute="leading" secondItem="jWj-Hf-3Sc" secondAttribute="leading" id="ylf-fh-Ngs"/>
+                            <constraint firstItem="djM-hF-eHT" firstAttribute="leading" secondItem="SY8-VY-0r1" secondAttribute="leading" id="ylf-fh-Ngs"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="jWj-Hf-3Sc"/>
                     </view>
                     <navigationItem key="navigationItem" id="Q8V-fX-UIC"/>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics"/>
@@ -122,6 +126,10 @@
         <scene sceneID="H5j-4E-iEb">
             <objects>
                 <viewController storyboardIdentifier="NoticiaViewController" title="Noticia Detalhe" id="jen-WG-S0E" customClass="NoticiaViewController" customModule="globoapp" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ehr-X8-j77"/>
+                        <viewControllerLayoutGuide type="bottom" id="m5x-Dy-1MH"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="o6O-R2-Dwi" customClass="NoticiaView" customModule="globoapp" customModuleProvider="target">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -223,10 +231,9 @@
                         <constraints>
                             <constraint firstItem="HWo-k6-leb" firstAttribute="top" secondItem="o6O-R2-Dwi" secondAttribute="top" constant="36" id="ada-Fh-xsR"/>
                             <constraint firstAttribute="trailing" secondItem="HWo-k6-leb" secondAttribute="trailing" id="awG-VC-TAp"/>
-                            <constraint firstItem="HWo-k6-leb" firstAttribute="bottom" secondItem="7CE-Ab-kbO" secondAttribute="bottom" id="klK-U0-VRV"/>
+                            <constraint firstItem="HWo-k6-leb" firstAttribute="bottom" secondItem="m5x-Dy-1MH" secondAttribute="top" id="klK-U0-VRV"/>
                             <constraint firstItem="HWo-k6-leb" firstAttribute="leading" secondItem="o6O-R2-Dwi" secondAttribute="leading" id="rKA-Ju-vq5"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="7CE-Ab-kbO"/>
                         <connections>
                             <outlet property="imagemNoticia" destination="aks-cl-t5r" id="xSS-nK-lv2"/>
                             <outlet property="scrollView" destination="KqN-iF-lAf" id="H9R-Qt-P9q"/>
