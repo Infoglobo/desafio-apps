@@ -18,6 +18,10 @@ class CapaViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var imagemCapa: UIImageView!
     
+    @IBOutlet weak var tituloCapa: UILabel!
+    
+    @IBOutlet weak var secaoCapa: UILabel!
+    
     @IBOutlet weak var tabBar: UITabBar!
     var finishedLoading = false
     private var news: [Noticia]!
@@ -36,10 +40,12 @@ class CapaViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.configureTable()
         
         //        self.noticiaTblDataSource = NoticiaTableViewDataSource()
-        
-        let imgCapa =  UIImage(data: news[0].images[0].image as! Data)
+        let newCapa = news[0]
+        let imgCapa =  UIImage(data: newCapa.images[0].image as! Data)
         let cgSize = CGSize(width: 95, height: 90)
         self.imagemCapa.image = imgCapa
+        self.tituloCapa.text = newCapa.title
+        self.secaoCapa.text = newCapa.secao?.name
         
         self.news.remove(at: 0)
         self.tableView.delegate = self
