@@ -15,8 +15,8 @@
             <rect key="frame" x="0.0" y="0.0" width="419" height="76"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="400" verticalHuggingPriority="1000" verticalCompressionResistancePriority="200" preservesSuperviewLayoutMargins="YES" text="O GLOBO" textAlignment="center" lineBreakMode="middleTruncation" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="500" translatesAutoresizingMaskIntoConstraints="NO" id="jfA-gu-3N6">
-                    <rect key="frame" x="77" y="7" width="265" height="62"/>
+                <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="400" verticalHuggingPriority="1000" verticalCompressionResistancePriority="200" preservesSuperviewLayoutMargins="YES" text="O GLOBO" textAlignment="center" lineBreakMode="middleTruncation" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="500" translatesAutoresizingMaskIntoConstraints="NO" id="jfA-gu-3N6">
+                    <rect key="frame" x="152" y="7" width="114" height="62"/>
                     <accessibility key="accessibilityConfiguration">
                         <accessibilityTraits key="traits" none="YES"/>
                     </accessibility>
@@ -28,7 +28,6 @@
             </subviews>
             <color key="backgroundColor" red="0.31889887320839994" green="0.54621521840948684" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="jfA-gu-3N6" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="77" id="CsG-uk-xBW"/>
                 <constraint firstItem="jfA-gu-3N6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="EhV-n6-MPL"/>
                 <constraint firstItem="jfA-gu-3N6" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="7" id="F79-Ba-uHK"/>
                 <constraint firstItem="jfA-gu-3N6" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="QhH-ev-InB"/>

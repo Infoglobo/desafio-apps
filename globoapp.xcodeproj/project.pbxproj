@@ -52,7 +52,7 @@
 		653FDE131FA66652008DB30D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		653FDE151FA66652008DB30D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		653FDE201FA66C0E008DB30D /* globonews.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = globonews.storyboard; sourceTree = "<group>"; };
-		653FDE271FA672CE008DB30D /* CapaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CapaTableViewController.swift; path = globoapp/controllers/CapaTableViewController.swift; sourceTree = SOURCE_ROOT; };
+		653FDE271FA672CE008DB30D /* CapaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CapaTableViewController.swift; path = globoapp/todelete/CapaTableViewController.swift; sourceTree = SOURCE_ROOT; };
 		653FDE291FA672F8008DB30D /* CapaTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CapaTableView.swift; sourceTree = "<group>"; };
 		653FDE2B1FA674DF008DB30D /* NoticiaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaTableViewCell.swift; sourceTree = "<group>"; };
 		653FDE2E1FA6832D008DB30D /* NoticiasAPICall.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiasAPICall.swift; sourceTree = "<group>"; };
@@ -120,8 +120,6 @@
 			isa = PBXGroup;
 			children = (
 				655167181FADFA1E00EDB5F7 /* todelete */,
-				655167191FADFA3400EDB5F7 /* todelete */,
-				6551670A1FADBF4800EDB5F7 /* viewmodels */,
 				655167071FAD1F4500EDB5F7 /* datasources */,
 				65417C9A1FA69255005EB72A /* models */,
 				653FDE2D1FA682E4008DB30D /* business */,
@@ -145,7 +143,6 @@
 		653FDE1B1FA66677008DB30D /* controllers */ = {
 			isa = PBXGroup;
 			children = (
-				653FDE271FA672CE008DB30D /* CapaTableViewController.swift */,
 				651D303C1FAC8FB500C91BE1 /* CapaViewController.swift */,
 				65417CA71FA6C9CD005EB72A /* NoticiaViewController.swift */,
 			);
@@ -155,7 +152,6 @@
 		653FDE1C1FA66685008DB30D /* views */ = {
 			isa = PBXGroup;
 			children = (
-				653FDE291FA672F8008DB30D /* CapaTableView.swift */,
 				65417CA91FA6CBA1005EB72A /* NoticiaView.swift */,
 			);
 			path = views;
@@ -247,13 +243,9 @@
 		655167181FADFA1E00EDB5F7 /* todelete */ = {
 			isa = PBXGroup;
 			children = (
-			);
-			path = todelete;
-			sourceTree = "<group>";
-		};
-		655167191FADFA3400EDB5F7 /* todelete */ = {
-			isa = PBXGroup;
-			children = (
+				6551670A1FADBF4800EDB5F7 /* viewmodels */,
+				653FDE291FA672F8008DB30D /* CapaTableView.swift */,
+				653FDE271FA672CE008DB30D /* CapaTableViewController.swift */,
 			);
 			path = todelete;
 			sourceTree = "<group>";
