@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <development version="8000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -25,7 +25,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" contentViewInsetsToSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="djM-hF-eHT">
+                            <tableView contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="djM-hF-eHT">
                                 <rect key="frame" x="0.0" y="214" width="375" height="453"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -138,7 +138,7 @@
                                 <rect key="frame" x="0.0" y="36" width="375" height="631"/>
                                 <subviews>
                                     <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KqN-iF-lAf">
-                                        <rect key="frame" x="0.0" y="14" width="375" height="653"/>
+                                        <rect key="frame" x="0.0" y="14" width="375" height="617"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aks-cl-t5r">
                                                 <rect key="frame" x="0.0" y="132.5" width="375" height="326.5"/>
@@ -193,13 +193,13 @@
                                             <constraint firstItem="2r5-QP-sGB" firstAttribute="trailing" secondItem="Rq4-iw-k9A" secondAttribute="trailing" id="Xl1-S8-MBC"/>
                                             <constraint firstItem="aks-cl-t5r" firstAttribute="leading" secondItem="KqN-iF-lAf" secondAttribute="leading" id="aQj-qm-Qag"/>
                                             <constraint firstAttribute="trailing" secondItem="2r5-QP-sGB" secondAttribute="trailing" constant="25" id="c5C-FP-SDn"/>
-                                            <constraint firstAttribute="bottom" secondItem="YMl-tY-feI" secondAttribute="bottom" id="cQA-wL-YSm"/>
+                                            <constraint firstAttribute="bottom" secondItem="YMl-tY-feI" secondAttribute="bottom" constant="88" id="cQA-wL-YSm"/>
                                             <constraint firstItem="Rq4-iw-k9A" firstAttribute="height" secondItem="2r5-QP-sGB" secondAttribute="height" multiplier="0.5" id="f09-Ef-m0B"/>
                                             <constraint firstItem="5Ry-Z1-JBo" firstAttribute="leading" secondItem="KqN-iF-lAf" secondAttribute="leading" constant="151" id="f22-3u-FdW"/>
                                             <constraint firstItem="2r5-QP-sGB" firstAttribute="leading" secondItem="KqN-iF-lAf" secondAttribute="leading" constant="25" id="mE4-Wf-2Ee"/>
                                             <constraint firstItem="kL1-9r-ndk" firstAttribute="leading" secondItem="KqN-iF-lAf" secondAttribute="leading" constant="183" id="nNW-aq-fAb"/>
                                             <constraint firstAttribute="trailing" secondItem="Rq4-iw-k9A" secondAttribute="trailing" constant="25" id="nyp-fS-Ojd"/>
-                                            <constraint firstItem="aks-cl-t5r" firstAttribute="height" secondItem="KqN-iF-lAf" secondAttribute="height" multiplier="0.5" id="o2E-95-ggI"/>
+                                            <constraint firstItem="aks-cl-t5r" firstAttribute="height" secondItem="KqN-iF-lAf" secondAttribute="height" multiplier="0.5" constant="18" id="o2E-95-ggI"/>
                                             <constraint firstItem="5Ry-Z1-JBo" firstAttribute="baseline" secondItem="kL1-9r-ndk" secondAttribute="baseline" id="pkd-5D-ndb"/>
                                             <constraint firstItem="Rq4-iw-k9A" firstAttribute="centerX" secondItem="aks-cl-t5r" secondAttribute="centerX" id="t7D-5S-8Rl"/>
                                             <constraint firstItem="aks-cl-t5r" firstAttribute="top" secondItem="5Ry-Z1-JBo" secondAttribute="bottom" constant="21" id="tQC-12-AEe"/>
@@ -207,18 +207,18 @@
                                         </constraints>
                                     </scrollView>
                                     <tabBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7bj-qp-twS">
-                                        <rect key="frame" x="0.0" y="-5" width="375" height="49"/>
+                                        <rect key="frame" x="0.0" y="-35" width="375" height="49"/>
                                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <items/>
                                     </tabBar>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="7bj-qp-twS" firstAttribute="top" secondItem="HWo-k6-leb" secondAttribute="top" constant="-5" id="4VE-sR-LAX"/>
+                                    <constraint firstItem="7bj-qp-twS" firstAttribute="top" secondItem="HWo-k6-leb" secondAttribute="top" constant="-35" id="4VE-sR-LAX"/>
                                     <constraint firstAttribute="trailing" secondItem="KqN-iF-lAf" secondAttribute="trailing" id="F7J-82-6yl"/>
                                     <constraint firstItem="7bj-qp-twS" firstAttribute="leading" secondItem="HWo-k6-leb" secondAttribute="leading" id="LJB-EU-XH0"/>
-                                    <constraint firstItem="KqN-iF-lAf" firstAttribute="top" secondItem="7bj-qp-twS" secondAttribute="bottom" multiplier="0.5" priority="500" constant="2" id="PnY-CI-a1q"/>
-                                    <constraint firstAttribute="bottom" secondItem="KqN-iF-lAf" secondAttribute="bottom" constant="-36" id="Q7B-gF-pEr"/>
+                                    <constraint firstItem="KqN-iF-lAf" firstAttribute="top" secondItem="7bj-qp-twS" secondAttribute="bottom" multiplier="0.5" priority="500" constant="7" id="PnY-CI-a1q"/>
+                                    <constraint firstAttribute="bottom" secondItem="KqN-iF-lAf" secondAttribute="bottom" id="Q7B-gF-pEr"/>
                                     <constraint firstAttribute="trailing" secondItem="7bj-qp-twS" secondAttribute="trailing" id="TX9-4M-Rvp"/>
                                     <constraint firstItem="KqN-iF-lAf" firstAttribute="leading" secondItem="HWo-k6-leb" secondAttribute="leading" id="bQm-3c-AIQ"/>
                                     <constraint firstItem="KqN-iF-lAf" firstAttribute="top" secondItem="HWo-k6-leb" secondAttribute="top" constant="14" id="dk2-57-g3p"/>
@@ -249,16 +249,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQw-ra-Lk9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="855" y="1017"/>
+            <point key="canvasLocation" x="853.60000000000002" y="1016.9415292353824"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Hq6-98-vHi">
             <objects>
                 <navigationController navigationBarHidden="YES" id="LcO-eR-TQc" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8BE-3G-pCq">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="8BE-3G-pCq">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
-                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="onW-GV-baX">
+                    <toolbar key="toolbar" opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="onW-GV-baX">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </toolbar>
                     <connections>

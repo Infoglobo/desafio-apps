@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <development version="8000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -16,11 +17,10 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label autoresizesSubviews="NO" opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="400" verticalHuggingPriority="1000" verticalCompressionResistancePriority="200" preservesSuperviewLayoutMargins="YES" text="Secao" textAlignment="center" lineBreakMode="middleTruncation" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="500" translatesAutoresizingMaskIntoConstraints="NO" id="jfA-gu-3N6">
-                    <rect key="frame" x="174" y="7" width="71" height="62"/>
+                    <rect key="frame" x="174" y="23.5" width="71" height="29.5"/>
                     <accessibility key="accessibilityConfiguration">
                         <accessibilityTraits key="traits" none="YES"/>
                     </accessibility>
-                    <viewLayoutGuide key="safeArea" id="nic-wq-ohe"/>
                     <fontDescription key="fontDescription" name=".SFNSDisplay" family=".SF NS Display" pointSize="25"/>
                     <color key="textColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <nil key="highlightedColor"/>
@@ -29,11 +29,9 @@
             <color key="backgroundColor" red="0.31889887320839994" green="0.54621521840948684" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="jfA-gu-3N6" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="EhV-n6-MPL"/>
-                <constraint firstItem="jfA-gu-3N6" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="7" id="F79-Ba-uHK"/>
                 <constraint firstItem="jfA-gu-3N6" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="QhH-ev-InB"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="secao" destination="jfA-gu-3N6" id="OFB-oc-V5h"/>
             </connections>

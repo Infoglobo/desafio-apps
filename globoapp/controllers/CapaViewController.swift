@@ -12,7 +12,7 @@ import Foundation
 
 class CapaViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var noticiaAPICall: NoticiasAPICall!
-
+    
     @IBOutlet weak var capaView: UIView!
     
     @IBOutlet weak var tableView: UITableView!
@@ -21,7 +21,7 @@ class CapaViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tabBar: UITabBar!
     var finishedLoading = false
     private var news: [Noticia]!
-
+    
     private func configureTable(){
         noticiaAPICall = NoticiasAPICall()
         noticiaAPICall.fetchNoticias(){ news, error in
@@ -37,9 +37,9 @@ class CapaViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         //        self.noticiaTblDataSource = NoticiaTableViewDataSource()
         
-//        let imgCapa =  UIImage(data: news[0].images[0]?.image as! Data)
+        let imgCapa =  UIImage(data: news[0].images[0].image as! Data)
         let cgSize = CGSize(width: 95, height: 90)
-//        self.imagemCapa.image = imgCapa
+        self.imagemCapa.image = imgCapa
         
         self.news.remove(at: 0)
         self.tableView.delegate = self
@@ -83,15 +83,15 @@ class CapaViewController: UIViewController, UITableViewDataSource, UITableViewDe
             if new != nil{
                 cell.secao.text = secao?.name
                 cell.topico.text = new?.title
-
+                
                 if new?.img != nil{
-                if let url = new?.img?.url{
-                    let urlStr : NSString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) as! NSString
-                    
-                    let searchURL : NSURL = NSURL(string: urlStr as String)!
-                    cell.imagemNoticia.af_setImage(withURL: searchURL as URL)
-                }
-                return cell
+                    if let url = new?.img?.url{
+                        let urlStr : NSString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) as! NSString
+                        
+                        let searchURL : NSURL = NSURL(string: urlStr as String)!
+                        cell.imagemNoticia.af_setImage(withURL: searchURL as URL)
+                    }
+                    return cell
                 }
             }
         }
@@ -109,29 +109,34 @@ class CapaViewController: UIViewController, UITableViewDataSource, UITableViewDe
         }
         
     }
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let new = self.news[indexPath.row]
+        
+        let storyboard = UIStoryboard(name: "globonews", bundle:nil)
+        let noticiaVC = storyboard.instantiateViewController(withIdentifier: "NoticiaViewController") as! NoticiaViewController
+        
+        self.present(noticiaVC, animated: true, completion: nil)
+        
+        //        noticiaVC.navigationItem.backBarButtonItem = backItem
+        
+        noticiaVC.setUpNoticiaView(titulo: new.title!, subtitulo: new.subTitle!, imagem: new.images[0].image! as Data, texto: new.texto!, secao: new.secao!)
+    }
+
     
-        func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-    
-            let new = self.news[indexPath.row]
-    
-            let storyboard = UIStoryboard(name: "globonews", bundle:nil)
-            let noticiaVC = storyboard.instantiateViewController(withIdentifier: "NoticiaViewController") as! NoticiaViewController
-            //        noticiaVC.viewDidLoad()
-            //        noticiaVC.setUpNoticiaView(titulo: new.title!, subtitulo: new.subTitle!, imagem: new.images[0].image! as Data, texto: new.texto!)
-            self.present(noticiaVC, animated: true, completion: nil)
-            let backItem = UIBarButtonItem()
-            backItem.title = "Back"
-            noticiaVC.navigationItem.backBarButtonItem = backItem
-    
-            noticiaVC.setUpNoticiaView(titulo: new.title!, subtitulo: new.subTitle!, imagem: new.images[0].image! as Data, texto: new.texto!)
-        }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        
+//        let new = self.news[indexPath.row]
+//        
+//        let storyboard = UIStoryboard(name: "globonews", bundle:nil)
+//        let noticiaVC = storyboard.instantiateViewController(withIdentifier: "NoticiaViewController") as! NoticiaViewController
+//
+//        self.present(noticiaVC, animated: true, completion: nil)
+//      
+////        noticiaVC.navigationItem.backBarButtonItem = backItem
+//        
+//        noticiaVC.setUpNoticiaView(titulo: new.title!, subtitulo: new.subTitle!, imagem: new.images[0].image! as Data, texto: new.texto!)
+//    }
     
     func setUpCapa(new: Noticia, secao: Secao){
         //        self.tableView.setup(secao: (secao.name)!, titulo: (new.title)!)

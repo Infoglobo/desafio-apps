@@ -17,6 +17,7 @@ class NoticiaView: UIView {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var textoNoticia: UILabel!
+    
     /*
      // Only override draw() if you perform custom drawing.
     // An empty implementation adversely affects performance during animation.
@@ -25,18 +26,21 @@ class NoticiaView: UIView {
     }
     */
     
-    func setUpNoticiaView(titulo: String, subtitulo: String, imagem: Data, texto : String){
+    func setUpNoticiaView(titulo: String, subtitulo: String, imagem: Data, texto : String ){
         self.titulo.text = titulo
         self.subtitulo.text = subtitulo
         self.imagemNoticia.image = UIImage(data: imagem as! Data)
         self.textoNoticia.text = texto
+      
+    }
+
+    func setupHeader(secao: Secao){
         
         let nib = UINib(nibName: "NoticiaViewHeader", bundle: nil)
         let view = nib.instantiate(withOwner: nil, options: nil).first as! NoticiaViewHeader
         
-//        view.secao.text = secao
+        view.secao.text = secao.name
+        
         self.tabBar.addSubview(view)
-       
     }
-
 }
