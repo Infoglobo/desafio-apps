@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NoticiaViewHeader: UIView {
+@objc class NoticiaViewHeader: UIView {
 
     @IBOutlet weak var secao: UILabel!
     /*

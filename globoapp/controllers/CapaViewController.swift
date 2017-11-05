@@ -116,7 +116,12 @@ class CapaViewController: UIViewController, UITableViewDataSource, UITableViewDe
         let storyboard = UIStoryboard(name: "globonews", bundle:nil)
         let noticiaVC = storyboard.instantiateViewController(withIdentifier: "NoticiaViewController") as! NoticiaViewController
         
-        self.present(noticiaVC, animated: true, completion: nil)
+        let backItem = UIBarButtonItem()
+        backItem.title = "Voltar"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+//        self.navigationItem.leftItemsSupplementBackButton = true;
+//        self.navigationItem.leftBarButtonItem = backItem
+        self.present(noticiaVC, animated: false, completion: nil)
         
         //        noticiaVC.navigationItem.backBarButtonItem = backItem
         

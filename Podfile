@@ -9,5 +9,11 @@ target 'globoapp' do
 
 pod 'ObjectMapper', '~> 2.2'
 pod 'AlamofireImage', '~> 3.3'
-pod 'PINRemoteImage'
+end
+
+target 'globoappTests’ do
+pod 'Specta'
+pod 'Expecta'
+pod 'OCMock'
+
 end

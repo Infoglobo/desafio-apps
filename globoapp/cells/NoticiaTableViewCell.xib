@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12121" systemVersion="16G29" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
+        <deployment identifier="iOS"/>
         <development version="8000" identifier="xcode"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -14,21 +15,21 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CapaTableViewController" customModule="globoapp" customModuleProvider="target"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="NoticiaTableViewCell" customModule="globoapp" customModuleProvider="target">
+        <view clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" id="iN0-l3-epB" customClass="NoticiaTableViewCell" customModule="globoapp" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="390" height="116"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
             <subviews>
-                <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="40" verticalHuggingPriority="40" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" fixedFrame="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="NoticiaTableViewCell" rowHeight="116" translatesAutoresizingMaskIntoConstraints="NO" id="6WU-N4-ZDV" customClass="NoticiaTableViewCell" customModule="globoapp" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="0.0" width="383" height="116"/>
+                <tableViewCell clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" horizontalHuggingPriority="40" verticalHuggingPriority="40" horizontalCompressionResistancePriority="1000" verticalCompressionResistancePriority="1000" fixedFrame="YES" selectionStyle="blue" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="NoticiaTableViewCell" rowHeight="116" translatesAutoresizingMaskIntoConstraints="NO" id="6WU-N4-ZDV" customClass="NoticiaTableViewCell" customModule="globoapp" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="390" height="116"/>
                     <autoresizingMask key="autoresizingMask"/>
-                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6WU-N4-ZDV" id="3E2-ae-iQX">
-                        <rect key="frame" x="0.0" y="0.0" width="383" height="115.5"/>
+                    <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="6WU-N4-ZDV" id="3E2-ae-iQX">
+                        <rect key="frame" x="0.0" y="0.0" width="357" height="115.5"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ho5-UU-lEq">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ho5-UU-lEq">
                                 <rect key="frame" x="10" y="15" width="99" height="90"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="116" id="aNy-zi-Kp7"/>
+                                    <constraint firstAttribute="width" priority="850" constant="100" id="aNy-zi-Kp7"/>
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" alpha="0.65000000000000002" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Secao" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8Tr-5f-tyf">
@@ -37,7 +38,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Titulo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS6-pi-raf">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Titulo" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DS6-pi-raf">
                                 <rect key="frame" x="117" y="15" width="273" height="90"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="58" id="GaR-e7-BMG"/>
@@ -48,33 +49,32 @@
                             </label>
                         </subviews>
                         <constraints>
-                            <constraint firstItem="8Tr-5f-tyf" firstAttribute="leading" secondItem="Ho5-UU-lEq" secondAttribute="trailing" constant="1" id="1wZ-AZ-iKL"/>
-                            <constraint firstItem="Ho5-UU-lEq" firstAttribute="height" secondItem="DS6-pi-raf" secondAttribute="height" id="58W-Ua-o9V"/>
+                            <constraint firstItem="8Tr-5f-tyf" firstAttribute="leading" secondItem="Ho5-UU-lEq" secondAttribute="trailing" constant="8" id="1wZ-AZ-iKL"/>
+                            <constraint firstItem="Ho5-UU-lEq" firstAttribute="height" secondItem="DS6-pi-raf" secondAttribute="height" multiplier="0.5" priority="400" id="58W-Ua-o9V"/>
                             <constraint firstAttribute="trailing" secondItem="Ho5-UU-lEq" secondAttribute="trailing" constant="267" id="7oe-tI-N1l"/>
                             <constraint firstItem="Ho5-UU-lEq" firstAttribute="top" secondItem="DS6-pi-raf" secondAttribute="bottom" constant="-90" id="9X0-n5-Gga"/>
-                            <constraint firstItem="8Tr-5f-tyf" firstAttribute="top" secondItem="Ho5-UU-lEq" secondAttribute="top" id="AAJ-Dy-pe2"/>
+                            <constraint firstItem="8Tr-5f-tyf" firstAttribute="top" secondItem="Ho5-UU-lEq" secondAttribute="top" constant="-15" id="AAJ-Dy-pe2"/>
                             <constraint firstItem="DS6-pi-raf" firstAttribute="top" secondItem="3E2-ae-iQX" secondAttribute="top" priority="250" constant="57" id="Cvp-TB-WNR"/>
                             <constraint firstAttribute="trailingMargin" secondItem="DS6-pi-raf" secondAttribute="trailing" constant="-17" id="G1T-tp-4Gi"/>
-                            <constraint firstAttribute="trailing" secondItem="8Tr-5f-tyf" secondAttribute="trailing" constant="146" id="GBG-ZS-pqt"/>
-                            <constraint firstItem="8Tr-5f-tyf" firstAttribute="height" secondItem="3E2-ae-iQX" secondAttribute="height" multiplier="0.5" priority="300" id="GYe-rO-Wwr"/>
-                            <constraint firstItem="DS6-pi-raf" firstAttribute="leading" secondItem="Ho5-UU-lEq" secondAttribute="trailing" constant="1" id="Kgq-39-hzf"/>
-                            <constraint firstItem="DS6-pi-raf" firstAttribute="firstBaseline" secondItem="8Tr-5f-tyf" secondAttribute="baseline" constant="16" id="LMb-dn-GNx"/>
+                            <constraint firstAttribute="trailing" secondItem="8Tr-5f-tyf" secondAttribute="trailing" constant="-33" id="GBG-ZS-pqt"/>
+                            <constraint firstItem="8Tr-5f-tyf" firstAttribute="height" secondItem="3E2-ae-iQX" secondAttribute="height" multiplier="0.5" priority="300" constant="-8.75" id="GYe-rO-Wwr"/>
+                            <constraint firstItem="DS6-pi-raf" firstAttribute="leading" secondItem="Ho5-UU-lEq" secondAttribute="trailing" multiplier="2" constant="1" id="Kgq-39-hzf"/>
+                            <constraint firstItem="DS6-pi-raf" firstAttribute="firstBaseline" secondItem="8Tr-5f-tyf" secondAttribute="baseline" multiplier="2" constant="-17.5" id="LMb-dn-GNx"/>
                             <constraint firstItem="DS6-pi-raf" firstAttribute="leading" secondItem="Ho5-UU-lEq" secondAttribute="trailing" constant="1" id="RT4-Ya-cTl"/>
-                            <constraint firstItem="Ho5-UU-lEq" firstAttribute="height" secondItem="3E2-ae-iQX" secondAttribute="height" id="Yzb-gj-kbo"/>
                             <constraint firstAttribute="bottomMargin" secondItem="Ho5-UU-lEq" secondAttribute="bottom" constant="-13.5" id="bmq-tB-9my"/>
-                            <constraint firstItem="8Tr-5f-tyf" firstAttribute="leading" secondItem="Ho5-UU-lEq" secondAttribute="trailing" constant="1" id="iyj-Rf-V6d"/>
+                            <constraint firstItem="Ho5-UU-lEq" firstAttribute="height" secondItem="3E2-ae-iQX" secondAttribute="height" id="ii3-BN-U72"/>
+                            <constraint firstItem="8Tr-5f-tyf" firstAttribute="leading" secondItem="Ho5-UU-lEq" secondAttribute="trailing" constant="8" id="iyj-Rf-V6d"/>
+                            <constraint firstItem="DS6-pi-raf" firstAttribute="top" secondItem="8Tr-5f-tyf" secondAttribute="bottom" multiplier="0.7" priority="880" constant="-34" id="rQN-gL-TKL"/>
                         </constraints>
-                        <directionalEdgeInsets key="directionalLayoutMargins" top="5" leading="10" bottom="11" trailing="10"/>
                     </tableViewCellContentView>
                 </tableViewCell>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="DS6-pi-raf" secondAttribute="bottom" constant="1" id="6gz-vL-HBO"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="DS6-pi-raf" secondAttribute="trailing" id="MRu-8L-umv"/>
+                <constraint firstAttribute="bottom" secondItem="DS6-pi-raf" secondAttribute="bottom" constant="2" id="6gz-vL-HBO"/>
+                <constraint firstAttribute="trailing" secondItem="DS6-pi-raf" secondAttribute="trailing" id="MRu-8L-umv"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <connections>
                 <outlet property="imagemNoticia" destination="Ho5-UU-lEq" id="aDv-PI-EBj"/>
                 <outlet property="secao" destination="8Tr-5f-tyf" id="WA3-Mw-y3W"/>

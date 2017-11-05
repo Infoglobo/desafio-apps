@@ -119,6 +119,7 @@ class CapaTableViewController: UITableViewController {
         self.present(noticiaVC, animated: true, completion: nil)
         let backItem = UIBarButtonItem()
         backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
         noticiaVC.navigationItem.backBarButtonItem = backItem
         
         noticiaVC.setUpNoticiaView(titulo: new.title!, subtitulo: new.subTitle!, imagem: new.img as! Data, texto: new.texto!, secao: new.secao!)
