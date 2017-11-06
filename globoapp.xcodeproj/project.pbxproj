@@ -12,6 +12,7 @@
 		59346A461FAFDFE20092231B /* Not_found.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59346A451FAFDFE20092231B /* Not_found.jpg */; };
 		59346A481FAFE3D20092231B /* Not_found.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59346A471FAFE3D20092231B /* Not_found.jpg */; };
 		59346A521FB003340092231B /* back-button-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 59346A511FB003340092231B /* back-button-hi.png */; };
+		59346A541FB0069B0092231B /* CapaView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59346A531FB0069B0092231B /* CapaView.swift */; };
 		651D303D1FAC8FB500C91BE1 /* CapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D303C1FAC8FB500C91BE1 /* CapaViewController.swift */; };
 		653FDE071FA66652008DB30D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653FDE061FA66652008DB30D /* AppDelegate.swift */; };
 		653FDE0F1FA66652008DB30D /* globoapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 653FDE0D1FA66652008DB30D /* globoapp.xcdatamodeld */; };
@@ -56,6 +57,7 @@
 		59346A451FAFDFE20092231B /* Not_found.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Not_found.jpg; sourceTree = "<group>"; };
 		59346A471FAFE3D20092231B /* Not_found.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Not_found.jpg; sourceTree = "<group>"; };
 		59346A511FB003340092231B /* back-button-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button-hi.png"; sourceTree = "<group>"; };
+		59346A531FB0069B0092231B /* CapaView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapaView.swift; sourceTree = "<group>"; };
 		59BEAF5A0642D99CAA5A72D7 /* Pods-globoappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-globoappTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-globoappTests/Pods-globoappTests.release.xcconfig"; sourceTree = "<group>"; };
 		651D303C1FAC8FB500C91BE1 /* CapaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapaViewController.swift; sourceTree = "<group>"; };
 		653FDE031FA66652008DB30D /* globoapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = globoapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -179,6 +181,7 @@
 			isa = PBXGroup;
 			children = (
 				65417CA91FA6CBA1005EB72A /* NoticiaView.swift */,
+				59346A531FB0069B0092231B /* CapaView.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -483,6 +486,7 @@
 				653FDE071FA66652008DB30D /* AppDelegate.swift in Sources */,
 				65417CA21FA6A8DB005EB72A /* Imagem.swift in Sources */,
 				65417CAA1FA6CBA1005EB72A /* NoticiaView.swift in Sources */,
+				59346A541FB0069B0092231B /* CapaView.swift in Sources */,
 				653FDE2C1FA674DF008DB30D /* NoticiaTableViewCell.swift in Sources */,
 				65417C9C1FA69384005EB72A /* Noticia.swift in Sources */,
 			);

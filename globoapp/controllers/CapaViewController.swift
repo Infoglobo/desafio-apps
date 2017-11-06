@@ -11,17 +11,11 @@ import AlamofireImage
 import Foundation
 
 class CapaViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
+    
     var noticiaAPICall: NoticiasAPICall!
-    
-    @IBOutlet weak var capaView: UIView!
-    
+    @IBOutlet weak var capaView: CapaView!
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var imagemCapa: UIImageView!
-    
-    @IBOutlet weak var tituloCapa: UILabel!
-    
-    @IBOutlet weak var secaoCapa: UILabel!
-    
+
     @IBOutlet weak var tabBar: UITabBar!
     var finishedLoading = false
     private var news: [Noticia]!
@@ -81,9 +75,9 @@ class CapaViewController: UIViewController, UITableViewDataSource, UITableViewDe
     private func setUpCapa(){
         let newCapa = news[0]
         let imgCapa =  UIImage(data: newCapa.images[0].image as! Data)
-        self.imagemCapa.image = imgCapa
-        self.tituloCapa.text = newCapa.title
-        self.secaoCapa.text = newCapa.secao?.name
+        self.capaView.imagemCapa.image = imgCapa
+        self.capaView.tituloCapa.text = newCapa.title
+        self.capaView.secaoCapa.text = newCapa.secao?.name
         self.news.remove(at: 0)
     }
     
