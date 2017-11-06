@@ -10,6 +10,10 @@ import UIKit
 import AlamofireImage
 import Foundation
 
+enum MyErrorType:Error {
+    case BadTimes
+}
+
 class CapaViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var noticiaAPICall: NoticiasAPICall!
     
@@ -26,37 +30,118 @@ class CapaViewController: UIViewController, UITableViewDataSource, UITableViewDe
     var finishedLoading = false
     private var news: [Noticia]!
     
-    private func configureTable(){
+    private func setUpCapa(){
+        let newCapa = news[0]
+        let imgCapa =  UIImage(data: newCapa.images[0].image as! Data)
+        self.imagemCapa.image = imgCapa
+        self.tituloCapa.text = newCapa.title
+        self.secaoCapa.text = newCapa.secao?.name
+        self.news.remove(at: 0)
+    }
+    
+    private func setUpModels(){
         noticiaAPICall = NoticiasAPICall()
         noticiaAPICall.fetchNoticias(){ news, error in
             self.news = news
         }
+    }
+    private func setUpTable(){
+        
         self.tableView.reloadData()
         finishedLoading = false
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.configureTable()
-        
-        //        self.noticiaTblDataSource = NoticiaTableViewDataSource()
-        let newCapa = news[0]
-        let imgCapa =  UIImage(data: newCapa.images[0].image as! Data)
-        let cgSize = CGSize(width: 95, height: 90)
-        self.imagemCapa.image = imgCapa
-        self.tituloCapa.text = newCapa.title
-        self.secaoCapa.text = newCapa.secao?.name
-        
-        self.news.remove(at: 0)
+    private func setUpDelegateAndDataSource(){
         self.tableView.delegate = self
         self.tableView.dataSource = self
-        
+    }
+    
+    private func setUpCell(){
         tableView.register(UINib(nibName: "NoticiaTableViewCell", bundle: nil), forCellReuseIdentifier: "NoticiaTableViewCell")
-        
+    }
+    
+    private func setUpHeader(){
         let nib = UINib(nibName: "NoticiaTableViewHeader", bundle: nil)
         let view = nib.instantiate(withOwner: nil, options: nil).first as! UIView
-        
         self.tabBar.addSubview(view)
+    }
+    
+    private func setUpDetailedNew(new: Noticia, nextViewController: NoticiaViewController){
+        if new.img == nil{
+            let img_not_found = self.load(fileName: "Not_found", fileType: "jpg")!
+            let data = UIImageJPEGRepresentation(img_not_found, 0.8)
+            
+            guard let title = new.title else{
+                
+                return
+            }
+            guard let subTitle = new.subTitle else{
+                
+                return
+            }
+            guard let texto = new.texto else{
+                
+                return
+            }
+            
+            nextViewController.setUpNoticiaView(titulo: title, subtitulo: subTitle, imagem: data!, texto: texto, secao: new.secao!, autores: new.autores)
+            
+        }else{
+            nextViewController.setUpNoticiaView(titulo: new.title!, subtitulo: new.subTitle!, imagem: new.img?.image! as! Data, texto: new.texto!, secao: new.secao!, autores: new.autores)
+        }
+    }
+    
+    private func setUpNewViewController(new: Noticia){
+        let storyboard = UIStoryboard(name: "globonews", bundle:nil)
+        let noticiaVC = storyboard.instantiateViewController(withIdentifier: "NoticiaViewController") as! NoticiaViewController
+        
+        let backItem = UIBarButtonItem()
+        backItem.title = "Voltar"
+        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
+        
+        self.present(noticiaVC, animated: false, completion: nil)
+        
+        setUpDetailedNew(new: new, nextViewController: noticiaVC)
+        
+    }
+    
+    private func setUpCellInfo(cell: NoticiaTableViewCell, indexPath: IndexPath)-> UITableViewCell{
+        
+        if indexPath.row < self.news.count{
+            let new = self.news![indexPath.row] as Noticia!
+            let secao = new?.secao as Secao!
+            if new != nil{
+                cell.secao.text = secao?.name
+                cell.topico.text = new?.title
+                
+                if new?.img != nil{
+                    if let url = new?.img?.url{
+                        let urlStr : NSString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) as! NSString
+                        
+                        let searchURL : NSURL = NSURL(string: urlStr as String)!
+                        cell.imagemNoticia.af_setImage(withURL: searchURL as URL)
+                    }
+                    return cell
+                }else{
+                    let notFoundImage = self.load(fileName: "Not_found", fileType: "jpg")
+                    cell.imagemNoticia.image = notFoundImage
+                }
+            }
+        }
+        return UITableViewCell()
+        
+    }
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.setUpModels()
+        self.setUpTable()
+        self.setUpCapa()
+        self.setUpDelegateAndDataSource()
+        self.setUpCell()
+        self.setUpHeader()
+        //        self.noticiaTblDataSource = NoticiaTableViewDataSource()
+        
+        
     }
     override func viewDidAppear(_ animated: Bool) {
     }
@@ -83,26 +168,7 @@ class CapaViewController: UIViewController, UITableViewDataSource, UITableViewDe
         
         let cell = tableView.dequeueReusableCell(withIdentifier: simpleIdentifier, for: indexPath) as! (NoticiaTableViewCell)
         
-        if indexPath.row < self.news.count{
-            let new = self.news![indexPath.row] as Noticia!
-            let secao = new?.secao as Secao!
-            if new != nil{
-                cell.secao.text = secao?.name
-                cell.topico.text = new?.title
-                
-                if new?.img != nil{
-                    if let url = new?.img?.url{
-                        let urlStr : NSString = url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) as! NSString
-                        
-                        let searchURL : NSURL = NSURL(string: urlStr as String)!
-                        cell.imagemNoticia.af_setImage(withURL: searchURL as URL)
-                    }
-                    return cell
-                }
-            }
-        }
-        
-        return cell
+        return self.setUpCellInfo(cell: cell, indexPath: indexPath)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -113,91 +179,23 @@ class CapaViewController: UIViewController, UITableViewDataSource, UITableViewDe
         if !self.finishedLoading && indexPath.row == self.news.count - 1{
             self.finishedLoading = true
         }
-        
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let new = self.news[indexPath.row]
-        
-        let storyboard = UIStoryboard(name: "globonews", bundle:nil)
-        let noticiaVC = storyboard.instantiateViewController(withIdentifier: "NoticiaViewController") as! NoticiaViewController
-        
-        let backItem = UIBarButtonItem()
-        backItem.title = "Voltar"
-        navigationItem.backBarButtonItem = UIBarButtonItem(title: "", style: .plain, target: nil, action: nil)
-//        self.navigationItem.leftItemsSupplementBackButton = true;
-//        self.navigationItem.leftBarButtonItem = backItem
-        self.present(noticiaVC, animated: false, completion: nil)
-        
-        //        noticiaVC.navigationItem.backBarButtonItem = backItem
-        
-        noticiaVC.setUpNoticiaView(titulo: new.title!, subtitulo: new.subTitle!, imagem: new.images[0].image! as Data, texto: new.texto!, secao: new.secao!, autores: new.autores)
+        setUpNewViewController(new: new)
     }
-
-    
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        
-//        let new = self.news[indexPath.row]
-//        
-//        let storyboard = UIStoryboard(name: "globonews", bundle:nil)
-//        let noticiaVC = storyboard.instantiateViewController(withIdentifier: "NoticiaViewController") as! NoticiaViewController
-//
-//        self.present(noticiaVC, animated: true, completion: nil)
-//      
-////        noticiaVC.navigationItem.backBarButtonItem = backItem
-//        
-//        noticiaVC.setUpNoticiaView(titulo: new.title!, subtitulo: new.subTitle!, imagem: new.images[0].image! as Data, texto: new.texto!)
-//    }
-    
-    func setUpCapa(new: Noticia, secao: Secao){
-        //        self.tableView.setup(secao: (secao.name)!, titulo: (new.title)!)
-        //        self.capaTableView.imagemCapa.image = UIImage(data: new.images[0].image! as Data)
+    private func load(fileName: String, fileType: String) -> UIImage?{
+        if let path = Bundle.main.path(forResource: fileName, ofType:fileType) {
+            // use path
+            let imageURL = URL(fileURLWithPath: path)
+            let image    = UIImage(contentsOfFile: imageURL.path)
+            return image
+        }else{
+            return nil
+        }
     }
+  
     
 }
 
-//    func setUpCellImage(cell: NoticiaTableViewCell, new: Noticia){
-//        //        cell.imagemNoticia.image = UIImage(data: new.images[0].image! as Data)
-//        let itemSize:CGSize = CGSize(width: 99, height: 90)
-//        //        UIGraphicsBeginImageContextWithOptions(itemSize, false, UIScreen.main.scale)
-//        //        let imageRect : CGRect = CGRect(origin: .zero, size: CGSize(width: itemSize.width, height: itemSize.height))
-//        //        cell.imagemNoticia!.image?.draw(in: imageRect)
-//        //        let img = self.resizeImage(image: cell.imagemNoticia.image!, targetSize: itemSize)
-//        if new.images.count > 0{
-//            let img = UIImage(data: new.img?.image as! Data)
-//            //        let imgNew = self.imageWithImage(image: img!, newSize: itemSize)
-//            if img != nil{
-//                cell.imagemNoticia.image = img
-//            }
-//
-//        }else{
-//            return ;
-//        }
-//    }
-
-//    func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
-//        let size = image.size
-//
-//        let widthRatio  = targetSize.width  / size.width
-//        let heightRatio = targetSize.height / size.height
-//
-//        // Figure out what our orientation is, and use that to form the rectangle
-//        var newSize: CGSize
-//        if(widthRatio > heightRatio) {
-//            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
-//        } else {
-//            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
-//        }
-//
-//        // This is the rect that we've calculated out and this is what is actually used below
-//        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
-//
-//        // Actually do the resizing to the rect using the ImageContext stuff
-//        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-//        image.draw(in: rect)
-//        let newImage = UIGraphicsGetImageFromCurrentImageContext()
-//        UIGraphicsEndImageContext()
-//
-//        return newImage!
-//    }
 

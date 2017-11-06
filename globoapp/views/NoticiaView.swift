@@ -47,6 +47,11 @@ class NoticiaView: UIView {
     
     
     func setupAutor(authors: [String]){
-        self.autor.text = authors[0]
+        if authors.count > 0{
+            self.autor.text = authors[0]
+        }else{
+            self.autor.text = ""
+        }
+        
     }
 }

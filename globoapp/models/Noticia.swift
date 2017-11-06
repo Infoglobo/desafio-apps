@@ -44,10 +44,23 @@ class Noticia: Mappable {
             images <- map["imagens"]
             if  images.count > 0{
                 self.img = images[0]
+            }else{
+//                self.img = self.load(fileName: "Not_found", fileType: "jpg")
             }
         }
         
         secao <- map["secao"]
+    }
+    
+    private func load(fileName: String, fileType: String) -> UIImage?{
+        if let path = Bundle.main.path(forResource: fileName, ofType:fileType) {
+            // use path
+            let imageURL = URL(fileURLWithPath: path)
+            let image    = UIImage(contentsOfFile: imageURL.path)
+            return image
+        }else{
+            return nil
+        }
     }
 }
 

@@ -10,6 +10,8 @@
 		59346A371FAF946F0092231B /* globoappTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 59346A361FAF946F0092231B /* globoappTests.m */; };
 		59346A411FAF97FC0092231B /* NoticiaViewHeaderTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59346A401FAF97FC0092231B /* NoticiaViewHeaderTest.swift */; };
 		59346A441FAF9C500092231B /* NoticiaAPICallTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59346A431FAF9C500092231B /* NoticiaAPICallTest.swift */; };
+		59346A461FAFDFE20092231B /* Not_found.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59346A451FAFDFE20092231B /* Not_found.jpg */; };
+		59346A481FAFE3D20092231B /* Not_found.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59346A471FAFE3D20092231B /* Not_found.jpg */; };
 		651D303D1FAC8FB500C91BE1 /* CapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D303C1FAC8FB500C91BE1 /* CapaViewController.swift */; };
 		653FDE071FA66652008DB30D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653FDE061FA66652008DB30D /* AppDelegate.swift */; };
 		653FDE0F1FA66652008DB30D /* globoapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 653FDE0D1FA66652008DB30D /* globoapp.xcdatamodeld */; };
@@ -62,6 +64,8 @@
 		59346A381FAF946F0092231B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		59346A401FAF97FC0092231B /* NoticiaViewHeaderTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticiaViewHeaderTest.swift; sourceTree = "<group>"; };
 		59346A431FAF9C500092231B /* NoticiaAPICallTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticiaAPICallTest.swift; sourceTree = "<group>"; };
+		59346A451FAFDFE20092231B /* Not_found.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Not_found.jpg; sourceTree = "<group>"; };
+		59346A471FAFE3D20092231B /* Not_found.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Not_found.jpg; sourceTree = "<group>"; };
 		59BEAF5A0642D99CAA5A72D7 /* Pods-globoappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-globoappTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-globoappTests/Pods-globoappTests.release.xcconfig"; sourceTree = "<group>"; };
 		651D303C1FAC8FB500C91BE1 /* CapaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapaViewController.swift; sourceTree = "<group>"; };
 		653FDE031FA66652008DB30D /* globoapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = globoapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -143,6 +147,7 @@
 		653FDDFA1FA66652008DB30D = {
 			isa = PBXGroup;
 			children = (
+				59346A471FAFE3D20092231B /* Not_found.jpg */,
 				653FDE051FA66652008DB30D /* globoapp */,
 				59346A351FAF946F0092231B /* globoappTests */,
 				653FDE041FA66652008DB30D /* Products */,
@@ -163,6 +168,7 @@
 		653FDE051FA66652008DB30D /* globoapp */ = {
 			isa = PBXGroup;
 			children = (
+				59346A451FAFDFE20092231B /* Not_found.jpg */,
 				6546BA8B1FAF59F900F3A37D /* LaunchScreen.storyboard */,
 				6546BA8A1FAF59F900F3A37D /* Main.storyboard */,
 				655167181FADFA1E00EDB5F7 /* todelete */,
@@ -405,7 +411,9 @@
 				6546BA8D1FAF59F900F3A37D /* LaunchScreen.storyboard in Resources */,
 				6551671B1FAE434600EDB5F7 /* NoticiaViewHeader.xib in Resources */,
 				65F33A2D1FAC6D990036512B /* NoticiaTableViewHeader.xib in Resources */,
+				59346A461FAFDFE20092231B /* Not_found.jpg in Resources */,
 				653FDE111FA66652008DB30D /* Assets.xcassets in Resources */,
+				59346A481FAFE3D20092231B /* Not_found.jpg in Resources */,
 				65417C9E1FA69613005EB72A /* capa.json in Resources */,
 				653FDE211FA66C0E008DB30D /* globonews.storyboard in Resources */,
 				65F33A2B1FABB3240036512B /* NoticiaTableViewCell.xib in Resources */,
