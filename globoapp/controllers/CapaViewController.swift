@@ -29,7 +29,6 @@ class CapaViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tabBar: UITabBar!
     var finishedLoading = false
     private var news: [Noticia]!
-   
     
     // MARK: - Life cycle methods UIViewController
     override func viewDidLoad() {
@@ -40,9 +39,6 @@ class CapaViewController: UIViewController, UITableViewDataSource, UITableViewDe
         self.setUpDelegateAndDataSource()
         self.setUpCell()
         self.setUpHeader()
-
-    }
-    override func viewDidAppear(_ animated: Bool) {
     }
     
     override func didReceiveMemoryWarning() {

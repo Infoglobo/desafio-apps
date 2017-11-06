@@ -9,7 +9,7 @@ import Foundation
 import ObjectMapper
 
 class NoticiasAPICall: NSObject {
-//    completion: @escaping (_ news: [Noticia]?, _ error: Error?) -> Void
+
     func fetchNoticias(completion: @escaping (_ news: [Noticia]?, _ error: Error?) -> Void){
         let path = Bundle.main.path(forResource: "capa", ofType: "json")
         let data = try! Data(contentsOf: URL(fileURLWithPath: path!))

@@ -158,7 +158,6 @@
 				653FDE2D1FA682E4008DB30D /* business */,
 				653FDE221FA66DD1008DB30D /* cells */,
 				653FDE1F1FA66707008DB30D /* storyboards */,
-				653FDE1E1FA666E1008DB30D /* managers */,
 				653FDE1D1FA6669A008DB30D /* infrastructure */,
 				653FDE1C1FA66685008DB30D /* views */,
 				653FDE1B1FA66677008DB30D /* controllers */,
@@ -193,13 +192,6 @@
 				65417C9D1FA69613005EB72A /* capa.json */,
 			);
 			path = infrastructure;
-			sourceTree = "<group>";
-		};
-		653FDE1E1FA666E1008DB30D /* managers */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = managers;
 			sourceTree = "<group>";
 		};
 		653FDE1F1FA66707008DB30D /* storyboards */ = {
