@@ -10,10 +10,6 @@ import UIKit
 import AlamofireImage
 import Foundation
 
-enum MyErrorType:Error {
-    case BadTimes
-}
-
 class CapaViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     var noticiaAPICall: NoticiasAPICall!
     
