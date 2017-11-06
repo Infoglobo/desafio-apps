@@ -29,7 +29,63 @@ class CapaViewController: UIViewController, UITableViewDataSource, UITableViewDe
     @IBOutlet weak var tabBar: UITabBar!
     var finishedLoading = false
     private var news: [Noticia]!
+   
     
+    // MARK: - Life cycle methods UIViewController
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.setUpModels()
+        self.setUpTable()
+        self.setUpCapa()
+        self.setUpDelegateAndDataSource()
+        self.setUpCell()
+        self.setUpHeader()
+
+    }
+    override func viewDidAppear(_ animated: Bool) {
+    }
+    
+    override func didReceiveMemoryWarning() {
+        super.didReceiveMemoryWarning()
+        // Dispose of any resources that can be recreated.
+    }
+    
+    
+    // MARK: - Table view data source
+    func numberOfSections(in tableView: UITableView) -> Int {
+        // #warning Incomplete implementation, return the number of sections
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        // #warning Incomplete implementation, return the number of rows
+        return (self.news?.count)!
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
+        let simpleIdentifier = "NoticiaTableViewCell"
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: simpleIdentifier, for: indexPath) as! (NoticiaTableViewCell)
+        
+        return self.setUpCellInfo(cell: cell, indexPath: indexPath)
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return CGFloat(80)
+    }
+    
+    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
+        if !self.finishedLoading && indexPath.row == self.news.count - 1{
+            self.finishedLoading = true
+        }
+    }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let new = self.news[indexPath.row]
+        setUpNewViewController(new: new)
+    }
+    
+    // MARK: - private methods
     private func setUpCapa(){
         let newCapa = news[0]
         let imgCapa =  UIImage(data: newCapa.images[0].image as! Data)
@@ -131,59 +187,8 @@ class CapaViewController: UIViewController, UITableViewDataSource, UITableViewDe
         return UITableViewCell()
         
     }
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.setUpModels()
-        self.setUpTable()
-        self.setUpCapa()
-        self.setUpDelegateAndDataSource()
-        self.setUpCell()
-        self.setUpHeader()
-        //        self.noticiaTblDataSource = NoticiaTableViewDataSource()
-        
-        
-    }
-    override func viewDidAppear(_ animated: Bool) {
-    }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    // MARK: - Table view data source
-    func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
-    }
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return (self.news?.count)!
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        
-        let simpleIdentifier = "NoticiaTableViewCell"
-        
-        let cell = tableView.dequeueReusableCell(withIdentifier: simpleIdentifier, for: indexPath) as! (NoticiaTableViewCell)
-        
-        return self.setUpCellInfo(cell: cell, indexPath: indexPath)
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(80)
-    }
-    
-    func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
-        if !self.finishedLoading && indexPath.row == self.news.count - 1{
-            self.finishedLoading = true
-        }
-    }
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let new = self.news[indexPath.row]
-        setUpNewViewController(new: new)
-    }
+    // MARK: - Infra methods
     private func load(fileName: String, fileType: String) -> UIImage?{
         if let path = Bundle.main.path(forResource: fileName, ofType:fileType) {
             // use path
