@@ -12,6 +12,9 @@
 		59346A441FAF9C500092231B /* NoticiaAPICallTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59346A431FAF9C500092231B /* NoticiaAPICallTest.swift */; };
 		59346A461FAFDFE20092231B /* Not_found.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59346A451FAFDFE20092231B /* Not_found.jpg */; };
 		59346A481FAFE3D20092231B /* Not_found.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 59346A471FAFE3D20092231B /* Not_found.jpg */; };
+		59346A4C1FAFFFBF0092231B /* back_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 59346A4B1FAFFFBF0092231B /* back_button.png */; };
+		59346A501FB001040092231B /* back_button_3.png in Resources */ = {isa = PBXBuildFile; fileRef = 59346A4F1FB001040092231B /* back_button_3.png */; };
+		59346A521FB003340092231B /* back-button-hi.png in Resources */ = {isa = PBXBuildFile; fileRef = 59346A511FB003340092231B /* back-button-hi.png */; };
 		651D303D1FAC8FB500C91BE1 /* CapaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 651D303C1FAC8FB500C91BE1 /* CapaViewController.swift */; };
 		653FDE071FA66652008DB30D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 653FDE061FA66652008DB30D /* AppDelegate.swift */; };
 		653FDE0F1FA66652008DB30D /* globoapp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 653FDE0D1FA66652008DB30D /* globoapp.xcdatamodeld */; };
@@ -29,7 +32,6 @@
 		6546BA891FAF385A00F3A37D /* NoticiaViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6546BA881FAF385A00F3A37D /* NoticiaViewHeader.swift */; };
 		6546BA8C1FAF59F900F3A37D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6546BA8A1FAF59F900F3A37D /* Main.storyboard */; };
 		6546BA8D1FAF59F900F3A37D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6546BA8B1FAF59F900F3A37D /* LaunchScreen.storyboard */; };
-		655167091FAD1F7800EDB5F7 /* NoticiaTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655167081FAD1F7800EDB5F7 /* NoticiaTableViewDataSource.swift */; };
 		6551671B1FAE434600EDB5F7 /* NoticiaViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6551671A1FAE434600EDB5F7 /* NoticiaViewHeader.xib */; };
 		65F33A2B1FABB3240036512B /* NoticiaTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65F33A2A1FABB3240036512B /* NoticiaTableViewCell.xib */; };
 		65F33A2D1FAC6D990036512B /* NoticiaTableViewHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = 65F33A2C1FAC6D990036512B /* NoticiaTableViewHeader.xib */; };
@@ -57,6 +59,9 @@
 		59346A431FAF9C500092231B /* NoticiaAPICallTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoticiaAPICallTest.swift; sourceTree = "<group>"; };
 		59346A451FAFDFE20092231B /* Not_found.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Not_found.jpg; sourceTree = "<group>"; };
 		59346A471FAFE3D20092231B /* Not_found.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Not_found.jpg; sourceTree = "<group>"; };
+		59346A4B1FAFFFBF0092231B /* back_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_button.png; sourceTree = "<group>"; };
+		59346A4F1FB001040092231B /* back_button_3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = back_button_3.png; sourceTree = "<group>"; };
+		59346A511FB003340092231B /* back-button-hi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "back-button-hi.png"; sourceTree = "<group>"; };
 		59BEAF5A0642D99CAA5A72D7 /* Pods-globoappTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-globoappTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-globoappTests/Pods-globoappTests.release.xcconfig"; sourceTree = "<group>"; };
 		651D303C1FAC8FB500C91BE1 /* CapaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CapaViewController.swift; sourceTree = "<group>"; };
 		653FDE031FA66652008DB30D /* globoapp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = globoapp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,7 +82,6 @@
 		6546BA881FAF385A00F3A37D /* NoticiaViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaViewHeader.swift; sourceTree = "<group>"; };
 		6546BA8A1FAF59F900F3A37D /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		6546BA8B1FAF59F900F3A37D /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		655167081FAD1F7800EDB5F7 /* NoticiaTableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoticiaTableViewDataSource.swift; sourceTree = "<group>"; };
 		6551671A1FAE434600EDB5F7 /* NoticiaViewHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NoticiaViewHeader.xib; sourceTree = "<group>"; };
 		65F33A2A1FABB3240036512B /* NoticiaTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticiaTableViewCell.xib; sourceTree = "<group>"; };
 		65F33A2C1FAC6D990036512B /* NoticiaTableViewHeader.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoticiaTableViewHeader.xib; sourceTree = "<group>"; };
@@ -129,6 +133,9 @@
 		653FDDFA1FA66652008DB30D = {
 			isa = PBXGroup;
 			children = (
+				59346A511FB003340092231B /* back-button-hi.png */,
+				59346A4F1FB001040092231B /* back_button_3.png */,
+				59346A4B1FAFFFBF0092231B /* back_button.png */,
 				59346A471FAFE3D20092231B /* Not_found.jpg */,
 				653FDE051FA66652008DB30D /* globoapp */,
 				59346A351FAF946F0092231B /* globoappTests */,
@@ -153,7 +160,6 @@
 				59346A451FAFDFE20092231B /* Not_found.jpg */,
 				6546BA8B1FAF59F900F3A37D /* LaunchScreen.storyboard */,
 				6546BA8A1FAF59F900F3A37D /* Main.storyboard */,
-				655167071FAD1F4500EDB5F7 /* datasources */,
 				65417C9A1FA69255005EB72A /* models */,
 				653FDE2D1FA682E4008DB30D /* business */,
 				653FDE221FA66DD1008DB30D /* cells */,
@@ -231,14 +237,6 @@
 				65417CA31FA6AA9C005EB72A /* Secao.swift */,
 			);
 			path = models;
-			sourceTree = "<group>";
-		};
-		655167071FAD1F4500EDB5F7 /* datasources */ = {
-			isa = PBXGroup;
-			children = (
-				655167081FAD1F7800EDB5F7 /* NoticiaTableViewDataSource.swift */,
-			);
-			path = datasources;
 			sourceTree = "<group>";
 		};
 		CF629D03AD34B9D7D44438E7 /* Pods */ = {
@@ -348,13 +346,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				59346A4C1FAFFFBF0092231B /* back_button.png in Resources */,
 				6546BA8C1FAF59F900F3A37D /* Main.storyboard in Resources */,
 				6546BA8D1FAF59F900F3A37D /* LaunchScreen.storyboard in Resources */,
 				6551671B1FAE434600EDB5F7 /* NoticiaViewHeader.xib in Resources */,
 				65F33A2D1FAC6D990036512B /* NoticiaTableViewHeader.xib in Resources */,
 				59346A461FAFDFE20092231B /* Not_found.jpg in Resources */,
+				59346A501FB001040092231B /* back_button_3.png in Resources */,
 				653FDE111FA66652008DB30D /* Assets.xcassets in Resources */,
 				59346A481FAFE3D20092231B /* Not_found.jpg in Resources */,
+				59346A521FB003340092231B /* back-button-hi.png in Resources */,
 				65417C9E1FA69613005EB72A /* capa.json in Resources */,
 				653FDE211FA66C0E008DB30D /* globonews.storyboard in Resources */,
 				65F33A2B1FABB3240036512B /* NoticiaTableViewCell.xib in Resources */,
@@ -484,7 +485,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				655167091FAD1F7800EDB5F7 /* NoticiaTableViewDataSource.swift in Sources */,
 				6546BA891FAF385A00F3A37D /* NoticiaViewHeader.swift in Sources */,
 				65417CA41FA6AA9C005EB72A /* Secao.swift in Sources */,
 				65417CA81FA6C9CD005EB72A /* NoticiaViewController.swift in Sources */,

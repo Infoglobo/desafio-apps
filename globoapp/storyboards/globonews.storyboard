@@ -247,11 +247,20 @@
                                     <constraint firstItem="7bj-qp-twS" firstAttribute="leading" secondItem="KqN-iF-lAf" secondAttribute="leading" id="p7H-4Y-fVH"/>
                                 </constraints>
                             </view>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0D4-Hg-z4U">
+                                <rect key="frame" x="8" y="6" width="94" height="40"/>
+                                <state key="normal" image="back-button-hi.png"/>
+                                <connections>
+                                    <action selector="backButton:" destination="jen-WG-S0E" eventType="touchUpInside" id="eM4-Rn-axc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="0D4-Hg-z4U" firstAttribute="leading" secondItem="KqN-iF-lAf" secondAttribute="leading" id="7N1-8k-Qxu"/>
                             <constraint firstItem="HWo-k6-leb" firstAttribute="top" secondItem="o6O-R2-Dwi" secondAttribute="top" constant="36" id="ada-Fh-xsR"/>
                             <constraint firstAttribute="trailing" secondItem="HWo-k6-leb" secondAttribute="trailing" id="awG-VC-TAp"/>
+                            <constraint firstItem="0D4-Hg-z4U" firstAttribute="top" secondItem="ehr-X8-j77" secondAttribute="bottom" constant="-12" id="fe3-Kc-iJp"/>
                             <constraint firstItem="HWo-k6-leb" firstAttribute="bottom" secondItem="m5x-Dy-1MH" secondAttribute="top" id="klK-U0-VRV"/>
                             <constraint firstItem="HWo-k6-leb" firstAttribute="leading" secondItem="o6O-R2-Dwi" secondAttribute="leading" id="rKA-Ju-vq5"/>
                         </constraints>
@@ -265,11 +274,15 @@
                             <outlet property="titulo" destination="2r5-QP-sGB" id="YZv-yJ-gIX"/>
                         </connections>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="ICo-ia-l5D">
+                        <barButtonItem key="backBarButtonItem" title="BackButton" id="h1H-sr-Ab6"/>
+                    </navigationItem>
                     <connections>
                         <outlet property="noticiaView" destination="o6O-R2-Dwi" id="IgS-mv-dTB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZQw-ra-Lk9" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationItem title="Title" id="DPq-L5-Jl4"/>
             </objects>
             <point key="canvasLocation" x="853.60000000000002" y="1016.9415292353824"/>
         </scene>
@@ -294,4 +307,7 @@
             <point key="canvasLocation" x="-548" y="190"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="back-button-hi.png" width="40" height="40"/>
+    </resources>
 </document>

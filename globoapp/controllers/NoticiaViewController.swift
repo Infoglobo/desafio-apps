@@ -14,6 +14,7 @@ class NoticiaViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
     }
 
     override func didReceiveMemoryWarning() {
@@ -26,4 +27,7 @@ class NoticiaViewController: UIViewController {
         self.noticiaView.setupAutor(authors: autores)
     }
 
+    @IBAction func backButton(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
 }
