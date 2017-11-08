@@ -3,16 +3,17 @@ use_frameworks!
 
 target 'DesafioNoticias' do
 
-# Requests Maker
-pod 'Alamofire'
-pod 'AlamofireImage'
+    # Requests Maker
+    pod 'Alamofire'
+    pod 'AlamofireImage'
 
-# JSON Parser
-pod 'Freddy'
+    # JSON Parser
+    pod 'Freddy'
 
 end
 
 target 'DesafioNoticiasTests' do
     pod 'Quick'
     pod 'Nimble'
+    pod 'KIF', :configurations => ['Debug']
 end

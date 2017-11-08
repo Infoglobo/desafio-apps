@@ -3,6 +3,9 @@ PODS:
   - AlamofireImage (3.3.0):
     - Alamofire (~> 4.5)
   - Freddy (3.0.2)
+  - KIF (3.6.0):
+    - KIF/Core (= 3.6.0)
+  - KIF/Core (3.6.0)
   - Nimble (7.0.2)
   - Quick (1.2.0)
 
@@ -10,6 +13,7 @@ DEPENDENCIES:
   - Alamofire
   - AlamofireImage
   - Freddy
+  - KIF
   - Nimble
   - Quick
 
@@ -17,9 +21,10 @@ SPEC CHECKSUMS:
   Alamofire: 2d95912bf4c34f164fdfc335872e8c312acaea4a
   AlamofireImage: 2e784dc5d00f04903a52c1d169181469c805c3df
   Freddy: 60e165f3943b116d188c5a89991424a89cd71165
+  KIF: bd770edd8ce49bc7308501e4871e58a02d137be3
   Nimble: bfe1f814edabba69ff145cb1283e04ed636a67f2
   Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
 
-PODFILE CHECKSUM: c410f63be07d5338f28c5ffb79408c7efd2664e0
+PODFILE CHECKSUM: eef872aaf2811ea256a89f405abead5be648785a
 
 COCOAPODS: 1.3.1

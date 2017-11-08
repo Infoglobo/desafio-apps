@@ -31,10 +31,10 @@ internal struct NewsDetailViewModel {
         self.newsText = news.text
         
         if news.images.count > 0 {
-            self.newsImage = news.images[0].image ?? UIImage(contentsOfFile: "imageNotFound.jpeg") ?? UIImage()
+            self.newsImage = news.images[0].image ?? UIImage(contentsOfFile: "imageNotFound") ?? UIImage()
             self.imageSubtitle = news.images.first?.subtitles ?? ""
         } else {
-            self.newsImage = UIImage(contentsOfFile: "imageNotFound.jpeg") ?? UIImage()
+            self.newsImage = UIImage(contentsOfFile: "imageNotFound") ?? UIImage()
             self.imageSubtitle = ""
         }
     }

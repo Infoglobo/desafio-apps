@@ -38,6 +38,8 @@ internal class NewsfeedViewController: UIViewController {
         self.setup()
         if sharedApplication.news.count == 0 && self.viewModel.count == 0 {
             self.fetchNews()
+        } else {
+            self.animateTable(cells: self.newsTableView.visibleCells, tableViewHeight: self.newsTableView.bounds.height)
         }
     }
     
@@ -46,6 +48,7 @@ internal class NewsfeedViewController: UIViewController {
     func setup() {
         self.newsTableView.delegate = self
         self.newsTableView.dataSource = self
+        self.newsTableView.alpha = 0
     }
     
     func createAnNewsArray(dictionaryArray : [[String:Any]]) {
@@ -114,6 +117,7 @@ internal class NewsfeedViewController: UIViewController {
                         
                         DispatchQueue.main.async {
                             self.newsTableView.reloadData()
+                            self.animateTable(cells: self.newsTableView.visibleCells, tableViewHeight: self.newsTableView.bounds.size.height)
                         }
                     }
                 }
@@ -121,6 +125,22 @@ internal class NewsfeedViewController: UIViewController {
             } else {
                 return
             }
+        }
+        
+    }
+    
+    func animateTable(cells : [UITableViewCell], tableViewHeight : CGFloat) {
+        
+        self.newsTableView.alpha = 1
+        var delayCounter : Double = 0
+        
+        for cell in cells {
+            cell.transform = CGAffineTransform(translationX: 0, y: tableViewHeight)
+            
+            UIView.animate(withDuration: 2, delay: delayCounter * 0.1, usingSpringWithDamping: 0.8, initialSpringVelocity: 0, options: .curveEaseInOut, animations: {
+                cell.transform = CGAffineTransform.identity
+            }, completion: nil)
+            delayCounter += 1
         }
         
     }

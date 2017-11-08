@@ -45,7 +45,7 @@ class NewsDetailViewController: UIViewController, UIScrollViewDelegate {
         if let selectedItem = self.selectedItem {
             self.newsDetailViewModel = NewsDetailViewModel(news: selectedItem)
             self.screenSetup()
-            self.createGradient(view: self.newsImageView, frame: self.newsImageView.frame)
+            self.createGradient(frame: self.newsImageView.frame)
         }
 
     }
@@ -72,11 +72,11 @@ class NewsDetailViewController: UIViewController, UIScrollViewDelegate {
         
     }
     
-    func createGradient(view : UIView, frame : CGRect) {
+    func createGradient(frame : CGRect) {
         let view = UIView(frame: frame)
         let gradient = CAGradientLayer()
         
-        gradient.frame = view.frame
+        gradient.frame = self.newsImageView.frame
         gradient.locations = [0, 1]
         gradient.colors = [UIColor.clear.cgColor, UIColor.black.cgColor]
         

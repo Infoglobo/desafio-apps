@@ -20,9 +20,9 @@ internal class NewsfeedViewModel {
         self.titleText = news.title
         
         if news.images.count > 0 {
-            self.image = news.images[0].image ?? UIImage(contentsOfFile: "imageNotFound.jpeg") ?? UIImage()
+            self.image = news.images[0].image ?? UIImage(contentsOfFile: "imageNotFound") ?? UIImage()
         } else {
-            self.image = UIImage(contentsOfFile: "imageNotFound.jpeg") ?? UIImage()
+            self.image = UIImage(contentsOfFile: "imageNotFound") ?? UIImage()
         }
         
     }
