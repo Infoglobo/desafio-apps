@@ -1,0 +1,57 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        applicationId "com.alancamargo.desafioinfoglobo"
+        minSdkVersion 17
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+    }
+}
+
+dependencies {
+    // region Instrumented test libraries
+    // Android test runner
+    androidTestImplementation 'androidx.test:runner:1.1.1-alpha01'
+
+    // Espresso
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1-alpha01'
+    // endregion
+
+    // region Standard libraries
+    // Local .jar files
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Kotlin
+    implementation"org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // App compatibility
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha01'
+
+    // ConstraintLayout
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
+    // endregion
+
+    // region Unit test libraries
+    testImplementation 'junit:junit:4.12'
+    // endregion
+}
