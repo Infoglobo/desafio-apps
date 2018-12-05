@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <style name="CoverHeadline" parent="@style/TextAppearance.AppCompat.Headline">
+    <style name="CoverHeadline" parent="@style/TextAppearance.AppCompat.Medium">
         <item name="android:textColor">@color/white</item>
         <item name="android:textStyle">bold</item>
         <item name="android:gravity">center</item>
