@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- region Margin -->
+    <dimen name="margin_default">8dp</dimen>
+    <!-- endregion -->
+
+    <!-- region Padding -->
+    <dimen name="padding_default">16dp</dimen>
+    <!-- endregion -->
+</resources>
