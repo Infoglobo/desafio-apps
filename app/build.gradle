@@ -49,6 +49,9 @@ dependencies {
 
     // ConstraintLayout
     implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     // endregion
 
     // region Unit test libraries
