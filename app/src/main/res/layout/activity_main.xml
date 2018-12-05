@@ -20,18 +20,18 @@
             tools:src="@tools:sample/backgrounds/scenic"/>
 
     <TextView
-            android:id="@+id/txt_cover_subject"
+            android:id="@+id/txt_subject"
             style="@style/CoverSubject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="@dimen/margin_default"
-            app:layout_constraintBottom_toTopOf="@+id/txt_cover_headline"
+            app:layout_constraintBottom_toTopOf="@+id/txt_headline"
             app:layout_constraintStart_toStartOf="@id/img_cover"
             app:layout_constraintEnd_toEndOf="@id/img_cover"
             tools:text="Brasil"/>
 
     <TextView
-            android:id="@+id/txt_cover_headline"
+            android:id="@+id/txt_headline"
             style="@style/CoverHeadline"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -53,10 +53,10 @@
             android:id="@+id/recycler_view"
             android:layout_width="0dp"
             android:layout_height="0dp"
-            android:padding="@dimen/padding_default"
             app:layout_constraintTop_toBottomOf="@id/guideline"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"/>
+            app:layout_constraintEnd_toEndOf="parent"
+            tools:listitem="@layout/item_news"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
