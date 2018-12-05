@@ -2,7 +2,7 @@ package com.alancamargo.desafioinfoglobo.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Content(@SerializedName("autores") val authors: List<String>,
+data class Article(@SerializedName("autores") val authors: List<String>,
                    @SerializedName("informePublicitario") val hasAds: Boolean,
                    @SerializedName("subTitulo") val subHeadline: String,
                    @SerializedName("texto") val text: String,
@@ -13,6 +13,6 @@ data class Content(@SerializedName("autores") val authors: List<String>,
                    @SerializedName("titulo") val headline: String,
                    @SerializedName("urlOriginal") val originalUrl: String,
                    @SerializedName("imagens") val images: List<Image>,
-                   val videos: List<Any>,
-                   val id: Long,
-                   val url: String)
+                   @SerializedName("videos") val videos: List<Any>,
+                   @SerializedName("id") val id: Long,
+                   @SerializedName("url") val url: String)
