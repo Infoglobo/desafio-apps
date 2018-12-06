@@ -20,15 +20,48 @@ data class Article(@SerializedName("autores") var authors: List<String> = listOf
                    @SerializedName("url") var url: String = "") : Parcelable {
 
     companion object CREATOR : Parcelable.Creator<Article> {
-        override fun createFromParcel(source: Parcel?): Article {
-
-        }
+        override fun createFromParcel(source: Parcel): Article = Article(source)
 
         override fun newArray(size: Int): Array<Article?> = arrayOfNulls(size)
     }
 
-    override fun writeToParcel(dest: Parcel?, flags: Int) {
+    @Suppress("unchecked_cast")
+    constructor(parcel: Parcel): this() {
+        with(parcel) {
+            authors = readArrayList(javaClass.classLoader) as ArrayList<String>
+            hasAds = readString()!!.toBoolean()
+            subHeadline = readString()!!
+            text = readString()!!
+            dateUpdated = readString()!!
+            datePublished = readString()!!
+            section = readParcelable(javaClass.classLoader) as Section
+            type = readString()!!
+            headline = readString()!!
+            originalUrl = readString()!!
+            images = readParcelableArray(javaClass.classLoader)!!.toList() as List<Image>
+            videos = readArrayList(javaClass.classLoader)!!
+            id = readLong()
+            url = readString()!!
+        }
+    }
 
+    override fun writeToParcel(dest: Parcel?, flags: Int) {
+        dest?.let {
+            it.writeList(authors)
+            it.writeString(hasAds.toString())
+            it.writeString(subHeadline)
+            it.writeString(text)
+            it.writeString(dateUpdated)
+            it.writeString(datePublished)
+            it.writeParcelable(section, flags)
+            it.writeString(type)
+            it.writeString(headline)
+            it.writeString(originalUrl)
+            it.writeParcelableArray(images.toTypedArray(), flags)
+            it.writeList(videos)
+            it.writeLong(id)
+            it.writeString(url)
+        }
     }
 
     override fun describeContents() = 0
