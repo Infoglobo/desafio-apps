@@ -12,14 +12,24 @@
         <item name="android:textAllCaps">true</item>
     </style>
 
-    <style name="NewsItemHeadline" parent="@style/TextAppearance.AppCompat.Menu">
+    <style name="ArticleItemHeadline" parent="@style/TextAppearance.AppCompat.Menu">
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/grey_dark</item>
     </style>
 
-    <style name="NewsItemSubject" parent="@style/TextAppearance.AppCompat.Caption">
+    <style name="ArticleItemSubject" parent="@style/TextAppearance.AppCompat.Caption">
         <item name="android:textAllCaps">true</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/grey</item>
+    </style>
+
+    <style name="Headline" parent="@style/TextAppearance.AppCompat.Headline">
+        <item name="android:textStyle">bold</item>
+        <item name="android:gravity">center_horizontal</item>
+    </style>
+
+    <style name="SubHeadline" parent="@style/TextAppearance.AppCompat.Medium">
+        <item name="android:gravity">center_horizontal</item>
+        <item name="android:textColor">@color/grey_dark</item>
     </style>
 </resources>

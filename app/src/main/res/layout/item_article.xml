@@ -29,7 +29,7 @@
 
     <TextView
             android:id="@+id/txt_subject"
-            style="@style/NewsItemSubject"
+            style="@style/ArticleItemSubject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_large"
@@ -41,7 +41,7 @@
 
     <TextView
             android:id="@+id/txt_headline"
-            style="@style/NewsItemHeadline"
+            style="@style/ArticleItemHeadline"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/margin_large"
