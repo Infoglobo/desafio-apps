@@ -21,6 +21,7 @@ class ArticleAdapter : RecyclerView.Adapter<ArticleAdapter.ArticleHolder>() {
 
     fun setData(data: List<Article>) {
         this.data = data
+        notifyDataSetChanged()
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArticleHolder {
@@ -33,7 +34,10 @@ class ArticleAdapter : RecyclerView.Adapter<ArticleAdapter.ArticleHolder>() {
     override fun onBindViewHolder(holder: ArticleHolder, position: Int) {
         val article = data[position]
         with(holder) {
-            Picasso.get().load(article.images[0].url).into(imgHeadlinePhoto)
+            if (article.images.isNotEmpty())
+                Picasso.get().load(article.images[0].url).into(imgHeadlinePhoto)
+            else
+                Picasso.get().load(R.drawable.ic_image).into(imgHeadlinePhoto)
             txtSubject.text = article.section.name
             txtHeadline.text = article.headline
         }
