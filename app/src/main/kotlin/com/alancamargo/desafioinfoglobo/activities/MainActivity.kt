@@ -1,4 +1,4 @@
-package com.alancamargo.desafioinfoglobo
+package com.alancamargo.desafioinfoglobo.activities
 
 import android.os.Bundle
 import android.widget.Toast
@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.alancamargo.desafioinfoglobo.R
 import com.alancamargo.desafioinfoglobo.adapter.ArticleAdapter
 import com.alancamargo.desafioinfoglobo.adapter.DividerItemDecoration
 import com.alancamargo.desafioinfoglobo.model.Article
