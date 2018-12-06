@@ -39,17 +39,7 @@ class MainActivity : AppCompatActivity(), ArticleAdapter.OnItemClickListener {
         val viewModel = ViewModelProviders.of(this).get(ArticleViewModel::class.java)
         viewModel.getArticles(productIndex = 0).observe(this, Observer { articles ->
             val coverArticle = articles[0]
-
-            if (coverArticle.images.isNotEmpty())
-                Picasso.get().load(coverArticle.images[0].url).into(img_cover)
-            else
-                Picasso.get().load(R.drawable.ic_image).into(img_cover)
-            txt_subject.text = coverArticle.section.name
-            txt_headline.text = coverArticle.headline
-
-            img_cover.setOnClickListener {
-                showArticleDetails(coverArticle)
-            }
+            fillCover(coverArticle)
 
             val otherArticles = articles.subList(1, articles.lastIndex)
             adapter.setData(otherArticles)
@@ -61,6 +51,19 @@ class MainActivity : AppCompatActivity(), ArticleAdapter.OnItemClickListener {
     private fun showArticleDetails(article: Article) {
         Toast.makeText(this, article.headline, Toast.LENGTH_SHORT).show()
         // TODO: show details
+    }
+
+    private fun fillCover(coverArticle: Article) {
+        if (coverArticle.images.isNotEmpty())
+            Picasso.get().load(coverArticle.images[0].url).into(img_cover)
+        else
+            Picasso.get().load(R.drawable.ic_image).into(img_cover)
+        txt_subject.text = coverArticle.section.name
+        txt_headline.text = coverArticle.headline
+
+        img_cover.setOnClickListener {
+            showArticleDetails(coverArticle)
+        }
     }
 
 }
