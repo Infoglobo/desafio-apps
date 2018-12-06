@@ -18,6 +18,7 @@ object ArticleRepository {
     private val api: ProductApi = ProductApi.getApi(DependencyInjection.productApiBaseUrl)
 
     fun getArticles(productIndex: Int): LiveData<List<Article>> {
+        Log.d(LOG_TAG, "API URL: ${DependencyInjection.productApiBaseUrl}")
         val articles = MutableLiveData<List<Article>>()
 
         api.getProducts().enqueue(object : Callback<List<Product>> {
