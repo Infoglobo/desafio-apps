@@ -8,4 +8,8 @@
     <!-- region Padding -->
     <dimen name="padding_default">16dp</dimen>
     <!-- endregion -->
+
+    <!-- region Size -->
+    <dimen name="size_recycler_view_divider">1dp</dimen>
+    <!-- endregion -->
 </resources>

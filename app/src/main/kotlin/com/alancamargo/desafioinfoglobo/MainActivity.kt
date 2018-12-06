@@ -5,9 +5,9 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.alancamargo.desafioinfoglobo.adapter.ArticleAdapter
+import com.alancamargo.desafioinfoglobo.adapter.DividerItemDecoration
 import com.alancamargo.desafioinfoglobo.model.Article
 import com.alancamargo.desafioinfoglobo.viewmodel.ArticleViewModel
 import com.squareup.picasso.Picasso
@@ -29,7 +29,7 @@ class MainActivity : AppCompatActivity(), ArticleAdapter.OnItemClickListener {
         val adapter = ArticleAdapter()
         recycler_view.let {
             it.layoutManager = LinearLayoutManager(this)
-            val divider = DividerItemDecoration(this, DividerItemDecoration.HORIZONTAL)
+            val divider = DividerItemDecoration(this)
             it.addItemDecoration(divider)
             it.setHasFixedSize(true)
             it.adapter = adapter
