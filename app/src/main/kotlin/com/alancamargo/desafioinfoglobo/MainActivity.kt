@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity(), ArticleAdapter.OnItemClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        title = getString(R.string.title_main_activity).toUpperCase()
         setupRecyclerView()
     }
 
