@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Desafio InfoGlobo</string>
+    <string name="title_main_activity">O Globo</string>
 </resources>
