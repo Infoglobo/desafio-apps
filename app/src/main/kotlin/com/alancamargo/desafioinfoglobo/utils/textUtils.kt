@@ -8,7 +8,7 @@ import java.text.SimpleDateFormat
 import java.util.*
 
 @Suppress("DEPRECATION")
-fun getHtmlFormattedText(rawHtmlText: String): Spanned {
+fun formatHtmlText(rawHtmlText: String): Spanned {
     return if (SDK_INT >= N)
         Html.fromHtml(rawHtmlText, Html.FROM_HTML_MODE_LEGACY)
     else
