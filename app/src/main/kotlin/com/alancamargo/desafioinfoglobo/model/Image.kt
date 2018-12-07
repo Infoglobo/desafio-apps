@@ -4,8 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
-data class Image(@SerializedName("autor") var author: String = "",
-                 @SerializedName("fonte") var source: String = "",
+data class Image(@SerializedName("fonte") var source: String = "",
                  @SerializedName("legenda") var caption: String = "",
                  @SerializedName("url") var url: String = ""): Parcelable {
 
@@ -17,7 +16,6 @@ data class Image(@SerializedName("autor") var author: String = "",
 
     constructor(parcel: Parcel): this() {
         with(parcel) {
-            author = readString()!!
             source = readString()!!
             caption = readString()!!
             url = readString()!!
@@ -26,7 +24,6 @@ data class Image(@SerializedName("autor") var author: String = "",
 
     override fun writeToParcel(dest: Parcel?, flags: Int) {
         dest?.let {
-            it.writeString(author)
             it.writeString(source)
             it.writeString(caption)
             it.writeString(url)

@@ -4,8 +4,7 @@ import android.os.Parcel
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
-data class Section(@SerializedName("nome") var name: String = "",
-                   @SerializedName("url") var url: String = ""): Parcelable {
+data class Section(@SerializedName("nome") var name: String = ""): Parcelable {
 
     companion object CREATOR : Parcelable.Creator<Section> {
         override fun createFromParcel(source: Parcel): Section = Section(source)
@@ -16,15 +15,11 @@ data class Section(@SerializedName("nome") var name: String = "",
     constructor(parcel: Parcel): this() {
         with(parcel) {
             name = readString()!!
-            url = readString()!!
         }
     }
 
     override fun writeToParcel(dest: Parcel?, flags: Int) {
-        dest?.let {
-            it.writeString(name)
-            it.writeString(url)
-        }
+        dest?.writeString(name)
     }
 
     override fun describeContents() = 0
