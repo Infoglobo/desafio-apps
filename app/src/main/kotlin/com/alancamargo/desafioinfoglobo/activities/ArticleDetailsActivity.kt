@@ -39,14 +39,9 @@ class ArticleDetailsActivity : AppCompatActivity() {
             txt_headline.text = headline
             txt_sub_headline.text = subHeadline
 
-            // TODO: Remove articles without author or text
-            if (authors.isNotEmpty()) {
-                authors[0].let {
-                    val rawHtmlAuthorText = getString(R.string.author_format, authors[0])
-                    txt_author.setText(formatHtmlText(rawHtmlAuthorText), TextView.BufferType.SPANNABLE)
-                }
-            } else {
-                txt_author.visibility = GONE
+            authors[0].let {
+                val rawHtmlAuthorText = getString(R.string.author_format, authors[0])
+                txt_author.setText(formatHtmlText(rawHtmlAuthorText), TextView.BufferType.SPANNABLE)
             }
 
             txt_date_updated.text = formatDateString(dateUpdated)
@@ -54,7 +49,9 @@ class ArticleDetailsActivity : AppCompatActivity() {
             if (images.isNotEmpty()) {
                 images[0].let {
                     DependencyInjection.imageHelper.loadImage(it.url, img_headline_photo)
-                    txt_caption.text = getString(R.string.caption_format, it.caption, it.source)
+                    txt_caption.text = getString(R.string.caption_format,
+                        it.caption.trim(),
+                        it.source.trim())
                 }
             } else {
                 img_headline_photo.visibility = GONE
