@@ -16,11 +16,16 @@ import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), ArticleAdapter.OnItemClickListener {
 
+    private lateinit var viewModel: ArticleViewModel
+
+    private var adapter = ArticleAdapter()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         title = getString(R.string.title_main_activity).toUpperCase()
         setupRecyclerView()
+        loadArticles()
     }
 
     override fun onItemClick(article: Article) {
@@ -28,7 +33,6 @@ class MainActivity : AppCompatActivity(), ArticleAdapter.OnItemClickListener {
     }
 
     private fun setupRecyclerView() {
-        val adapter = ArticleAdapter()
         recycler_view.let {
             it.layoutManager = LinearLayoutManager(this)
             val divider = DividerItemDecoration(this)
@@ -37,7 +41,11 @@ class MainActivity : AppCompatActivity(), ArticleAdapter.OnItemClickListener {
             it.adapter = adapter
         }
 
-        val viewModel = ViewModelProviders.of(this).get(ArticleViewModel::class.java)
+        adapter.setOnItemClickListener(this)
+    }
+
+    private fun loadArticles() {
+        viewModel = ViewModelProviders.of(this).get(ArticleViewModel::class.java)
         viewModel.getArticles(productIndex = 0).observe(this, Observer { articles ->
             val coverArticle = articles[0]
             fillCover(coverArticle)
@@ -45,8 +53,6 @@ class MainActivity : AppCompatActivity(), ArticleAdapter.OnItemClickListener {
             val otherArticles = articles.subList(1, articles.lastIndex)
             adapter.setData(otherArticles)
         })
-
-        adapter.setOnItemClickListener(this)
     }
 
     private fun showArticleDetails(article: Article) {
