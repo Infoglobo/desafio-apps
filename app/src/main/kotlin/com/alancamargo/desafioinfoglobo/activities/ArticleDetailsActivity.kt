@@ -8,6 +8,7 @@ import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.alancamargo.desafioinfoglobo.R
 import com.alancamargo.desafioinfoglobo.model.Article
+import com.alancamargo.desafioinfoglobo.utils.formatDateString
 import com.alancamargo.desafioinfoglobo.utils.getHtmlFormattedText
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_article_details.*
@@ -40,8 +41,7 @@ class ArticleDetailsActivity : AppCompatActivity() {
 
             val rawHtmlAuthorText = getString(R.string.author_format, authors[0])
             txt_author.setText(getHtmlFormattedText(rawHtmlAuthorText), TextView.BufferType.SPANNABLE)
-
-            // TODO: add date updated
+            txt_date_updated.text = formatDateString(dateUpdated)
 
             if (images.isNotEmpty()) {
                 images[0].let {
