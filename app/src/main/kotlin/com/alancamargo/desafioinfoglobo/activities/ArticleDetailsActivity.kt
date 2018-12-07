@@ -39,8 +39,16 @@ class ArticleDetailsActivity : AppCompatActivity() {
             txt_headline.text = headline
             txt_sub_headline.text = subHeadline
 
-            val rawHtmlAuthorText = getString(R.string.author_format, authors[0])
-            txt_author.setText(formatHtmlText(rawHtmlAuthorText), TextView.BufferType.SPANNABLE)
+            // TODO: Remove articles without author or text
+            if (authors.isNotEmpty()) {
+                authors[0].let {
+                    val rawHtmlAuthorText = getString(R.string.author_format, authors[0])
+                    txt_author.setText(formatHtmlText(rawHtmlAuthorText), TextView.BufferType.SPANNABLE)
+                }
+            } else {
+                txt_author.visibility = GONE
+            }
+
             txt_date_updated.text = formatDateString(dateUpdated)
 
             if (images.isNotEmpty()) {
