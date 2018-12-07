@@ -50,7 +50,9 @@ class MainActivity : AppCompatActivity(), ArticleAdapter.OnItemClickListener {
             val coverArticle = articles[0]
             fillCover(coverArticle)
 
-            val otherArticles = articles.subList(1, articles.lastIndex)
+            val otherArticles = articles.subList(1, articles.lastIndex).filter {
+                it.authors.isNotEmpty() && it.text.isNotEmpty()
+            }
             adapter.setData(otherArticles)
         })
     }
