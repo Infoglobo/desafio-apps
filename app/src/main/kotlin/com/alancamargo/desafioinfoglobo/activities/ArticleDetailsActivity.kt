@@ -3,16 +3,57 @@ package com.alancamargo.desafioinfoglobo.activities
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.View.GONE
+import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 import com.alancamargo.desafioinfoglobo.R
 import com.alancamargo.desafioinfoglobo.model.Article
+import com.alancamargo.desafioinfoglobo.utils.getHtmlFormattedText
+import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.activity_article_details.*
 
 class ArticleDetailsActivity : AppCompatActivity() {
+
+    private lateinit var article: Article
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_article_details)
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        parseIntent()
+        changeTitle()
+        fillViews()
+    }
+
+    private fun parseIntent() {
+        article = intent.getParcelableExtra(EXTRA_ARTICLE)
+    }
+
+    private fun changeTitle() {
+        title = article.section.name.toUpperCase()
+    }
+
+    private fun fillViews() {
+        with(article) {
+            txt_headline.text = headline
+            txt_sub_headline.text = subHeadline
+
+            val rawHtmlAuthorText = getString(R.string.author_format, authors[0])
+            txt_author.setText(getHtmlFormattedText(rawHtmlAuthorText), TextView.BufferType.SPANNABLE)
+
+            // TODO: add date updated
+
+            if (images.isNotEmpty()) {
+                images[0].let {
+                    Picasso.get().load(it.url).into(img_headline_photo)
+                    txt_caption.text = getString(R.string.caption_format, it.caption, it.source)
+                }
+            } else {
+                img_headline_photo.visibility = GONE
+            }
+
+            txt_article_text.text = text
+        }
     }
 
     companion object {

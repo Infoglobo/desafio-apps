@@ -1,7 +1,6 @@
 package com.alancamargo.desafioinfoglobo.activities
 
 import android.os.Bundle
-import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -10,6 +9,7 @@ import com.alancamargo.desafioinfoglobo.R
 import com.alancamargo.desafioinfoglobo.adapter.ArticleAdapter
 import com.alancamargo.desafioinfoglobo.adapter.DividerItemDecoration
 import com.alancamargo.desafioinfoglobo.model.Article
+import com.alancamargo.desafioinfoglobo.utils.launchArticleDetailsActivity
 import com.alancamargo.desafioinfoglobo.viewmodel.ArticleViewModel
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
@@ -50,8 +50,7 @@ class MainActivity : AppCompatActivity(), ArticleAdapter.OnItemClickListener {
     }
 
     private fun showArticleDetails(article: Article) {
-        Toast.makeText(this, article.headline, Toast.LENGTH_SHORT).show()
-        // TODO: show details
+        launchArticleDetailsActivity(article)
     }
 
     private fun fillCover(coverArticle: Article) {
