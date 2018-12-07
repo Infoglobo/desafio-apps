@@ -8,6 +8,7 @@ import androidx.test.espresso.intent.rule.IntentsTestRule
 import androidx.test.rule.ActivityTestRule
 import br.com.concretesolutions.kappuccino.utils.doWait
 import com.alancamargo.desafioinfoglobo.DependencyInjection
+import com.alancamargo.desafioinfoglobo.images.MockImageHelper
 import okhttp3.mockwebserver.MockWebServer
 import org.junit.After
 import org.junit.Before
@@ -29,7 +30,7 @@ open class BaseActivityTest<T: AppCompatActivity>(activityClass: Class<T>,
 
     @Before
     open fun setup() {
-        DependencyInjection.init(mockArticleApi.url("/articles/").toString())
+        DependencyInjection.init(mockArticleApi.url("/articles/").toString(), MockImageHelper)
 
         if (autoLaunch)
             launch()

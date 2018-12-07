@@ -6,11 +6,11 @@ import android.os.Bundle
 import android.view.View.GONE
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import com.alancamargo.desafioinfoglobo.DependencyInjection
 import com.alancamargo.desafioinfoglobo.R
 import com.alancamargo.desafioinfoglobo.model.Article
 import com.alancamargo.desafioinfoglobo.utils.formatDateString
 import com.alancamargo.desafioinfoglobo.utils.formatHtmlText
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_article_details.*
 
 class ArticleDetailsActivity : AppCompatActivity() {
@@ -53,7 +53,7 @@ class ArticleDetailsActivity : AppCompatActivity() {
 
             if (images.isNotEmpty()) {
                 images[0].let {
-                    Picasso.get().load(it.url).into(img_headline_photo)
+                    DependencyInjection.imageHelper.loadImage(it.url, img_headline_photo)
                     txt_caption.text = getString(R.string.caption_format, it.caption, it.source)
                 }
             } else {

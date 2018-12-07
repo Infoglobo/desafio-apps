@@ -5,13 +5,13 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.alancamargo.desafioinfoglobo.DependencyInjection
 import com.alancamargo.desafioinfoglobo.R
 import com.alancamargo.desafioinfoglobo.adapter.ArticleAdapter
 import com.alancamargo.desafioinfoglobo.adapter.DividerItemDecoration
 import com.alancamargo.desafioinfoglobo.model.Article
 import com.alancamargo.desafioinfoglobo.utils.launchArticleDetailsActivity
 import com.alancamargo.desafioinfoglobo.viewmodel.ArticleViewModel
-import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity(), ArticleAdapter.OnItemClickListener {
@@ -54,15 +54,16 @@ class MainActivity : AppCompatActivity(), ArticleAdapter.OnItemClickListener {
     }
 
     private fun fillCover(coverArticle: Article) {
-        if (coverArticle.images.isNotEmpty())
-            Picasso.get().load(coverArticle.images[0].url).into(img_cover)
-        else
-            Picasso.get().load(R.drawable.ic_image).into(img_cover)
-        txt_subject.text = coverArticle.section.name
-        txt_headline.text = coverArticle.headline
+        with(coverArticle) {
+            if (images.isNotEmpty())
+                DependencyInjection.imageHelper.loadImage(images[0].url, img_cover)
 
-        img_cover.setOnClickListener {
-            showArticleDetails(coverArticle)
+            txt_subject.text = section.name
+            txt_headline.text = headline
+
+            img_cover.setOnClickListener {
+                showArticleDetails(this)
+            }
         }
     }
 
