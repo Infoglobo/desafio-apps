@@ -1,6 +1,5 @@
 package com.alancamargo.desafioinfoglobo.utils
 
-import com.alancamargo.desafioinfoglobo.utils.formatDateString
 import org.hamcrest.CoreMatchers.`is`
 import org.junit.Assert.assertThat
 import org.junit.Test
