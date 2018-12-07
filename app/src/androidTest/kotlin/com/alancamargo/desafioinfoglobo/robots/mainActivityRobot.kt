@@ -1,8 +1,10 @@
 package com.alancamargo.desafioinfoglobo.robots
 
 import br.com.concretesolutions.kappuccino.actions.ClickActions.click
+import br.com.concretesolutions.kappuccino.custom.intent.IntentMatcherInteractions.sentIntent
 import br.com.concretesolutions.kappuccino.custom.recyclerView.RecyclerViewInteractions.recyclerView
 import com.alancamargo.desafioinfoglobo.R
+import com.alancamargo.desafioinfoglobo.activities.ArticleDetailsActivity
 
 fun mainActivity(func: MainActivityRobot.() -> Unit) = MainActivityRobot().apply(func)
 
@@ -41,7 +43,9 @@ class MainActivityRobot {
 class MainActivityResult {
 
     fun redirectToArticleDetailsActivity() {
-        // TODO: implement
+        sentIntent {
+            className(ArticleDetailsActivity::class.java.name)
+        }
     }
 
 }
