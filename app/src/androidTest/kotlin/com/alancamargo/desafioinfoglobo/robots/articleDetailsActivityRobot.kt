@@ -32,6 +32,7 @@ class ArticleDetailsActivityRobot {
         headlineIsDisplayed(article)
         subHeadlineIsDisplayed(article)
         dateUpdatedIsDisplayed(article)
+        headlinePhotoIsDisplayed(article)
         textIsDisplayed(article)
     }
 
@@ -62,6 +63,15 @@ class ArticleDetailsActivityRobot {
             allOf {
                 id(R.id.txt_date_updated)
                 text(formatDateString(article.dateUpdated))
+            }
+        }
+    }
+
+    private fun headlinePhotoIsDisplayed(article: Article) {
+        displayed(scroll = true) {
+            allOf {
+                id(R.id.img_headline_photo)
+                image(R.drawable.cabral_preso)
             }
         }
     }
