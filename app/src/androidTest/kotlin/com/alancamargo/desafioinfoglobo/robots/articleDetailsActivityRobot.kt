@@ -1,6 +1,11 @@
 package com.alancamargo.desafioinfoglobo.robots
 
+import androidx.test.espresso.Espresso.onView
+import androidx.test.espresso.assertion.ViewAssertions.matches
 import androidx.test.espresso.intent.matcher.IntentMatchers.hasExtra
+import androidx.test.espresso.matcher.ViewMatchers
+import androidx.test.espresso.matcher.ViewMatchers.withEffectiveVisibility
+import androidx.test.espresso.matcher.ViewMatchers.withId
 import br.com.concretesolutions.kappuccino.assertions.VisibilityAssertions.displayed
 import br.com.concretesolutions.kappuccino.custom.intent.IntentMatcherInteractions.stubIntent
 import com.alancamargo.desafioinfoglobo.R
@@ -28,6 +33,10 @@ class ArticleDetailsActivityRobot {
         subHeadlineIsDisplayed(article)
         dateUpdatedIsDisplayed(article)
         textIsDisplayed(article)
+    }
+
+    fun imageViewIsNotVisible() {
+        onView(withId(R.id.img_headline_photo)).check(matches(withEffectiveVisibility(ViewMatchers.Visibility.GONE)))
     }
 
     private fun headlineIsDisplayed(article: Article) {

@@ -8,7 +8,6 @@ import com.alancamargo.desafioinfoglobo.model.Article
 import com.alancamargo.desafioinfoglobo.model.Image
 import com.alancamargo.desafioinfoglobo.model.Section
 import com.alancamargo.desafioinfoglobo.robots.articleDetailsActivity
-import org.junit.Before
 import org.junit.Test
 
 class ArticleDetailsActivityTest : BaseActivityTest<ArticleDetailsActivity>(ArticleDetailsActivity::class.java,
@@ -16,15 +15,10 @@ class ArticleDetailsActivityTest : BaseActivityTest<ArticleDetailsActivity>(Arti
 
     private lateinit var article: Article
 
-    @Before
-    override fun setup() {
-        super.setup()
-        prepareArticle()
-        launch()
-    }
-
     @Test
     fun shouldLoadCorrectArticle() {
+        prepareArticleAndLaunch()
+
         articleDetailsActivity {
             articleIs(article)
         }
@@ -32,14 +26,32 @@ class ArticleDetailsActivityTest : BaseActivityTest<ArticleDetailsActivity>(Arti
 
     @Test
     fun shouldDisplayCorrectArticleInfo() {
+        prepareArticleAndLaunch()
+
         articleDetailsActivity {
             articleInfoIsDisplayed(article)
+        }
+    }
+
+    @Test
+    fun givenArticleHasNoImage_shouldNotDisplayImageView() {
+        prepareArticleAndLaunch(articleWithoutImage = true)
+
+        articleDetailsActivity {
+            imageViewIsNotVisible()
         }
     }
 
     override fun intent(): Intent {
         val context = InstrumentationRegistry.getInstrumentation().targetContext
         return ArticleDetailsActivity.getIntent(context, article)
+    }
+
+    private fun prepareArticleAndLaunch(articleWithoutImage: Boolean = false) {
+        prepareArticle()
+        if (articleWithoutImage)
+            article.images = listOf()
+        launch()
     }
 
     private fun prepareArticle() {
@@ -51,8 +63,8 @@ class ArticleDetailsActivityTest : BaseActivityTest<ArticleDetailsActivity>(Arti
             headline = "Sérgio Cabral é denunciado pela sexta vez na Lava-Jato",
             images = listOf(
                 Image(source = "Agência O Globo / 17-11-2016",
-                caption = "O ex-governador do Rio Sérgio Cabral ao ser preso pela Polícia Federal em novembro",
-                url = "https://ogimg.infoglobo.com.br/in/20620804-669-05e/FT1086A/cabral-preso.jpg"
+                    caption = "O ex-governador do Rio Sérgio Cabral ao ser preso pela Polícia Federal em novembro",
+                    url = "https://ogimg.infoglobo.com.br/in/20620804-669-05e/FT1086A/cabral-preso.jpg"
                 )
             )
         )
