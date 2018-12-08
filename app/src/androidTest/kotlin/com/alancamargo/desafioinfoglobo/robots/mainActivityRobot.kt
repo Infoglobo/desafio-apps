@@ -1,6 +1,5 @@
 package com.alancamargo.desafioinfoglobo.robots
 
-import br.com.concretesolutions.kappuccino.actions.ClickActions.click
 import br.com.concretesolutions.kappuccino.custom.intent.IntentMatcherInteractions.sentIntent
 import br.com.concretesolutions.kappuccino.custom.recyclerView.RecyclerViewInteractions.recyclerView
 import com.alancamargo.desafioinfoglobo.R
@@ -14,14 +13,6 @@ class MainActivityRobot {
 
     fun articlePositionIs(articlePosition: Int) {
         this.articlePosition = articlePosition
-    }
-
-    infix fun clickCoverArticle(func: MainActivityResult.() -> Unit) {
-        click {
-            id(R.id.img_cover)
-        }
-
-        applyResult(func)
     }
 
     infix fun clickArticleInList(func: MainActivityResult.() -> Unit) {

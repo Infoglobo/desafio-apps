@@ -4,7 +4,6 @@ import com.alancamargo.desafioinfoglobo.base.BaseActivityTest
 import com.alancamargo.desafioinfoglobo.robots.mainActivity
 import okhttp3.mockwebserver.MockResponse
 import org.junit.Before
-import org.junit.Ignore
 import org.junit.Test
 
 class MainActivityTest : BaseActivityTest<MainActivity>(MainActivity::class.java) {
@@ -13,16 +12,6 @@ class MainActivityTest : BaseActivityTest<MainActivity>(MainActivity::class.java
     override fun setup() {
         super.setup()
         mockApiResponse()
-    }
-
-    // FIXME: this test is only passing when executed individually
-    @Test
-    @Ignore
-    fun whenClickingOnCoverArticle_shouldShowDetails() {
-        mainActivity {
-        } clickCoverArticle {
-            redirectToArticleDetailsActivity()
-        }
     }
 
     @Test
