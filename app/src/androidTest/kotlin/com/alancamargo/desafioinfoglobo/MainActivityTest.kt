@@ -15,6 +15,7 @@ class MainActivityTest : BaseActivityTest<MainActivity>(MainActivity::class.java
         mockApiResponse()
     }
 
+    // FIXME: this test is only passing when executed individually
     @Test
     fun whenClickingOnCoverArticle_shouldShowDetails() {
         mainActivity {
