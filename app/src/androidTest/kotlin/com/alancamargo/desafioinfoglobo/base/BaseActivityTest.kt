@@ -5,6 +5,7 @@ import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.test.espresso.intent.Intents
 import androidx.test.espresso.intent.rule.IntentsTestRule
+import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.rule.ActivityTestRule
 import br.com.concretesolutions.kappuccino.utils.doWait
 import com.alancamargo.desafioinfoglobo.DependencyInjection
@@ -55,7 +56,8 @@ open class BaseActivityTest<T: AppCompatActivity>(activityClass: Class<T>,
         val json: String
 
         try {
-            val inputStream: InputStream = rule.activity.assets.open(fileName)
+            val context = InstrumentationRegistry.getInstrumentation().context
+            val inputStream: InputStream = context.assets.open(fileName)
             json = inputStream.bufferedReader().use { it.readText() }
         } catch (e: Exception) {
             Log.e(LOG_TAG, e.message, e)
