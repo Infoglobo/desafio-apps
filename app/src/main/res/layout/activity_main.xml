@@ -10,12 +10,16 @@
     <ImageView
             android:id="@+id/img_cover"
             android:layout_width="0dp"
-            android:layout_height="wrap_content"
+            android:layout_height="0dp"
             android:scaleType="fitXY"
             android:importantForAccessibility="no"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toTopOf="@+id/recycler_view"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintDimensionRatio="16:9"
+            app:layout_constraintVertical_bias="0"
+            app:layout_constraintVertical_chainStyle="packed"
             tools:src="@tools:sample/backgrounds/scenic"/>
 
     <TextView
@@ -32,12 +36,12 @@
     <TextView
             android:id="@+id/txt_headline"
             style="@style/CoverHeadline"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="@id/img_cover"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/img_cover"
+            app:layout_constraintEnd_toEndOf="@id/img_cover"
             app:layout_constraintVertical_bias="0.9"
             tools:text="Sérgio Cabral é denunciado pela sexta vez na Lava-Jato"/>
 
