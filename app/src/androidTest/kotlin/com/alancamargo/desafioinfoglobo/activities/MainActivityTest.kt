@@ -1,6 +1,5 @@
-package com.alancamargo.desafioinfoglobo
+package com.alancamargo.desafioinfoglobo.activities
 
-import com.alancamargo.desafioinfoglobo.activities.MainActivity
 import com.alancamargo.desafioinfoglobo.base.BaseActivityTest
 import com.alancamargo.desafioinfoglobo.robots.mainActivity
 import okhttp3.mockwebserver.MockResponse
