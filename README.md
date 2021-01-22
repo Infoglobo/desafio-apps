@@ -13,11 +13,11 @@ Faça um fork do projeto para a sua conta e clone-o para o seu ambiente de traba
 
 # Instruções
 
-###A API de Notícias
+## A API de Notícias
 
 API de conteúdo: https://raw.githubusercontent.com/Infoglobo/desafio-apps/master/capa.json
 
-###Na listagem, o usuário verá:
+## Na listagem, o usuário verá:
 
 <p align="left">
   <img src="wireframes/image1.PNG" width="350"/>
@@ -30,7 +30,7 @@ API de conteúdo: https://raw.githubusercontent.com/Infoglobo/desafio-apps/maste
 
 Ao clicar em uma notícia, será exibida uma página com detalhes da notícia;
 
-###Na página de detalhes, o usuário verá:
+## Na página de detalhes, o usuário verá:
 
 <p align="left">
   <img src="wireframes/image2.PNG" width="350"/>
