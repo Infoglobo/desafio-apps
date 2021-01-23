@@ -1,0 +1,117 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'jacoco'
+
+android {
+    compileSdkVersion 28
+
+    defaultConfig {
+        applicationId "com.alancamargo.desafioinfoglobo"
+        minSdkVersion 17
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            debuggable true
+            testCoverageEnabled true
+        }
+
+        release {
+            debuggable false
+            testCoverageEnabled false
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    sourceSets {
+        androidTest.java.srcDirs += 'src/androidTest/kotlin'
+        main.java.srcDirs += 'src/main/kotlin'
+        test.java.srcDirs += 'src/test/kotlin'
+        main { assets.srcDirs = ['src/main/assets', 'src/androidTest/assets/'] }
+    }
+}
+
+jacoco {
+    toolVersion = '0.8.1'
+}
+
+tasks.withType(Test) {
+    jacoco.includeNoLocationClasses = true
+}
+
+task deleteOldReports(type: Delete) {
+    delete "$project.buildDir/reports/"
+}
+
+// Run this task for test coverage reports
+task jacocoTestReport(type: JacocoReport,
+        dependsOn: ['deleteOldReports', 'testDebugUnitTest', 'createDebugCoverageReport']) {
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+
+    def fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*',
+                      '**/Manifest*.*', '**/*Test*.*', 'android/**/*.*']
+    def debugTree = fileTree(dir: "$project.buildDir/tmp/kotlin-classes/debug", excludes: fileFilter)
+    def mainSrc = "$project.projectDir/src/main/kotlin"
+
+    sourceDirectories = files([mainSrc])
+    classDirectories = files([debugTree])
+    executionData = fileTree(dir: project.buildDir, includes: [
+            'jacoco/testDebugUnitTest.exec', 'outputs/code-coverage/connected/*coverage.ec'
+    ])
+}
+
+dependencies {
+    // region Instrumented test libraries
+    // Android test runner
+    androidTestImplementation 'androidx.test:runner:1.1.1-alpha01'
+
+    // Espresso
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0'
+    androidTestImplementation 'androidx.test.espresso:espresso-intents:3.1.0'
+
+    // Kappuccino
+    androidTestImplementation 'br.com.concretesolutions:kappuccino:1.2.1'
+
+    // Mock web server
+    androidTestImplementation 'com.squareup.okhttp3:mockwebserver:3.11.0'
+    // endregion
+
+    // region Standard libraries
+    // Local .jar files
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // Kotlin
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+
+    // App compatibility
+    implementation 'androidx.appcompat:appcompat:1.1.0-alpha01'
+
+    // ConstraintLayout
+    implementation 'androidx.constraintlayout:constraintlayout:2.0.0-alpha2'
+
+    // Retrofit
+    implementation 'com.squareup.retrofit2:retrofit:2.5.0'
+    implementation 'com.squareup.retrofit2:converter-gson:2.4.0'
+
+    // Lifecycle
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
+
+    // Picasso
+    implementation 'com.squareup.picasso:picasso:2.71828'
+    // endregion
+
+    // region Unit test libraries
+    testImplementation 'junit:junit:4.12'
+    // endregion
+}
