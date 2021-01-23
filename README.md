@@ -1,4 +1,33 @@
-# Quer trabalhar em nosso time de apps? 
+# Desafio - Cauê Alves
+
+## Descrição do projeto
+* `Xcode` 9.0 e `Swift` 4.0.
+* Suporte para `iOS9`, `iOS10` e `iOS11`.
+* App universal (`iPhone` e `iPad`).
+* Gerenciador de dependências: `Cocoapods`.
+* Pods: `ObjectMapper` (mapping JSON to objects/models), `PINRemoteImage` (download and cache for images) e `SwiftLint` (Swift style guide).
+* Arquitetura: `MVVM`.
+* Persistência de dados: `UserDefaults`.
+
+## Features desenvolvidas
+* **Tela Home** com listagem de manchetes/notícias agrupadas por seção (Brasil, Economia, etc.), scroll lateral entre imagens/notícias e cache de notícias baixadas.
+* **Tela Detalhe** da notícia (contendo seção, titulo, subtitulo, foto, autores, data e conteúdo), opção de compartilhar através do recurso nativo do `iOS` e salvar o conteúdo cacheado em uma **Lista de Leitura**.
+* **Tela Seções** que encaminha para a URL inicial do portal para cada tipo de conteúdo.
+* **Lista de Leitura** com listagem e detalhe de conteúdos salvos em memória para leitura posterior.
+
+## Testes Unitários
+* Camada de modelo (parse de objetos do JSON).
+* Camada de persistência (query, save e delete de conteúdos).
+
+## Screenshot
+
+<p align="left">
+  <img src="wireframes/screenshot.PNG" width="900"/>
+</p>
+
+---
+
+# Quer trabalhar em nosso time de apps?
 
 Esse é o nosso desafio para você!
 O objetivo é você desenvolver um aplicativo que exiba as notícias usando uma API de capa e criar testes unitários. Avaliaremos seu conhecimento e habilidades nos seguintes quesitos:

@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13196" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="q5U-t0-pOh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13173"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home Table View Controller-->
+        <scene sceneID="Sl4-MD-Hhn">
+            <objects>
+                <tableViewController storyboardIdentifier="HomeTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="AC7-VU-3fL" customClass="HomeTableViewController" customModule="OGloboNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="SWI-5J-acn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodayTableViewCell" id="tTy-4D-N10" customClass="TodayTableViewCell" customModule="OGloboNews" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="tTy-4D-N10" id="g51-is-sxP">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="HomeContentTableViewCell" id="MfU-fF-ihZ" customClass="HomeContentTableViewCell" customModule="OGloboNews" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="MfU-fF-ihZ" id="oVx-sT-Lfp">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="AC7-VU-3fL" id="4jD-Go-dA5"/>
+                            <outlet property="delegate" destination="AC7-VU-3fL" id="FrH-rz-Ld4"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="5gZ-Im-dn8"/>
+                    <connections>
+                        <segue destination="Mcg-Au-HfA" kind="show" identifier="contentDetailSegue" id="fF1-uE-1sj"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="F7I-K2-mUm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="65"/>
+        </scene>
+        <!--Content Detail Table View Controller-->
+        <scene sceneID="aEG-5w-nzh">
+            <objects>
+                <tableViewController storyboardIdentifier="ContentDetailTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Mcg-Au-HfA" customClass="ContentDetailTableViewController" customModule="OGloboNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="MPH-Sq-OSW">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TitleTableViewCell" id="NZg-O5-9iS" customClass="TitleTableViewCell" customModule="OGloboNews" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NZg-O5-9iS" id="64a-nn-wH2">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SubTitleTableViewCell" id="ipq-S3-EkP" customClass="SubTitleTableViewCell" customModule="OGloboNews" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="72" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ipq-S3-EkP" id="vF9-JA-TMn">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="AuthorAndDateTableViewCell" id="hoI-eQ-r98" customClass="AuthorAndDateTableViewCell" customModule="OGloboNews" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="116" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hoI-eQ-r98" id="mIg-Oa-1Fr">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageTableViewCell" id="hPA-Uk-07U" customClass="ImageTableViewCell" customModule="OGloboNews" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="160" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hPA-Uk-07U" id="9he-Ys-mE9">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ContentTableViewCell" id="dC7-wK-9Hp" customClass="ContentTableViewCell" customModule="OGloboNews" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="204" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="dC7-wK-9Hp" id="Xgx-iH-ENA">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="Mcg-Au-HfA" id="PxO-HM-1jy"/>
+                            <outlet property="delegate" destination="Mcg-Au-HfA" id="pHI-uB-gYZ"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="nXX-lZ-NgS">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="action" id="1hj-9q-D3j">
+                                <connections>
+                                    <action selector="shareContent" destination="Mcg-Au-HfA" id="X54-qV-w1k"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem systemItem="bookmarks" id="U3W-Eo-yFG">
+                                <connections>
+                                    <action selector="saveContent" destination="Mcg-Au-HfA" id="mWa-Ax-qBw"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="saveButton" destination="U3W-Eo-yFG" id="E7J-xQ-8VK"/>
+                        <outlet property="shareButton" destination="1hj-9q-D3j" id="wjk-Pw-67W"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6MY-29-Iot" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2092" y="65"/>
+        </scene>
+        <!--Manchetes-->
+        <scene sceneID="vE8-lz-ynE">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="3fQ-XF-CWt" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Manchetes" image="home" id="gd4-Ms-E03"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="w7O-iU-y7s">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="AC7-VU-3fL" kind="relationship" relationship="rootViewController" id="oGe-RD-M7J"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vAQ-wx-Xfp" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-135" y="66"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="xs5-wx-fn0">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="q5U-t0-pOh" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="y4b-kS-IJG">
+                        <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="3fQ-XF-CWt" kind="relationship" relationship="viewControllers" id="hIf-Zw-mPD"/>
+                        <segue destination="f7F-et-v9b" kind="relationship" relationship="viewControllers" id="ZSS-uY-p60"/>
+                        <segue destination="PLq-Pt-wiI" kind="relationship" relationship="viewControllers" id="L6m-qu-7NG"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3dz-8M-smy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1201" y="835"/>
+        </scene>
+        <!--Sections Table View Controller-->
+        <scene sceneID="Oz7-cZ-8cM">
+            <objects>
+                <tableViewController storyboardIdentifier="SectionsTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="vEp-9O-ZuG" customClass="SectionsTableViewController" customModule="OGloboNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="JFp-Bn-myF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="SectionTableViewCell" id="2Kf-hM-PB4" customClass="SectionTableViewCell" customModule="OGloboNews" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="2Kf-hM-PB4" id="jm7-ka-k41">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="vEp-9O-ZuG" id="VCe-eH-Ow2"/>
+                            <outlet property="delegate" destination="vEp-9O-ZuG" id="a6D-qU-FDY"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="W3V-wX-ifv"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5e7-Ly-5Y8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="833"/>
+        </scene>
+        <!--Seções-->
+        <scene sceneID="KRj-Xy-tCG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="f7F-et-v9b" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Seções" image="secoes" id="ulQ-Xr-G8K"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="8XI-xa-XGK">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="vEp-9O-ZuG" kind="relationship" relationship="rootViewController" id="j5O-fZ-zZd"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yNC-hd-syZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-136" y="833.88305847076469"/>
+        </scene>
+        <!--Favorites Table View Controller-->
+        <scene sceneID="Fcq-wB-eQL">
+            <objects>
+                <tableViewController storyboardIdentifier="FavoritesTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="FwX-Fj-EeP" customClass="FavoritesTableViewController" customModule="OGloboNews" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelectionDuringEditing="YES" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="KBf-C1-iRx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteTableViewCell" id="FiV-85-LG2" customClass="FavoriteTableViewCell" customModule="OGloboNews" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="FiV-85-LG2" id="ZG7-5q-Cbu">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="FwX-Fj-EeP" id="hOT-AZ-wtM"/>
+                            <outlet property="delegate" destination="FwX-Fj-EeP" id="xxW-cG-4V1"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" id="83e-WW-1cC"/>
+                    <connections>
+                        <segue destination="Mcg-Au-HfA" kind="show" identifier="contentDetailSegue" id="9gO-u3-aE9"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QWX-Qe-CXX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="980" y="1612"/>
+        </scene>
+        <!--Lista de leitura-->
+        <scene sceneID="OLn-Xl-gU4">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PLq-Pt-wiI" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Lista de leitura" image="listaleitura" id="jjZ-4I-L6E"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yaR-OQ-ZHz">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="FwX-Fj-EeP" kind="relationship" relationship="rootViewController" id="gm6-tX-IwQ"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="4py-6Y-Jgj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-135" y="1612"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="home" width="21" height="21"/>
+        <image name="listaleitura" width="21" height="21"/>
+        <image name="secoes" width="21" height="21"/>
+    </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="9gO-u3-aE9"/>
+    </inferredMetricsTieBreakers>
+</document>
